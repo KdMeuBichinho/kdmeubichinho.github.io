@@ -27,7 +27,7 @@ section{
     height: 100vh;
     left: 0px;
     top: 0px;
-    background-color: #FC7478;
+    background-color: var(--secondary-color);
     align-items: center;
 }
 #register{
