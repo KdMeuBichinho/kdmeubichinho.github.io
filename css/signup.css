@@ -1,0 +1,89 @@
+:root{
+    --primary-color: #334188;
+    --primary-light-color: #7799D9;
+    --primary-dark-color: #28346e;
+    --secondary-color: #FC7478;
+    --secondary-light-color: #ff979a;
+    --secondary-dark-color: #fc6166;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --gray-color: #616161;
+    --gray-light-color: #c0c0c0;
+    --gray-dark-color: #3C3C3C;
+    --space: 10px;
+    --time: .4s;
+}
+main{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+section{
+    display: flex;
+    position: absolute;
+    width: 62vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background-color: #FC7478;
+    align-items: center;
+}
+#register{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: 38vw;
+    height: 100vh;
+    right: 0px;
+    top: 0px;
+}
+#form{
+    width:60%;
+    font-style: normal;
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    align-self: center; 
+}
+#welcome{
+    position: absolute;
+}
+#icone{
+    width: 30px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    color: var(--primary-color);
+}
+form{
+    width:100%;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center; 
+}
+#mail,#phone,#password{
+    width: 100%;
+    font-size: 0.8em;   
+}
+.part{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;    
+}
+#name, #street{
+    width: 60%;
+    margin-right: 5px;
+    font-size: 0.8em;
+}
+#cep, #number{
+    width: 40%;
+    font-size: 0.8em;
+}
+#link{
+    height:50px;
+}

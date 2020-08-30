@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KdMeuBichinho?</title>
+    <link rel="stylesheet" href="../css/signup.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <main>
+        <section>
+                <img src="../images/welcome.svg" alt="welcome" id="welcome">
+        </section>
+        <div id="register">
+                <img src="../images/icone.svg" alt="icone" id="icone">
+            <div id="form">
+                <h1>Criar conta</h1>
+                <p>Realize seu cadastro e comece sua jornada por aqui.</p>
+                <form action="#" method="post">
+                    <div class="part">
+                        <input type="email" id="mail" placeholder="E-mail: user@email.com" required/>
+                    </div>
+                    <div class="part">
+                        <input type="text" name="Nome e Sobrenome" id="name" placeholder="Nome" value="" required/>
+                        <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP: xxxxx-xxx" value="" required/>
+                    </div>
+                    <div class="part">
+                        <input type="text" name="street" id="street" placeholder="Rua" value="" required/>
+                        <input type="text" name="number" id="number" placeholder="Número" value="" required/>
+                    </div>
+                    <div class="part">
+                        <input type="tel" name="phone" id="phone" pattern="\([0-9]{2}\)[9]{1}[0-9]{4}-[0-9]{4}" placeholder="Celular:(xx)9xxxx-xxxx" value="" required/>
+                    </div>
+                    <div class="part">
+                        <input type="password" name="senha" id="password" placeholder="Senha">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn-primary">Cadastrar</button>
+                    </div>
+                    <div id="link">
+                        <a href="#">Clique aqui caso já tenha uma conta</a>
+                    </div>  
+            </div>          
+        </div> 
+    </main>
+    <footer>Todos os direitos reservados.</footer>
+    <script src="../main.js"></script>
+</body>
+</html>
