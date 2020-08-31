@@ -65,7 +65,7 @@ a{
     font-weight: 300;
     text-decoration: none;
     color: var(--primary-light-color);
-    transition: color var(--time);
+    transition: var(--time);
 }
 a:hover{
     font-weight: 500;
@@ -73,7 +73,7 @@ a:hover{
     border-bottom: 2px solid var(--primary-color);
 }
 input{
-    font-size: 0.9em;
+    font-size: 0.8em;
     border: 1px solid var(--gray-dark-color);
     color: var(--gray-color);
     border-radius: 10px;
@@ -172,4 +172,12 @@ span.tag{
 .bg-gray-dark{
     background-color: var(--gray-dark-color);
     color: var(--white-color);;
+}
+.logo {
+    fill: var(--gray-dark-color);
+    width: 120px;
+}
+.icone{
+    fill: var(--gray-dark-color);
+    width: 30px;
 }
