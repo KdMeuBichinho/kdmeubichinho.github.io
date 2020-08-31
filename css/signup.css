@@ -1,18 +1,3 @@
-:root{
-    --primary-color: #334188;
-    --primary-light-color: #7799D9;
-    --primary-dark-color: #28346e;
-    --secondary-color: #FC7478;
-    --secondary-light-color: #ff979a;
-    --secondary-dark-color: #fc6166;
-    --white-color: #ffffff;
-    --black-color: #000000;
-    --gray-color: #616161;
-    --gray-light-color: #c0c0c0;
-    --gray-dark-color: #3C3C3C;
-    --space: 10px;
-    --time: .4s;
-}
 main{
     display: flex;
     position: relative;
