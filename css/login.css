@@ -2,24 +2,22 @@
 body{
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
 }
 
 .image-aside{
     display: none;
     
 }
-.content header{
-    background-color: #FC7478;
 
-}
 
 section header{
     padding-top: 20px;
     padding-left: 20px;
 }
+
 section header img{
     width: 20px;
-    color: #334188;
 }
 
 .form-login{
@@ -33,57 +31,27 @@ section header img{
     margin: 30px;
     display: flex;
     flex-direction: column;
-	flex-wrap: nowrap;
 	justify-content: right;
 	align-items: right;
 	align-content: right;
 }
 
-
 form .title{
     font-weight: 500;
     font-size: 40px;
-    color: #334188;
-}
-
-form p{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 23px;
-}
-
-input[type="email"], input[type="password"], select{
-    width: 90%;
-    height: 30px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
 }
 
 a{
     margin-left: 30px;
+    font-size: 16px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+input[type="submit"]{
+    width: 133px;
+    height: 55px;
+    border-radius: 100px;
+    color: var(--white-color);
+}
 
 @media (min-width: 550px){
  
@@ -95,7 +63,6 @@ a{
         display: block;    
         width: 60vw;
         height: 100vh;
-        background-color: #FC7478;
     }
     
     .content{
@@ -103,8 +70,9 @@ a{
     }
 
     .content header {
-        background-color: #0000;
+        background-color: var(--white-color);
     }
+
     section header img{
         width: 35px;
     }
