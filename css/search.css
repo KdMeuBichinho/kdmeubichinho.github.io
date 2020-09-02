@@ -1,0 +1,23 @@
+.menu{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FDFDFD;;
+    border-bottom: 2px solid #c0c0c0;
+    box-shadow: 2px 2px 2px 1px rgb(228, 228, 228, 0.9);
+    padding: 10px;
+}
+.menu a{
+    margin-left: 10px;
+    border: none;
+}
+.menu ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.menu ul li:last-child{
+    margin-right: 10px;
+}
+.menu ul li a{
+    color: #3C3C3C;
+}
