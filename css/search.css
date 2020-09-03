@@ -21,3 +21,64 @@
 .menu ul li a{
     color: #3C3C3C;
 }
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.search div{
+    padding: 20px;
+}
+.search *:not(input):not(select){
+    color: #ffffff;
+}
+.search input{
+    width: 100%;
+}
+.search div div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.search div div > div{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.result > div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.card{
+    width: 200px;
+    margin: 0 10px 10px 0px;
+    background: #ffffff;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.card div:first-child{
+    height: 200px;
+}
+.card img{
+    width: 100%;
+}
+.card div:last-child{
+    background-color: #ffffff;
+    padding: 10px;
+    display: block;
+}
+.card div:last-child p{
+    word-wrap: break-word;
+}
+.card div:last-child p:first-child{
+    font-weight: bold;
+}
+.card div:last-child p:last-child{
+    font-size: 0.8em;
+}
