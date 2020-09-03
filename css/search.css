@@ -1,13 +1,13 @@
 .menu{
     display: flex;
     justify-content: space-between;
-    background-color: #FDFDFD;;
-    border-bottom: 2px solid #c0c0c0;
-    box-shadow: 2px 2px 2px 1px rgb(228, 228, 228, 0.9);
-    padding: 10px;
+    background-color: var(--neutral-color);
+    border-bottom: 2px solid var(--gray-light-color);
+    box-shadow: 2px 2px 2px 1px var(--neutral-color);
+    padding: var(--space);
 }
 .menu a{
-    margin-left: 10px;
+    margin-left: var(--space);
     border: none;
 }
 .menu ul{
@@ -16,10 +16,10 @@
     align-items: center;
 }
 .menu ul li:last-child{
-    margin-right: 10px;
+    margin-right: var(--space);
 }
 .menu ul li a{
-    color: #3C3C3C;
+    color: var(--gray-dark-color);
 }
 .search{
     display: flex;
@@ -31,7 +31,7 @@
     padding: 20px;
 }
 .search *:not(input):not(select){
-    color: #ffffff;
+    color: var(--white-color);
 }
 .search input{
     width: 100%;
@@ -40,10 +40,10 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: var(--space);
 }
 .search div div > div{
-    padding: 10px;
+    padding: var(--space);
     display: flex;
     flex-direction: column;
 }
@@ -55,9 +55,9 @@
 }
 .card{
     width: 200px;
-    margin: 0 10px 10px 0px;
-    background: #ffffff;
-    border: 1px solid #c0c0c0;
+    margin: 0 var(--space) var(--space) 0px;
+    background: var(--white-color);
+    border: 1px solid var(--gray-light-color);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -69,8 +69,8 @@
     width: 100%;
 }
 .card div:last-child{
-    background-color: #ffffff;
-    padding: 10px;
+    background-color: var(--white-color);
+    padding: var(--space);
     display: block;
 }
 .card div:last-child p{
