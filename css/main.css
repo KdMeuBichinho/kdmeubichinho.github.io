@@ -10,6 +10,7 @@
     --gray-color: #616161;
     --gray-light-color: #c0c0c0;
     --gray-dark-color: #3C3C3C;
+    --neutral-color: #FDFDFD;
     --space: 10px;
     --time: .4s;
 }
@@ -89,6 +90,13 @@ label{
     color: var(--gray-color);
     margin-right: 5px;
 }
+select{
+    font-size: 0.9em;
+    padding: 10px;
+    background: var(--secondary-color);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
 span.tag{
     font-size: 0.7em;
     border: 1px solid var(--gray-color);
@@ -116,13 +124,11 @@ span.tag{
 .btn-transparent{
     background-color: transparent;
     color: var(--gray-color);
-    border: 2px solid transparent;
     transition: var(--time);
 }
 .btn-transparent:hover{
     background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: var(--black-color);
 }
 .flex{
     display: flex;
@@ -172,6 +178,10 @@ span.tag{
 .bg-gray-dark{
     background-color: var(--gray-dark-color);
     color: var(--white-color);;
+}
+.bg-neutral{
+    background-color: var(--neutral-color);
+    color: var(--gray-dark-color);
 }
 .logo {
     fill: var(--gray-dark-color);
