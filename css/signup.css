@@ -25,22 +25,25 @@ section{
     top: 0px;
 }
 #form{
-    width:60%;
+    width:65%;
     font-style: normal;
     display: flex;
     position: absolute;
     flex-wrap: wrap;
     align-self: center; 
 }
-#welcome{
+#h1{
+    font-size: 2.5em;
+}
+.welcome{
     position: absolute;
 }
-#icone{
+.icone{
     width: 30px;
     position: absolute;
-    left: 50px;
-    top: 50px;
-    color: var(--primary-color);
+    left: 40px;
+    top: 40px;
+    fill: var(--primary-color);
 }
 form{
     width:100%;
@@ -50,7 +53,7 @@ form{
     flex-wrap: wrap;
     align-self: center; 
 }
-#mail,#phone,#password{
+#name,#phone,#password{
     width: 100%;
     font-size: 0.8em;   
 }
@@ -60,7 +63,7 @@ form{
     flex-direction: row;
     flex-wrap: nowrap;    
 }
-#name, #street{
+#mail, #street{
     width: 60%;
     margin-right: 5px;
     font-size: 0.8em;
@@ -71,4 +74,31 @@ form{
 }
 #link{
     height:50px;
+}
+@media (max-width:1024px) {
+    main{
+        flex-direction: column;
+    }
+    section {
+        width:100vw;
+        height: 20vh;
+    }
+    .welcome{
+        display:none;
+    }
+    #register{
+        width: 100vw;
+        height: 80vh;
+        position:relative;
+    }
+    .icone{
+        position:absolute;
+    }
+    #form{
+        width:80vw;
+        top: 20vh;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
 }

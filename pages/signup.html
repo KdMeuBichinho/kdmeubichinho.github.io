@@ -12,20 +12,22 @@
 <body>
     
     <main>
-        <section>
-                <img src="../images/welcome.svg" alt="welcome" id="welcome">
+        <section>            
+            <img src="../images/welcome.svg" alt="welcome" class="welcome">
         </section>
         <div id="register">
-                <img src="../images/icone.svg" alt="icone" id="icone">
+            <object class="icone" type="image/svg+xml" data="../images/icone.svg" title="Icone Kd Meu Bichinho">
+                Icone Kd Meu Bichincho
+            </object>
             <div id="form">
-                <h1>Criar conta</h1>
+                <h1 id="h1">Criar conta</h1>
                 <p>Realize seu cadastro e comece sua jornada por aqui.</p>
                 <form action="#" method="post">
                     <div class="part">
-                        <input type="email" id="mail" placeholder="E-mail: user@email.com" required/>
+                        <input type="text" name="Nome e Sobrenome" id="name" placeholder="Nome" value="" required/>
                     </div>
                     <div class="part">
-                        <input type="text" name="Nome e Sobrenome" id="name" placeholder="Nome" value="" required/>
+                        <input type="email" id="mail" placeholder="E-mail: user@email.com" required/>
                         <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP: xxxxx-xxx" value="" required/>
                     </div>
                     <div class="part">
