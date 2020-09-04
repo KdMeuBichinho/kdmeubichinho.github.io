@@ -1,43 +1,45 @@
-#page-home{
-    width: 90vw;
-    max-width: 700px;
-    background: var( --secondary-color) ;
+#page-home {
+    height: 100vh;
+    background: url(/images/home.svg) no-repeat;
+    background-position: 35vw bottom;
+    background-color: var(--secondary-color);
 }
+
 #page-home header {
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
+
 }
 
-#page-home header img{
-    width: 27px;
-    height: 52px;
-}
 
-.hero-image {
-    width: 100%;
-}
-
-.buttons-main{
-    display: flex;
-    justify-content: center;
-    margin: 3.2rem 0;
-}
-
-.buttons-main a {
-    width: 30rem;
-    height: 10.4rem;
-
-    border-radius: .8rem;
-    margin-right: 1.6rem;
-    font: 700 2.4rem Archivo;
-    display: flex;
+.buttons-main {
     align-items: center;
+    justify-content: space-between; 
+}
+
+
+#page-home header img {
+    width: 13%;
+}
+
+
+
+#content{
+    width: 90%;
+    max-width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-home main{
+    max-width: 560px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-
-    text-decoration: none;
-
-    transition: background 0.2s;
-    color: beige;
 }
