@@ -10,10 +10,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
-
 }
 
+.cadastrar{
+    color: var(--gray-dark-color);
+    margin-right: 40px;
+}
 
 .buttons-main {
     align-items: center;
@@ -37,9 +39,25 @@
 }
 
 #page-home main{
-    max-width: 560px;
+    max-width: 650px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
+#page-home main h2{
+    font-size: 36px;
+    color: #fff;   
+}
+
+.footer-total {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.text-cor{
+    color: var(--gray-dark-color);
+}
+
