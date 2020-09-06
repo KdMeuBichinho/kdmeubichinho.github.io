@@ -5,14 +5,14 @@ main{
     width: 100vw;
     height: 100vh;
 }
-section{
+header{
     display: flex;
     position: absolute;
     width: 62vw;
     height: 100vh;
     left: 0px;
     top: 0px;
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
     align-items: center;
 }
 #register{
@@ -33,7 +33,9 @@ section{
     align-self: center; 
 }
 #h1{
-    font-size: 2.5em;
+    /* font-size: 2.5em; */
+    font-weight: 500;
+    font-size: 40px;
 }
 .welcome{
     position: absolute;
@@ -79,9 +81,9 @@ form{
     main{
         flex-direction: column;
     }
-    section {
+    header {
         width:100vw;
-        height: 20vh;
+        height: 64px;
     }
     .welcome{
         display:none;
@@ -93,10 +95,13 @@ form{
     }
     .icone{
         position:absolute;
+        width:20px;
+        top: 20px;
+        left: 20px;
     }
     #form{
         width:80vw;
-        top: 20vh;
+        top: 64px;
         flex-direction: column;
         flex-wrap: nowrap;
     }
