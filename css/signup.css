@@ -5,14 +5,14 @@ main{
     width: 100vw;
     height: 100vh;
 }
-section{
+header{
     display: flex;
     position: absolute;
     width: 62vw;
     height: 100vh;
     left: 0px;
     top: 0px;
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
     align-items: center;
 }
 #register{
@@ -25,22 +25,31 @@ section{
     top: 0px;
 }
 #form{
-    width:60%;
+    width:65%;
     font-style: normal;
     display: flex;
     position: absolute;
     flex-wrap: wrap;
     align-self: center; 
 }
-#welcome{
+#h1{
+<<<<<<< HEAD
+    font-size: 2.5em;
+=======
+    /* font-size: 2.5em; */
+    font-weight: 500;
+    font-size: 40px;
+>>>>>>> 64e5424211c5c988b49e84755f890f65fbca8dd7
+}
+.welcome{
     position: absolute;
 }
-#icone{
+.icone{
     width: 30px;
     position: absolute;
-    left: 50px;
-    top: 50px;
-    color: var(--primary-color);
+    left: 40px;
+    top: 40px;
+    fill: var(--primary-color);
 }
 form{
     width:100%;
@@ -50,7 +59,7 @@ form{
     flex-wrap: wrap;
     align-self: center; 
 }
-#mail,#phone,#password{
+#name,#phone,#password{
     width: 100%;
     font-size: 0.8em;   
 }
@@ -60,7 +69,7 @@ form{
     flex-direction: row;
     flex-wrap: nowrap;    
 }
-#name, #street{
+#mail, #street{
     width: 60%;
     margin-right: 5px;
     font-size: 0.8em;
@@ -71,4 +80,47 @@ form{
 }
 #link{
     height:50px;
+}
+@media (max-width:1024px) {
+    main{
+        flex-direction: column;
+    }
+<<<<<<< HEAD
+    section {
+        width:100vw;
+        height: 20vh;
+=======
+    header {
+        width:100vw;
+        height: 64px;
+>>>>>>> 64e5424211c5c988b49e84755f890f65fbca8dd7
+    }
+    .welcome{
+        display:none;
+    }
+    #register{
+        width: 100vw;
+        height: 80vh;
+        position:relative;
+    }
+    .icone{
+        position:absolute;
+<<<<<<< HEAD
+    }
+    #form{
+        width:80vw;
+        top: 20vh;
+=======
+        width:20px;
+        top: 20px;
+        left: 20px;
+    }
+    #form{
+        width:80vw;
+        top: 64px;
+>>>>>>> 64e5424211c5c988b49e84755f890f65fbca8dd7
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
 }
