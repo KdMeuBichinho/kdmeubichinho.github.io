@@ -1,4 +1,5 @@
 .menu{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: var(--neutral-color);
@@ -15,8 +16,11 @@
     display: flex;
     align-items: center;
 }
+.menu ul li{
+    padding: 20px;
+}
 .menu ul li:last-child{
-    margin-right: var(--space);
+    margin-right: 20px;
 }
 .menu ul li a{
     color: var(--gray-dark-color);
@@ -26,6 +30,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-right: 15px;
 }
 .search div{
     padding: 20px;
@@ -34,7 +39,7 @@
     color: var(--white-color);
 }
 .search input{
-    width: 100%;
+    width: 90%;
 }
 .search div div{
     display: flex;
@@ -81,4 +86,14 @@
 }
 .card div:last-child p:last-child{
     font-size: 0.8em;
+}
+object svg.logo{
+    fill: red;
+    width: 200px;
+}
+
+@media(max-width: 320px){
+    .search div{
+        padding: 0px;
+    }
 }
