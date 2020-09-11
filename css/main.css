@@ -186,3 +186,64 @@ span.tag{
 .icone{
     width: 30px;
 }
+.menu{
+    width: 100%;
+    display: inline-block;
+    background-color: var(--neutral-color);
+    border-bottom: 2px solid var(--gray-light-color);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    padding: var(--space);
+}
+.menu a{
+    margin-left: var(--space);
+    border: none;
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    float: right;
+}
+.menu ul li{
+    padding: 20px;
+}
+.menu ul li:last-child{
+    margin-right: 20px;
+}
+.menu ul li a{
+    color: var(--gray-dark-color);
+}
+#bar{
+    display: none;
+}
+.bars{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    margin: 0 auto;
+    font-size: 30px;
+    color: var(--gray-dark-color);
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width:600px){
+    h1{
+        font-size: 2.8em;
+    }
+    .menu ul{
+        display: none;
+        text-align: center;
+        width: 100vw; 
+        height: 100vh;      
+    }
+    .bars{
+        display: inline;
+    }
+    #bar:checked ~ ul{
+        display: block;
+    }
+    #bar:checked ~ ul li:last-child{
+        margin-right: 0;
+    }
+}
