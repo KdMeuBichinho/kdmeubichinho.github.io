@@ -12,25 +12,29 @@
         <header>
             <nav class="menu">
                 <a href="#">
-                    <img src="../images/logo.svg" alt="Logo KdMeuBichinho" class="logo">
+                    <img src="../images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
                 </a>
+                <input type="checkbox" id="bar">
+                <label for="bar" class="bars">&#9776;</label>
                 <ul>
-                    <li>
-                        <a href="#">Anúnciar</a>
-                    </li>
-                    <li>
-                        <a href="#">Perfil</a>
-                    </li>
-                </ul>
+                    <li><a href="#">Anúnciar &#9889;</a></li>
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Sair</a></li>
+                </ul>   
             </nav>
         </header>
         <main>
             <section class="search bg-secondary">
                 <div>
-                    <h1>Kdmeubichinho?</h1>
-                    <input type="text" placeholder="Digite algum CEP">
-                    <div>
-                        <div>
+                    <h1>Kdmeu bichinho?</h1>
+                    <div class="search-field">
+                        <input type="text" placeholder="Digite algum CEP">
+                        <button class="btn-primary">Buscar</button>
+                    </div>
+                    <input type="checkbox" id="filter">
+                    <label for="filter" class="filters">Filtros</label>
+                    <div class="search-input">
+                        <div >
                             <label for="animal">Animal</label>
                             <select name="animal" id="animal">
                                 <option value="">Todos</option>
