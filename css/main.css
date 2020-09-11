@@ -227,7 +227,7 @@ span.tag{
     display: none;
 }
 
-@media(max-width:600px){
+@media(max-width:768px){
     h1{
         font-size: 2.8em;
     }
