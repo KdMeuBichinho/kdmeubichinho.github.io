@@ -108,20 +108,20 @@ span.tag{
 footer{
     height: 170px;
     padding: 20px;
-    background-color: var(--secondary-color);
+    background-color: var(--neutral-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    border-top: 2px solid var(--gray-light-color);
-    box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--gray-light-color);
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.1);
 }
 footer img.icone{
     margin: 10px;
 }
-footer *{
-    color: var(--white-color);
+footer *:not(button){
+    color: var(--gray-dark-color-color);
     text-align: center;
     margin: 0px;
 }
@@ -239,7 +239,7 @@ footer button.btn-primary span{
     width: 100%;
     display: inline-block;
     background-color: var(--neutral-color);
-    border-bottom: 2px solid var(--gray-light-color);
+    border-bottom: 1px solid var(--gray-light-color);
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
     padding: var(--space);
 }
