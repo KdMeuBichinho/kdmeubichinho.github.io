@@ -56,7 +56,7 @@ form{
 }
 #name,#phone,#password{
     width: 100%;
-    font-size: 0.8em;   
+    /* font-size: 0.8em;*/
 }
 .part{
     display: flex;
@@ -67,25 +67,41 @@ form{
 #mail, #street{
     width: 60%;
     margin-right: 5px;
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
 }
 #cep, #number{
     width: 40%;
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
 }
 #link{
     height:50px;
 }
-@media (max-width:1024px) {
+@media (max-width: 1024px) and (min-width: 601px){
+    .part{
+        flex-wrap: wrap;    
+    }
+    #cep, #number, #mail, #street{
+        width: 100%;
+        margin-right: 0px;
+    }
+    #h1{
+        padding-top:50%;
+        font-size: 2.8em;
+    }
+    .icone{
+        display: flex;
+        position: absolute;
+        left: 30px;
+        top: 30px;
+    }
+}
+@media (max-width:600px) {
     main{
         flex-direction: column;
     }
     header {
         width:100vw;
         height: 64px;
-    }
-    #h1{
-        font-size: 2.8em;
     }
     .welcome{
         display:none;
