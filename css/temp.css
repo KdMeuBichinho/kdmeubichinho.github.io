@@ -15,10 +15,12 @@ main{
 }
 .cont-profile{
     flex: 1;
+    min-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    transition: all var(--time);
 }
 .cont-profile *{
     word-break: break-all;
@@ -87,6 +89,6 @@ label#name{
     }
     .cont-profile{
         flex: 1;
-        min-width: fit-content;
+        min-width: 100%;
     }
 }

@@ -97,6 +97,7 @@ select{
 }
 span.tag{
     display: inline-block;
+    height: fit-content;
     font-size: 0.8em;
     color: var(--secondary-color);
     border: 1px solid var(--secondary-color);
@@ -104,14 +105,57 @@ span.tag{
     padding: 5px 10px;
     margin: 1px 0px;
 }
+footer{
+    height: 170px;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-top: 2px solid var(--gray-light-color);
+    box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+footer img.icone{
+    margin: 10px;
+}
+footer *{
+    color: var(--white-color);
+    text-align: center;
+    margin: 0px;
+}
+/* footer img.icone{
+    position: absolute;
+    margin: 0 auto;
+    left: 20px;
+} */
+footer button.btn-primary{
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 5px 20px 10px 20px;
+}
+footer button.btn-primary span{
+    margin-left: 5px;
+    font-size: 0.8em;
+    font-weight: 100;
+}
 .btn-primary{
     background-color: var(--primary-color);
     border: 2px solid transparent;
+    transition: all var(--time);
 }
 .btn-primary:hover{
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background-color: var(--primary-dark-color);
+    color: var(--white-color);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.btn-primary:focus{
+    background-color: var(--primary-dark-color);
 }
 .btn-secondary{
     background-color: var(--secondary-color);
@@ -122,6 +166,7 @@ span.tag{
     color: var(--secondary-color);
     border: 2px solid var(--secondary-color);
 }
+
 .btn-transparent{
     background-color: transparent;
     color: var(--gray-color);
