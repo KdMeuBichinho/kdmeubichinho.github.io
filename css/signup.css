@@ -91,6 +91,8 @@ form{
     .icone{
         display: flex;
         position: absolute;
+        left: 30px;
+        top: 30px;
     }
 }
 @media (max-width:600px) {
