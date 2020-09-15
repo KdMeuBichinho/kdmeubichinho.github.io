@@ -1,4 +1,4 @@
-## Vai ter o Banner aqui
+ <img src="./images/banner.png" alt="Logomarca do Cadê meu Bichinho"> 
 
 <h4 align="center"> 
 	🚧  Kd meu bichinho? 👨‍🏫 em construção ✔️ 🚧
@@ -12,9 +12,34 @@ Santander Coders é um programa educacional promovido pelo o banco Santander em 
 
 ## 💻 Sobre o projeto
 
+Projeto integrador desenvolvido durante o curso de Desenvolvimento web Full Stack Java oferecido pela [digitalhouse](https://www.digitalhouse.com/br/) em parceria com a universida Santander.
+<br>
+:squirrel: KdMeuBichinho - O projeto surgiu com a missão de ajudar as pessoas que querem encontrar seu melhor amigo :dog: :cat: :rabbit:  que foi perdido ou encontrar alguém que está doando. 
 
+## :bulb: Ideia do Projeto
+```bash
+Realizar conexão entre os interesses comuns das pessoas relacionado aos animais.
+
+-Aquele que perdeu e quer encontrar;
+-Aquele que encontrou e quer devolver;
+-Aquele que teve filhotes e quer doar;
+-Aquele que quer adotar;
+-Aqueles (pets) que estão nas ONGs e querem um lar.
+
+```
 
 ## 🖼 Screenshot das telas da aplicação 
+
+   
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+#### **Front-end** 
+
+-  **[HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)**
+-  **[CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)**
+-  **[JS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)**
 
 
 # 👷 Como rodar
@@ -22,9 +47,7 @@ Santander Coders é um programa educacional promovido pelo o banco Santander em 
 # Clonar o repositório
 git clone https://github.com/teteusAraujo/KdMeuBichinho
 
-# Entrar no diretório
-
-# Baixar as dependências
+# Entrar noa sua IDE de sua preferencia 
 
 # Executar o servidor
 
