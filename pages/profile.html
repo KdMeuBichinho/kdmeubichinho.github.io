@@ -10,7 +10,7 @@
     </head>
     <body>
         <header>
-            <nav class="menu">
+            <nav class="menu" id="menu">
                 <a href="#">
                     <img src="../images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
                 </a>
@@ -42,7 +42,14 @@
                 </div>
             </section>
         </main>
-
+        <footer>
+            <img src="../images/icone-white.svg" alt="Icone do KdMeuBichinho" class="icone">
+            <div>
+                <a href="https://github.com/teteusAraujo/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
+                <p>2020 Todos os direitos reservados.</p>
+            </div>
+            <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
+        </footer>
         <div class="modal-container">
             <div class="modal">
                 <h2>Editar</h2>
@@ -60,7 +67,6 @@
                 </form>
             </div>
         </div>
-
         <script>
             const btnEdit = document.getElementById('edit');
             const btnCancel = document.getElementById('cancel');
