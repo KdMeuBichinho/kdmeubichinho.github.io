@@ -17,7 +17,7 @@ section header{
 }
 
 section header img{
-    width: 20px;
+    width: 100px;
 }
 
 .form-login{
@@ -71,9 +71,5 @@ input[type="submit"]{
 
     .content header {
         background-color: var(--white-color);
-    }
-
-    section header img{
-        width: 35px;
     }
 }
