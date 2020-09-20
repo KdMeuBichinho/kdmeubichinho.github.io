@@ -5,33 +5,34 @@
     background-color: var(--secondary-color);
 }
 
+#content{
+    width: 100%;
+    max-width: 1700px;
+    height: 100%;
+    margin: 0 ;
+    display: flex;
+    flex-direction: column;
+}
+
 #page-home header {
-    margin-top: 15px;
+    margin-top: 1.5rem;
+    margin: 1.5rem 4.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 #page-home header img {
-    width: 13%;
+    width: 11%;
 }
 
 .cadastrar{
     color: var(--gray-dark-color);
-    margin-right: 40px;
-}
-
-
-#content{
-    width: 90%;
-    max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    margin-right: 3.1rem;
 }
 
 #page-home main{
+    margin-left: 6.2rem;
     max-width: 600px;
     height: 530px;
     display: flex;
@@ -46,6 +47,7 @@
 
 .text-cor{
     color: var(--gray-dark-color);
+    align-self: flex-end;
 }
 
 .bold{
@@ -64,4 +66,60 @@
     font-size: 24px;
 }
 
+.text h2:last-child {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+  }
 
+.pesquisar {
+    margin-right: 1.5rem;
+}
+
+@media(max-width: 900px){
+    #page-home {
+        background-position-x: 90vw;
+    }
+
+    #content {
+        align-items: center;
+        text-align: center;
+    }
+    .buttons-header{
+        display: flex;
+        top: 60px;
+        align-items: center;
+        justify-content: space-between; 
+        position: absolute;
+        
+    }
+
+    #page-home header img {
+        width: 50%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .buttons-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        position: absolute;
+        bottom: 48px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+  
+}
+
+@media (min-width:1700px){
+    #page-home{
+        background-position-x: 37vw ;
+    }
+}
+
+@media (max-height: 760px){
+    #page-home{
+        background-position-y: 200px ;
+    }
+}
