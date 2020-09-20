@@ -15,12 +15,12 @@ section p{
     font-size: 20px;
 }
 .subtitle{
-    color: #FC7478;
+    color: var(--secondary-color);
     font-weight: 700;
 }
 
 .details{
-    color: #3C3C3C;
+    color: var(--gray-dark-color);
     font-weight: 500;
 }
 
@@ -29,7 +29,7 @@ section p{
 }
 
 label{
-    border: 1px solid gray;
+    border: 1px solid var(--gray-light-color);
     border-radius: 10px;
     margin: 5px;
     padding: 5px;
