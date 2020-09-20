@@ -36,6 +36,23 @@ label{
     display: inline-block;
 }
 
+.input-final{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="file"]{
+    width: 300px;
+    margin-right: 10px;
+}
+
+.input-final input{
+    width: 300px;
+}
+form a:hover{
+    border-bottom: none;
+}
+
 footer{
     background-color: var(--white-color);
 }
@@ -47,9 +64,7 @@ footer p{
 
 .footer-a{
     color: var(--black-color);
-
 }
-
 
 @media (min-width: 550px){
  
