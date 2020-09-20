@@ -15,7 +15,7 @@ section p{
     font-size: 20px;
 }
 .subtitle{
-    color: var( --secondary-color);
+    color: var(--secondary-color);
     font-weight: 700;
 }
 
