@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/petadvert.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap" rel="stylesheet">
     <title>Novo Anúncio</title>
 </head>
 <body>
@@ -16,21 +17,112 @@
             <input type="checkbox" id="bar">
             <label for="bar" class="bars">&#9776;</label>
             <ul>
-                <li><a href="#">Início</a></li>
+                <li><a href="../index.html">Início</a></li>
                 <li><a href="#">Anúnciar</a></li>
-                <li><a href="#">Perfil</a></li>
+                <li><a href="./profile.html">Perfil</a></li>
                 <li><a href="#">Sair</a></li>
             </ul>   
         </nav>
     </header>
     <main>
-        <section>
+        <section class="content">
             <h1>#Novo Anúncio</h1>
-            <h2>Nos conte o que aconteceu e te ajudaremos a resolver</h2>
-            <h3>Qual é o animal?</h3>
+            <p class="subtitle">Nos conte o que aconteceu e te ajudaremos a resolver</p>
+            
+            <form action="">
+
+                <p class="details"> > Qual é o animal?</p>
+                <label for="cachorro">
+                    <input type="radio" name="especie" id="cachorro" value="cachorro" checked>
+                    Cachorro
+                </label>
+                <label for="gato">
+                    <input type="radio" name="especie" id="gato" value="gato">
+                    Gato
+                </label>
+                <label for="hamster">
+                    <input type="radio" name="especie" id="hamster" value="hamster">
+                    Hamster
+                </label>
+                <label for="coelho">
+                    <input type="radio" name="especie" id="coelho" value="coelho">
+                    Coelho
+                </label>
+                <label for="passaro">
+                    <input type="radio" name="especie" id="passaro" value="passaro">
+                    Pássaro
+                </label>
+
+                <p class="details"> > O que aconteceu?</p>
+                <label for="fugiu">
+                    <input type="radio" name="evento" id="fugiu" value="fugiu" checked>
+                    Fugiu de Casa
+                </label>
+                <label for="encontrado">
+                    <input type="radio" name="evento" id="encontrado" value="encontrado">
+                    Encontrei na rua
+                </label>
+                <label for="doacao">
+                    <input type="radio" name="evento" id="doacao" value="doacao">
+                    Quero doar
+                </label>
+            
+                <p class="details"> > Fale sobre suas caracteristicas</p>
+                <p> > > Sexo</p>
+                <label for="macho">
+                    <input type="radio" name="sexo" id="macho" value="macho" checked>
+                    Macho
+                </label>
+                <label for="femea">
+                    <input type="radio" name="sexo" id="femea" value="femea">
+                    Fêmea
+                </label>
+                <label for="indeterminado">
+                    <input type="radio" name="sexo" id="indeterminado" value="indeterminado">
+                    Não sei
+                </label>
+                <p> > > Idade</p>
+                <label for="filhote">
+                    <input type="radio" name="idade" id="filhote" value="filhote" checked>
+                    Fêmea
+                </label>
+                <label for="adulto">
+                    <input type="radio" name="idade" id="adulto" value="adulto">
+                    Adulto
+                </label>
+                <p> > > Porte</p>
+                <label for="pequeno">
+                    <input type="radio" name="porte" id="pequeno" value="pequeno" checked>
+                    Pequeno
+                </label>
+                <label for="medio">
+                    <input type="radio" name="porte" id="medio" value="medio">
+                    Médio
+                </label>
+                <label for="grande">
+                    <input type="radio" name="porte" id="grande" value="grande">
+                    Grande
+                </label>
+                <p> > > Outros</p>
+                <label for="castrado">
+                    <input type="checkbox" name="outros" id="castrado" value="castrado">
+                    Castrado
+                </label>
+                <label for="vacinado">
+                    <input type="checkbox" name="outros" id="vacinado" value="vacinado">
+                    Vacinado
+                </label>
+                <p> > > Adicione uma foto</p>
+                <input type="file" />
+                <p class="details"> > Últimas perguntas</p>
+                <input type="text" placeholder="Nome do animal (caso saiba)">
+                 
+            </form>
 
         </section>
-        <section></section>
+        <section class="image-aside">
+            <img src="../images/ad.svg" alt="Duas pessoas segurando uma lupa">
+        </section>
     </main>
     <footer>
         <img src="../images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
@@ -39,6 +131,6 @@
             <p>2020 Todos os direitos reservados.</p>
         </div>
         <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
-</footer>   
+</footer>
 </body>
 </html>
