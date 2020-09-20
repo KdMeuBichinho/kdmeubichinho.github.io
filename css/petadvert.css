@@ -1,0 +1,13 @@
+footer{
+    background-color: var(--white-color);
+}
+    
+footer p{
+    color: var(--black-color);
+
+}
+
+.footer-a{
+    color: var(--black-color);
+
+}

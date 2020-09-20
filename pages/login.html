@@ -15,30 +15,38 @@
         </section>
         <section class="content">
             <header class="bg-secondary">
-                <img src="../images/logo-black.svg" alt="logo da página">
+                <img class="icone" src="../images/icone-black.svg" alt="logo da página">
             </header>
             <section class="form-login">
-                <form action="">
-                    <h1 class="title">Entre</h1>
-                    <p>Você é sempre bem-vindo(a) por aqui!</p>
-                    <input 
-                        type="email"
-                        id="email"
-                        name="email" placeholder="E-mail"
-                        required >
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Senha"
-                        required >
-                        <!-- <input class="btn-primary"
-                            type="submit" value="Entrar"> -->
+                <div class="form">
+                    <form action="">
+                        <h1>Entre</h1>
+                        <p>Você é sempre bem-vindo(a) por aqui!</p>
+                        <input 
+                            type="email"
+                            id="email"
+                            name="email" placeholder="E-mail"
+                            required >
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Senha"
+                            required >
                             
-                        </form>
-                        <a href="./searchpage.html"><button class="btn-primary">Entrar</button></a>
-                <a href="">Esqueci minha senha</a>
-                <a href="./signup.html">Cadastrar usuário</a>
+                        <a class="link-button"
+                            href="./searchpage.html">
+                            <button
+                            class="btn-primary"
+                            type="submit"
+                            >Entrar!</button>
+                        </a>                        
+                    </form>
+                </div>
+                <div class="links">
+                    <a href="">Esqueci minha senha</a>
+                    <a href="./signup.html">Cadastrar usuário</a>
+                </div>
             </section>
         </section>
     </main>
