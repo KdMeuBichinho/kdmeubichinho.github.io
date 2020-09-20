@@ -83,6 +83,7 @@ form{
 #link{
     height:50px;
 }
+
 @media (max-width: 1024px) and (min-width: 601px){
     /* .part{
         flex-wrap: wrap;    
