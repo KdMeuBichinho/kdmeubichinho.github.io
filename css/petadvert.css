@@ -1,3 +1,58 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+}
+
+.content{
+    padding: 10px;
+}
+
+h1{
+    font-size: 30px;
+}
+
+section p{
+    font-size: 20px;
+}
+.subtitle{
+    color: #FC7478;
+    font-weight: 700;
+}
+
+.details{
+    color: #3C3C3C;
+    font-weight: 500;
+}
+
+.image-aside{
+    display: none;
+}
+
+label{
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.input-final{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="file"]{
+    width: 300px;
+    margin-right: 10px;
+}
+
+.input-final input{
+    width: 300px;
+}
+form a:hover{
+    border-bottom: none;
+}
+
 footer{
     background-color: var(--white-color);
 }
@@ -9,5 +64,22 @@ footer p{
 
 .footer-a{
     color: var(--black-color);
+}
 
+@media (min-width: 550px){
+ 
+    main{
+        display: flex;
+    }
+
+    .image-aside{
+        display: block;    
+        width: 50vw;
+        background-color: var(--yellow-color);
+    }
+    
+    .content{
+        width: 50vw;
+        min-width: 350px;
+    }
 }
