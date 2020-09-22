@@ -12,6 +12,7 @@
     --gray-light-color: #c0c0c0;
     --gray-dark-color: #3C3C3C;
     --neutral-color: #FDFDFD;
+    --neutral-dark-color: #f9f9f9;
     --space: 10px;
     --time: .4s;
 }
@@ -38,7 +39,7 @@ h1, h2, p, button, a{
     outline: none;
 }
 h1{
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
     color: var(--primary-color);
 }
