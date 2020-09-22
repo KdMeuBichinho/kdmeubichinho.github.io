@@ -14,7 +14,7 @@ Santander Coders é um programa educacional promovido pelo Banco Santander em pa
 
 Projeto integrador desenvolvido durante o curso de Desenvolvimento Web Full Stack Java oferecido pela [digitalhouse](https://www.digitalhouse.com/br/) em parceria com a universidade Santander.
 <br>
-:squirrel: KdMeuBichinho - O projeto surgiu com a missão de ajudar as pessoas que querem encontrar seu melhor amigo :dog: :cat: :rabbit:  que foi perdido ou encontrar alguém que está doando. 
+ :squirrel: KdMeuBichinho - O projeto surgiu com a missão de ajudar as pessoas que querem encontrar seu melhor amigo :dog: :cat: :rabbit:  que foi perdido ou encontrar alguém que está doando. 
 
 ## :bulb: Ideia do Projeto
 ```bash
