@@ -6,19 +6,19 @@
 
 ## :coffee: Santander Coders
 
-Santander Coders é um programa educacional promovido pelo o banco Santander em parceria com a instituição de ensino Digital House. Para ingressar no programa foram realizado alguns processos seletivos, onde no final foram comteplada 240 bolsas integrais de estudo para o curso de Desenvolvimento Web Full Stack Java.
+Santander Coders é um programa educacional promovido pelo Banco Santander em parceria com a instituição de ensino Digital House. Para ingressar no programa, foi realizado um processo seletivo com o intuito de contemplar 240 bolsas integrais de estudo para o curso de Desenvolvimento Web Full Stack Java.
 
 <br>
 
 ## 💻 Sobre o projeto
 
-Projeto integrador desenvolvido durante o curso de Desenvolvimento web Full Stack Java oferecido pela [digitalhouse](https://www.digitalhouse.com/br/) em parceria com a universida Santander.
+Projeto integrador desenvolvido durante o curso de Desenvolvimento Web Full Stack Java oferecido pela [digitalhouse](https://www.digitalhouse.com/br/) em parceria com a universidade Santander.
 <br>
 :squirrel: KdMeuBichinho - O projeto surgiu com a missão de ajudar as pessoas que querem encontrar seu melhor amigo :dog: :cat: :rabbit:  que foi perdido ou encontrar alguém que está doando. 
 
 ## :bulb: Ideia do Projeto
 ```bash
-Realizar conexão entre os interesses comuns das pessoas relacionado aos animais.
+Realizar conexão entre os interesses comuns das pessoas e os animais.
 
 -Aquele que perdeu e quer encontrar;
 -Aquele que encontrou e quer devolver;
@@ -47,7 +47,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 # Clonar o repositório
 git clone https://github.com/teteusAraujo/KdMeuBichinho
 
-# Entrar noa sua IDE de sua preferencia 
+# Entrar noa sua IDE de sua preferência 
 
 # Executar o servidor
 
