@@ -65,6 +65,28 @@
     justify-content: space-between;
 }
 
+.side-right .box-text-message {
+    overflow-y: scroll;
+    max-height: 300px;
+}
+
+.side-right .box-text-message .style-message span:last-child {
+    font-size: 0.8em;
+    color: var(--gray-color);
+    background-color: var(--neutral-dark-color);
+    padding: 0px 10px;
+    border-radius: var(--space);
+}
+
+.side-right .box-text-message .style-message span:first-child {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    padding: 0px 5px;
+    border-radius: var(--space);
+    margin-right: 5px;
+    font-size: 1.0em;
+}
+
 .side-right .btn-size {
     padding: 10px 15px;
     flex: 1;
