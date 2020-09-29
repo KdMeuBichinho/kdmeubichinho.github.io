@@ -44,7 +44,7 @@ h1{
     color: var(--primary-color);
 }
 h2{
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: normal;
     color: var(--gray-dark-color)
 }
@@ -53,7 +53,7 @@ p{
     color: var(--gray-color)
 }
 button{
-    padding: 15px 40px;
+    padding: 10px 30px;
     font-size: 1em;
     font-style: normal;
     text-align: center;
@@ -71,7 +71,7 @@ a{
     color: var(--primary-light-color);
     transition: var(--time);
 }
-a:hover{
+a:hover:not(a > button){
     font-weight: 500;
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
@@ -255,14 +255,17 @@ footer button.btn-primary span{
     list-style: none;
     float: right;
 }
-.menu ul li{
-    padding: 20px;
-}
 .menu ul li:last-child{
     margin-right: 20px;
 }
 .menu ul li a{
+    padding: 20px;
     color: var(--gray-dark-color);
+}
+.menu-logout{
+    background-color: var(--secondary-color);
+    border-bottom: none;
+    box-shadow: none;
 }
 #bar{
     display: none;
