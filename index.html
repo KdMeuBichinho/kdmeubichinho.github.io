@@ -9,49 +9,36 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
-<body >
-    <div id="page-home">
-
-    
-
-    <div id="content">
-
-        <header>
-
-            <img src="./images/logo-black.svg" alt="Logomarca do Cadê meu Bichinho"> 
-           
-                <div class="buttons-header">
-                    <a class="cadastrar" href="./pages/signup.html">Cadastrar</a>
-                    <a href="./pages/login.html"><button class="btn-primary">Entrar</button></a>
+<body class="bg-secondary">
+    <header>
+        <nav class="menu menu-logout" id="menu">
+            <a href="./index.html">
+                <img src="./images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
+            </a>
+            <input type="checkbox" id="bar">
+            <label for="bar" class="bars">&#9776;</label>
+            <ul>
+                <li><a href="./pages/signup.html">Cadastrar</a></li>
+                <li><a href="./pages/login.html"><button class="btn-primary">Entrar</button></a></li>
+            </ul>  
+        </nav>     
+    </header>
+    <main>
+        <section class="section-home">
+            <div class="home-content">
+                <h1>Procure seu MELHOR AMIGO perdido ou <span>encontre alguém doando por perto.</span></h1>
+                <div>
+                    <a href="./pages/searchpage.html"><button class="btn-primary">Pesquisar</button></a>
+                    <a href="./pages/login.html"><button class="btn-primary">Anunciar</button></a>
                 </div>
-                    
-        </header>
-
-        <main>
-            <div class="text">
-                <h2> Procure seu </h2>
-                <h2><strong class="bold">MELHOR AMIGO </strong></h2>
-                <h2>perdido ou <span class="text-cor">encontre alguém doando </span></h2>
-                <h2><span class="text-cor">por perto.</span>  </h2>
-        
+                <div class="animal-counter">
+                    Total de 200 animais com um final feliz 
+                    <img src="./images/purple-heart.svg" alt="Coração roxo">
+                </div>
             </div>
-
-             <div class="buttons-main">
-                <a href="./pages/searchpage.html" class="pesquisar"><button class="btn-primary">Pesquisar</button></a>
-                <a href="./pages/petadvert.html"><button class="btn-primary">Anunciar</button></a>           
-            </div>
-
-            <p class="footer-total">
-                Total de 200 animais com um final feliz 
-                <img src="/images/purple-heart.svg" alt="Coração roxo">
-            </p>
-
-         </main>
-
-         
-            
-    </div>
-</div>
+            <img src="./images/home.svg" alt="Homem procurando animal perdido" class="home-animation">
+        </section>
+    </main>
 </body>
 </html>
 

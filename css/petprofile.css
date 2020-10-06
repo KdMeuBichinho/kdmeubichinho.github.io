@@ -70,6 +70,10 @@
     max-height: 300px;
 }
 
+.side-right .box-text-message .style-message{
+    line-height: 25px;
+}
+
 .side-right .box-text-message .style-message span:last-child {
     font-size: 0.8em;
     color: var(--gray-color);
@@ -81,7 +85,7 @@
 .side-right .box-text-message .style-message span:first-child {
     color: var(--white-color);
     background-color: var(--primary-color);
-    padding: 0px 5px;
+    padding: 3px 8px;
     border-radius: var(--space);
     margin-right: 5px;
     font-size: 1.0em;
