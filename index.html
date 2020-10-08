@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kd Meu Bichinho?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <title>KdMeuBichinho?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
@@ -18,6 +18,7 @@
             <input type="checkbox" id="bar">
             <label for="bar" class="bars">&#9776;</label>
             <ul>
+                <li><a href="./pages/login.html">Anunciar &#9889;</a></li>
                 <li><a href="./pages/signup.html">Cadastrar</a></li>
                 <li><a href="./pages/login.html"><button class="btn-primary">Entrar</button></a></li>
             </ul>  
@@ -27,16 +28,240 @@
         <section class="section-home">
             <div class="home-content">
                 <h1>Procure seu MELHOR AMIGO perdido ou <span>encontre alguém doando por perto.</span></h1>
-                <div>
-                    <a href="./pages/searchpage.html"><button class="btn-primary">Pesquisar</button></a>
-                    <a href="./pages/login.html"><button class="btn-primary">Anunciar</button></a>
-                </div>
+                <a href="#section-search"><button class="btn-primary">Pesquisar</button></a>
                 <div class="animal-counter">
                     Total de 200 animais com um final feliz 
                     <img src="./images/purple-heart.svg" alt="Coração roxo">
                 </div>
             </div>
             <img src="./images/home.svg" alt="Homem procurando animal perdido" class="home-animation">
+        </section>
+        <section id="section-search">
+            <section class="search bg-secondary">
+                <div>
+                    <h1>Kdmeu bichinho?</h1>
+                    <div class="search-field">
+                        <input type="text" placeholder="Digite algum CEP">
+                        <button class="btn-primary">Buscar</button>
+                    </div>
+                    <input type="checkbox" id="filter">
+                    <label for="filter" class="filters">Filtros</label>
+                    <div class="search-input">
+                        <div >
+                            <label for="animal">Animal</label>
+                            <select name="animal" id="animal">
+                                <option value="">Todos</option>
+                                <option value="">Cachorro</option>
+                                <option value="">Gato</option>
+                                <option value="">Coelho</option>
+                                <option value="">Hamster</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="acontecimento">Acontecimento</label>
+                            <select name="acontecimento" id="acontecimento">
+                                <option value="">Todos</option>
+                                <option value="">Fugiu de casa</option>
+                                <option value="">Encontrado na rua</option>
+                                <option value="">Procurando um lar</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="genero">Gênero</label>
+                            <select name="genero" id="genero">
+                                <option value="">Todos</option>
+                                <option value="">Macho</option>
+                                <option value="">Fêmea</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="idade">Idade</label>
+                            <select name="idade" id="idade">
+                                <option value="">Todos</option>
+                                <option value="">Filhote</option>
+                                <option value="">Adulto</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="porte">Porte</label>
+                            <select name="porte" id="porte">
+                                <option value="">Todos</option>
+                                <option value="">Pequeno</option>
+                                <option value="">Médio</option>
+                                <option value="">Grande</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="extra">Extra</label>
+                            <select name="extra" id="extra">
+                                <option value="">Todos</option>
+                                <option value="">Castrado</option>
+                                <option value="">Vacinado</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="result bg-neutral">
+                <div>
+                    <a href="./pages/petprofile.html" class="res-card">
+                        <div class="res-card-img">
+                            <img src="https://images.unsplash.com/photo-1523480717984-24cba35ae1ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Bob</p>
+                            <p>Araraquara</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <!-- <span class="tag">Cachorro</span> -->
+                            <span class="tag">Fugiu de casa</span>
+                            <!-- <span class="tag">Castrado</span>
+                            <span class="tag">Vacinado</span> -->
+                        </div>
+                    </a>
+                    <a href="#" class="res-card">
+                        <div class="res-card-img">
+                            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Desconhecido</p>
+                            <p>Araraquara</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <!-- <span class="tag">Gato</span> -->
+                            <span class="tag">Encontrado na rua</span>
+                            <!-- <span class="tag">Fêmea</span>
+                            <span class="tag">Filhote</span>
+                            <span class="tag">Vacinado</span> -->
+                        </div>
+                    </a>
+                    <a href="#" class="res-card">
+                        <div class="res-card-img">
+                            <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Katchusca</p>
+                            <p>Araraquara</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <!-- <span class="tag">Cachorro</span> -->
+                            <span class="tag">Fugiu de casa</span>
+                            <!-- <span class="tag">Fêmea</span>
+                            <span class="tag">Aulto</span>
+                            <span class="tag">Castrado</span>
+                            <span class="tag">Vacinado</span> -->
+                        </div>
+                    </a>
+                    <a href="#" class="res-card">
+                        <div class="res-card-img">
+                            <img src="https://images.unsplash.com/photo-1577099595920-bf19294bc408?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Frederico</p>
+                            <p>Araraquara</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <!-- <span class="tag">Hamster</span> -->
+                            <span class="tag">Fugiu de casa</span>
+                            <!-- <span class="tag">Macho</span>
+                            <span class="tag">Adulto</span> -->
+                        </div>
+                    </a>
+                    <a href="#" class="res-card">
+                        <div class="res-card-img">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Thor</p>
+                            <p>Araraquara</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <!-- <span class="tag">Gato</span> -->
+                            <span class="tag">Procurando um lar</span>
+                            <!-- <span class="tag">Macho</span>
+                            <span class="tag">Adulto</span>
+                            <span class="tag">Médio</span>
+                            <span class="tag">Castrado</span>
+                            <span class="tag">Vacinado</span> -->
+                        </div>
+                    </a>
+                    <a href="#" class="res-card">
+                        <div class="res-card-img">
+                            <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Rodolfinho</p>
+                            <p>Araraquara</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <!-- <span class="tag">Coelho</span> -->
+                            <span class="tag">Fugiu de casa</span>
+                            <!-- <span class="tag">Macho</span>
+                            <span class="tag">Filhote</span>
+                            <span class="tag">Pequeno</span>
+                            <span class="tag">Castrado</span>
+                            <span class="tag">Vacinado</span> -->
+                        </div>
+                    </a>
+                    <a href="#" class="res-card">
+                        <div class="res-card-img">
+                            <img src="https://images.unsplash.com/photo-1529040181623-e04ebc611e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Desconhecido</p>
+                            <p>Araraquara</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <!-- <span class="tag">Coelho</span> -->
+                            <span class="tag">Encontrado na rua</span>
+                            <!-- <span class="tag">Fêmea</span>
+                            <span class="tag">Castrado</span>
+                            <span class="tag">Vacinado</span> -->
+                        </div>
+                    </a>
+                    <a href="#" class="res-card">
+                        <div class="res-card-img">
+                            <img src="https://images.unsplash.com/photo-1550697851-920b181d8ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Lulu</p>
+                            <p>Araraquara</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <!-- <span class="tag">Hamster</span> -->
+                            <span class="tag">Fugiu de casa</span>
+                            <!-- <span class="tag">Castrado</span>
+                            <span class="tag">Vacinado</span> -->
+                        </div>
+                    </a>
+                    <a href="#" class="res-card">
+                        <div class="res-card-img">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Tony</p>
+                            <p>Araraquara</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <!-- <span class="tag">Cachorro</span> -->
+                            <span class="tag">Procurando um lar</span>
+                            <!-- <span class="tag">Macho</span>
+                            <span class="tag">Filhote</span>
+                            <span class="tag">Médio</span>
+                            <span class="tag">Castrado</span>
+                            <span class="tag">Vacinado</span> -->
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <footer class="footer">
+                <img src="./images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
+                <div>
+                    <a href="https://github.com/teteusAraujo/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
+                    <p>2020 Todos os direitos reservados.</p>
+                </div>
+                <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
+            </footer>
         </section>
     </main>
 </body>
