@@ -5,7 +5,7 @@ main{
     display: flex;
     width: 100%;
 }
-header{
+.section-welcome{
     display: flex;
     flex:2;
     height: 100vh;
@@ -23,10 +23,14 @@ header{
     height: 100vh;
     position: relative;
 }
-#register .icone-link{
+#register .header{
+    width: 100%;
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 0px;
+    left: 0px;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--neutral-dark-color);
+    padding: 15px 30px;
 }
 .icone-link .icone{
     margin: 0px;
@@ -79,11 +83,11 @@ form{
         flex-direction: column;
         max-width: 100vw;
     }
-    header{
+    .section-welcome{
         flex: none;
         min-width: 100%;
         height: 90px;
-        position: absolute;
+        display: none;
     }
     .welcome{
         display:none;
@@ -92,9 +96,9 @@ form{
         flex: none;
         min-width: 100%;
     }
-    #register .icone-link{
-        top: 15px;
-        left: 20px;
+    #register .header{
+        top: 0px;
+        left: 0px;
     }
     #form{
         width:70%;
