@@ -1,87 +1,87 @@
-
-body{
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
-    margin: 0 auto;
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
-
-.image-aside{
-    display: none;
-    
+header{
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
-
-section header{
-    padding-top: 20px;
-    padding-left: 30px;
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    min-width: 100%;
 }
-
-section header img{
-    width: 100px;
-}
-
-.icone{
-    font: 20px;
-}
-
 .form{
-    width: 95%;
+    width: 100%;
 }
-
+.image-aside{
+    min-width: 100%;
+    height: 90px;
+    position: absolute;
+}
+.img-login{
+    width: 60%;
+    display: none;
+}
+.logo{
+    position: relative;
+    top: 15px;
+    left: 20px;
+}
 .form-login{
     display: flex;
     flex-direction: column;
-	justify-content: right;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
 }
-
 .form-login form{
-    margin: 30px;
     display: flex;
     flex-direction: column;
-	justify-content: right;
-	align-items: right;
-	align-content: right;
 }
-
 .link-button:hover{
     border-bottom-style: none;
 }
-
-input[type="submit"]{
-    width: 133px;
-    height: 55px;
-    border-radius: 100px;
-    color: var(--white-color);
-}
-
 .links{
-    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: right;
-    margin-left: 30px;
 }
-
 .links a{
         width:160px;
 }
-
-@media (min-width: 550px){
- 
+@media (min-width: 769px){
     main{
-        display: flex;
+        flex-direction: row;
     }
-
     .image-aside{
-        display: block;    
-        width: 60vw;
+        display: flex;    
+        flex: 2;
         height: 100vh;
+        align-items: center;
+        justify-content: center;
+        min-width: max-content;
+        position: relative;
     }
-    
     .content{
-        min-width: 400px;
+        flex-direction: row;
+        min-width: 500px;
     }
-
-    .content header {
-        background-color: var(--white-color);
+    .logo{
+        top: 40px;
+        left: 40px;
     }
+    .img-login{
+        display: block;
+    }
+}
+@media (max-width: 1024px){
+    .img-login{
+        width: 80%;
 }
