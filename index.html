@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="icon" type="image/svg" href="./images/favicon.svg">
+    <script src="https://kit.fontawesome.com/5660cb5f80.js" crossorigin="anonymous"></script>
 
 </head>
 
-<body class="bg-secondary">
-    <header>
-        <nav class="menu menu-logout" id="menu">
+<body>
+    <header class="">
+        <nav class="menu" id="menu">
             <a href="./index.html">
                 <img src="./images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
             </a>
@@ -30,7 +31,10 @@
         <section class="section-home">
             <div class="home-content">
                 <h1>Procure seu MELHOR AMIGO perdido ou <span>encontre alguém doando por perto.</span></h1>
-                <a href="#"><button class="btn-primary" id="btnPesquisar">Pesquisar</button></a>
+                <div>
+                    <input type="text" placeholder="Digite seu CEP">
+                    <a href="#"><button class="btn-primary" id="btnPesquisar">Pesquisar</button></a>
+                </div>
                 <div class="animal-counter">
                     Total de 200 animais com um final feliz 
                     <img src="./images/purple-heart.svg" alt="Coração roxo">
@@ -38,18 +42,52 @@
             </div>
             <img src="./images/home.svg" alt="Homem procurando animal perdido" class="home-animation">
         </section>
-        <section id="section-search">
-            <section class="search bg-secondary">
+        <section class="section-search">
+            <section class="search">
                 <div>
-                    <h1>Kdmeu bichinho?</h1>
+                    <div class="slogan">
+                        <img src="./images/home.svg" alt="">
+                        <h2>Encontre seu melhor amigo</h2>
+                        <h3>perdido ou encontre alguém doando por perto.</h3>
+                    </div>
                     <div class="search-field">
-                        <input type="text" placeholder="Digite algum CEP">
+                        <span class="search-field-area">
+                            <input type="text" placeholder="Digite seu CEP">
+                            <select name="acontecimento" id="acontecimento">
+                                <option value="" selected>O que você procura?</option>
+                                <option value="">Animais que fugiram de casa</option>
+                                <option value="">Animais encontrados na rua</option>
+                                <option value="">Animais para adoção</option>
+                            </select>
+                        </span>
                         <button class="btn-primary">Buscar</button>
                     </div>
+                    <form class="group-btn-pet">
+                        <label class="btn-pet" for="filter-cachorro">
+                            <img src="./images/dog.svg" alt="Botão com imagem de cachorro" class="btn-pet-img">
+                            <input type="checkbox" id="filter-cachorro" class="filter-pet">
+                            <label for="filter-cachorro" class="">Cachorro</label>
+                        </label>
+                        <div class="btn-pet">
+                            <img src="./images/cat.svg" alt="Botão com imagem de gato" class="btn-pet-img">
+                            <input type="checkbox" id="filter-gato" class="filter-pet">
+                            <label for="filter-gato" class="">Gato</label>
+                        </div>
+                        <div class="btn-pet">
+                            <img src="./images/rabbit.svg" alt="Botão com imagem de coelho" class="btn-pet-img">
+                            <input type="checkbox" id="filter-coelho" class="filter-pet">
+                            <label for="filter-coelho" class="">Coelho</label>
+                        </div>
+                        <div class="btn-pet">
+                            <img src="./images/hamster.svg" alt="Botão com imagem de hamster" class="btn-pet-img">
+                            <input type="checkbox" id="filter-hamster" class="filter-pet">
+                            <label for="filter-hamster" class="">Hamster</label>
+                        </div>
+                    </form>
                     <input type="checkbox" id="filter">
                     <label for="filter" class="filters">Filtros</label>
                     <div class="search-input">
-                        <div >
+                        <!-- <div >
                             <label for="animal">Animal</label>
                             <select name="animal" id="animal">
                                 <option value="">Todos</option>
@@ -58,53 +96,54 @@
                                 <option value="">Coelho</option>
                                 <option value="">Hamster</option>
                             </select>
-                        </div>
-                        <div>
-                            <label for="acontecimento">Acontecimento</label>
+                        </div> -->
+                        <!-- <div>
                             <select name="acontecimento" id="acontecimento">
-                                <option value="">Todos</option>
+                                <option value="" selected>Acontecimento</option>
                                 <option value="">Fugiu de casa</option>
                                 <option value="">Encontrado na rua</option>
                                 <option value="">Procurando um lar</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div>
-                            <label for="genero">Gênero</label>
                             <select name="genero" id="genero">
-                                <option value="">Todos</option>
+                                <option value="" selected>Gênero</option>
                                 <option value="">Macho</option>
                                 <option value="">Fêmea</option>
                             </select>
                         </div>
                         <div>
-                            <label for="idade">Idade</label>
                             <select name="idade" id="idade">
-                                <option value="">Todos</option>
+                                <option value="" selected>Idade</option>
                                 <option value="">Filhote</option>
                                 <option value="">Adulto</option>
                             </select>
                         </div>
                         <div>
-                            <label for="porte">Porte</label>
                             <select name="porte" id="porte">
-                                <option value="">Todos</option>
+                                <option value="" selected>Porte</option>
                                 <option value="">Pequeno</option>
                                 <option value="">Médio</option>
                                 <option value="">Grande</option>
                             </select>
                         </div>
                         <div>
-                            <label for="extra">Extra</label>
-                            <select name="extra" id="extra">
-                                <option value="">Todos</option>
-                                <option value="">Castrado</option>
-                                <option value="">Vacinado</option>
-                            </select>
+                            <label for="castrado">
+                                <input type="checkbox" name="outros" id="castrado" value="castrado">
+                                Castrado
+                            </label>
+
+                        </div>
+                        <div>
+                            <label for="vacinado">
+                                <input type="checkbox" name="outros" id="vacinado" value="vacinado">
+                                Vacinado
+                            </label>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="result bg-neutral">
+            <section class="result">
                 <div>
                     <a href="./pages/petprofile.html" class="res-card">
                         <div class="res-card-img">
@@ -260,6 +299,7 @@
                 <img src="./images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
                 <div>
                     <a href="https://github.com/teteusAraujo/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
+                    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                     <p>2020 Todos os direitos reservados.</p>
                 </div>
                 <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
