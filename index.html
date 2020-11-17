@@ -28,7 +28,7 @@
         </nav>     
     </header>
     <main>
-        <section class="section-home">
+        <!-- <section class="section-home">
             <div class="home-content">
                 <h1>Procure seu MELHOR AMIGO perdido ou <span>encontre alguém doando por perto.</span></h1>
                 <div>
@@ -41,28 +41,45 @@
                 </div>
             </div>
             <img src="./images/home.svg" alt="Homem procurando animal perdido" class="home-animation">
-        </section>
+        </section> -->
         <section class="section-search">
             <section class="search">
                 <div>
                     <div class="slogan">
-                        <img src="./images/home.svg" alt="">
+                        <img src="./images/home.svg" alt="Homem segurando um cachorro na coleira e com uma lupa na mão" class="img-home display-none">
                         <h2>Encontre seu melhor amigo</h2>
                         <h3>perdido ou encontre alguém doando por perto.</h3>
                     </div>
                     <div class="search-field">
                         <span class="search-field-area">
-                            <input type="text" placeholder="Digite seu CEP">
-                            <select name="acontecimento" id="acontecimento">
-                                <option value="" selected>O que você procura?</option>
-                                <option value="">Animais que fugiram de casa</option>
-                                <option value="">Animais encontrados na rua</option>
-                                <option value="">Animais para adoção</option>
+                            <select name="especie" id="especie">
+                                <option value="" selected disabled>Qual animal?</option>
+                                <option value="">Todos</option>
+                                <option value="">Cachorro</option>
+                                <option value="">Gato</option>
+                                <option value="">Coelho</option>
+                                <option value="">Hamster</option>
                             </select>
+                            <select name="acontecimento" id="acontecimento">
+                                <option value="" selected disabled>O que aconteceu?</option>
+                                <option value="">Todos</option>
+                                <option value="">...fugiu de casa</option>
+                                <option value="">...encontrado na rua</option>
+                                <option value="">...para adoção</option>
+                            </select>
+                            <input type="text" placeholder="Digite seu CEP">
                         </span>
-                        <button class="btn-primary">Buscar</button>
+                        <button class="btn-primary" id="btn_Buscar">Buscar</button>
                     </div>
-                    <form class="group-btn-pet">
+                </div>
+                <div class="animal-counter">
+                    Total de 200 animais com um final feliz 
+                    <img src="./images/purple-heart.svg" alt="Coração roxo">
+                </div>
+            </section>
+            <section class="result display-none">
+                <div class="result-filters">
+                    <!-- <form class="group-btn-pet">
                         <label class="btn-pet" for="filter-cachorro">
                             <img src="./images/dog.svg" alt="Botão com imagem de cachorro" class="btn-pet-img">
                             <input type="checkbox" id="filter-cachorro" class="filter-pet">
@@ -83,7 +100,7 @@
                             <input type="checkbox" id="filter-hamster" class="filter-pet">
                             <label for="filter-hamster" class="">Hamster</label>
                         </div>
-                    </form>
+                    </form> -->
                     <input type="checkbox" id="filter">
                     <label for="filter" class="filters">Filtros</label>
                     <div class="search-input">
@@ -105,7 +122,11 @@
                                 <option value="">Procurando um lar</option>
                             </select>
                         </div> -->
-                        <div>
+                        <section class="title-filters">
+                            <h3>Refine sua busca</h3>
+                            <p>70 resultados encontrados</p>
+                        </section>
+                        <div class="filter-field">
                             <select name="genero" id="genero">
                                 <option value="" selected>Gênero</option>
                                 <option value="">Macho</option>
@@ -132,7 +153,6 @@
                                 <input type="checkbox" name="outros" id="castrado" value="castrado">
                                 Castrado
                             </label>
-
                         </div>
                         <div>
                             <label for="vacinado">
@@ -140,166 +160,175 @@
                                 Vacinado
                             </label>
                         </div>
+                        <button class="btn-primary">Aplicar filtros</button>
                     </div>
                 </div>
-            </section>
-            <section class="result">
-                <div>
-                    <a href="./pages/petprofile.html" class="res-card">
-                        <div class="res-card-img">
-                            <img src="https://images.unsplash.com/photo-1523480717984-24cba35ae1ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Bob</p>
-                            <p>Araraquara</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <!-- <span class="tag">Cachorro</span> -->
-                            <span class="tag">Fugiu de casa</span>
-                            <!-- <span class="tag">Castrado</span>
-                            <span class="tag">Vacinado</span> -->
-                        </div>
-                    </a>
-                    <a href="#" class="res-card">
-                        <div class="res-card-img">
-                            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Desconhecido</p>
-                            <p>Araraquara</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <!-- <span class="tag">Gato</span> -->
-                            <span class="tag">Encontrado na rua</span>
-                            <!-- <span class="tag">Fêmea</span>
-                            <span class="tag">Filhote</span>
-                            <span class="tag">Vacinado</span> -->
-                        </div>
-                    </a>
-                    <a href="#" class="res-card">
-                        <div class="res-card-img">
-                            <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Katchusca</p>
-                            <p>Araraquara</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <!-- <span class="tag">Cachorro</span> -->
-                            <span class="tag">Fugiu de casa</span>
-                            <!-- <span class="tag">Fêmea</span>
-                            <span class="tag">Aulto</span>
-                            <span class="tag">Castrado</span>
-                            <span class="tag">Vacinado</span> -->
-                        </div>
-                    </a>
-                    <a href="#" class="res-card">
-                        <div class="res-card-img">
-                            <img src="https://images.unsplash.com/photo-1577099595920-bf19294bc408?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Frederico</p>
-                            <p>Araraquara</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <!-- <span class="tag">Hamster</span> -->
-                            <span class="tag">Fugiu de casa</span>
-                            <!-- <span class="tag">Macho</span>
-                            <span class="tag">Adulto</span> -->
-                        </div>
-                    </a>
-                    <a href="#" class="res-card">
-                        <div class="res-card-img">
-                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Thor</p>
-                            <p>Araraquara</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <!-- <span class="tag">Gato</span> -->
-                            <span class="tag">Procurando um lar</span>
-                            <!-- <span class="tag">Macho</span>
-                            <span class="tag">Adulto</span>
-                            <span class="tag">Médio</span>
-                            <span class="tag">Castrado</span>
-                            <span class="tag">Vacinado</span> -->
-                        </div>
-                    </a>
-                    <a href="#" class="res-card">
-                        <div class="res-card-img">
-                            <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Rodolfinho</p>
-                            <p>Araraquara</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <!-- <span class="tag">Coelho</span> -->
-                            <span class="tag">Fugiu de casa</span>
-                            <!-- <span class="tag">Macho</span>
-                            <span class="tag">Filhote</span>
-                            <span class="tag">Pequeno</span>
-                            <span class="tag">Castrado</span>
-                            <span class="tag">Vacinado</span> -->
-                        </div>
-                    </a>
-                    <a href="#" class="res-card">
-                        <div class="res-card-img">
-                            <img src="https://images.unsplash.com/photo-1529040181623-e04ebc611e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Desconhecido</p>
-                            <p>Araraquara</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <!-- <span class="tag">Coelho</span> -->
-                            <span class="tag">Encontrado na rua</span>
-                            <!-- <span class="tag">Fêmea</span>
-                            <span class="tag">Castrado</span>
-                            <span class="tag">Vacinado</span> -->
-                        </div>
-                    </a>
-                    <a href="#" class="res-card">
-                        <div class="res-card-img">
-                            <img src="https://images.unsplash.com/photo-1550697851-920b181d8ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Lulu</p>
-                            <p>Araraquara</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <!-- <span class="tag">Hamster</span> -->
-                            <span class="tag">Fugiu de casa</span>
-                            <!-- <span class="tag">Castrado</span>
-                            <span class="tag">Vacinado</span> -->
-                        </div>
-                    </a>
-                    <a href="#" class="res-card">
-                        <div class="res-card-img">
-                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Tony</p>
-                            <p>Araraquara</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <!-- <span class="tag">Cachorro</span> -->
-                            <span class="tag">Procurando um lar</span>
-                            <!-- <span class="tag">Macho</span>
-                            <span class="tag">Filhote</span>
-                            <span class="tag">Médio</span>
-                            <span class="tag">Castrado</span>
-                            <span class="tag">Vacinado</span> -->
-                        </div>
-                    </a>
+                <div class="result-cards">
+                    <div class="result-cards-section">
+                        <a href="./pages/petprofile.html" class="res-card">
+                            <div class="res-card-img">
+                                <img src="https://images.unsplash.com/photo-1523480717984-24cba35ae1ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="">
+                            </div>
+                            <div class="res-card-txt">
+                                <p>Bob</p>
+                                <p>Araraquara</p>
+                            </div>
+                            <div class="res-card-tag">
+                                <!-- <span class="tag">Cachorro</span> -->
+                                <span class="tag">Fugiu de casa</span>
+                                <!-- <span class="tag">Castrado</span>
+                                <span class="tag">Vacinado</span> -->
+                            </div>
+                        </a>
+                        <a href="#" class="res-card">
+                            <div class="res-card-img">
+                                <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="">
+                            </div>
+                            <div class="res-card-txt">
+                                <p>Desconhecido</p>
+                                <p>Araraquara</p>
+                            </div>
+                            <div class="res-card-tag">
+                                <!-- <span class="tag">Gato</span> -->
+                                <span class="tag">Encontrado na rua</span>
+                                <!-- <span class="tag">Fêmea</span>
+                                <span class="tag">Filhote</span>
+                                <span class="tag">Vacinado</span> -->
+                            </div>
+                        </a>
+                        <a href="#" class="res-card">
+                            <div class="res-card-img">
+                                <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9" alt="">
+                            </div>
+                            <div class="res-card-txt">
+                                <p>Katchusca</p>
+                                <p>Araraquara</p>
+                            </div>
+                            <div class="res-card-tag">
+                                <!-- <span class="tag">Cachorro</span> -->
+                                <span class="tag">Fugiu de casa</span>
+                                <!-- <span class="tag">Fêmea</span>
+                                <span class="tag">Aulto</span>
+                                <span class="tag">Castrado</span>
+                                <span class="tag">Vacinado</span> -->
+                            </div>
+                        </a>
+                        <a href="#" class="res-card">
+                            <div class="res-card-img">
+                                <img src="https://images.unsplash.com/photo-1577099595920-bf19294bc408?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+                            </div>
+                            <div class="res-card-txt">
+                                <p>Frederico</p>
+                                <p>Araraquara</p>
+                            </div>
+                            <div class="res-card-tag">
+                                <!-- <span class="tag">Hamster</span> -->
+                                <span class="tag">Fugiu de casa</span>
+                                <!-- <span class="tag">Macho</span>
+                                <span class="tag">Adulto</span> -->
+                            </div>
+                        </a>
+                        <a href="#" class="res-card">
+                            <div class="res-card-img">
+                                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80" alt="">
+                            </div>
+                            <div class="res-card-txt">
+                                <p>Thor</p>
+                                <p>Araraquara</p>
+                            </div>
+                            <div class="res-card-tag">
+                                <!-- <span class="tag">Gato</span> -->
+                                <span class="tag">Procurando um lar</span>
+                                <!-- <span class="tag">Macho</span>
+                                <span class="tag">Adulto</span>
+                                <span class="tag">Médio</span>
+                                <span class="tag">Castrado</span>
+                                <span class="tag">Vacinado</span> -->
+                            </div>
+                        </a>
+                        <a href="#" class="res-card">
+                            <div class="res-card-img">
+                                <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+                            </div>
+                            <div class="res-card-txt">
+                                <p>Rodolfinho</p>
+                                <p>Araraquara</p>
+                            </div>
+                            <div class="res-card-tag">
+                                <!-- <span class="tag">Coelho</span> -->
+                                <span class="tag">Fugiu de casa</span>
+                                <!-- <span class="tag">Macho</span>
+                                <span class="tag">Filhote</span>
+                                <span class="tag">Pequeno</span>
+                                <span class="tag">Castrado</span>
+                                <span class="tag">Vacinado</span> -->
+                            </div>
+                        </a>
+                        <a href="#" class="res-card">
+                            <div class="res-card-img">
+                                <img src="https://images.unsplash.com/photo-1529040181623-e04ebc611e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" alt="">
+                            </div>
+                            <div class="res-card-txt">
+                                <p>Desconhecido</p>
+                                <p>Araraquara</p>
+                            </div>
+                            <div class="res-card-tag">
+                                <!-- <span class="tag">Coelho</span> -->
+                                <span class="tag">Encontrado na rua</span>
+                                <!-- <span class="tag">Fêmea</span>
+                                <span class="tag">Castrado</span>
+                                <span class="tag">Vacinado</span> -->
+                            </div>
+                        </a>
+                        <a href="#" class="res-card">
+                            <div class="res-card-img">
+                                <img src="https://images.unsplash.com/photo-1550697851-920b181d8ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
+                            </div>
+                            <div class="res-card-txt">
+                                <p>Lulu</p>
+                                <p>Araraquara</p>
+                            </div>
+                            <div class="res-card-tag">
+                                <!-- <span class="tag">Hamster</span> -->
+                                <span class="tag">Fugiu de casa</span>
+                                <!-- <span class="tag">Castrado</span>
+                                <span class="tag">Vacinado</span> -->
+                            </div>
+                        </a>
+                        <a href="#" class="res-card">
+                            <div class="res-card-img">
+                                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" alt="">
+                            </div>
+                            <div class="res-card-txt">
+                                <p>Tony</p>
+                                <p>Araraquara</p>
+                            </div>
+                            <div class="res-card-tag">
+                                <!-- <span class="tag">Cachorro</span> -->
+                                <span class="tag">Procurando um lar</span>
+                                <!-- <span class="tag">Macho</span>
+                                <span class="tag">Filhote</span>
+                                <span class="tag">Médio</span>
+                                <span class="tag">Castrado</span>
+                                <span class="tag">Vacinado</span> -->
+                            </div>
+                        </a>
+                    </div>
+                    <nav class="pagination">
+                        <ul>
+                            <li><a href="#" class="active">1</a></li>
+                            <li><a href="#" class="">2</a></li>
+                            <li><a href="#" class="">3</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </section>
-            <footer class="footer">
+
+            <footer class="footer display-none">
                 <img src="./images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
                 <div>
                     <a href="https://github.com/teteusAraujo/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
-                    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
                     <p>2020 Todos os direitos reservados.</p>
                 </div>
                 <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
