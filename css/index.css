@@ -145,7 +145,7 @@ ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: initial;
     flex-wrap: wrap;
     padding: var(--space);
 }
@@ -332,6 +332,7 @@ ul{
     }
     .result{
         flex-direction: column;
+        padding: 0px;
     }
     .result-cards-section{
         justify-content: center;
