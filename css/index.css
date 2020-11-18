@@ -14,12 +14,6 @@ h3{
     opacity: 0 !important;
     transition: opacity 1s ease-out;
 }
-.img-home{
-    opacity: 1;
-}
-.slogan{
-    padding: 20px;
-}
 .main-section{
     max-width: 1024px;
     margin: 0 auto;
@@ -69,9 +63,6 @@ ul{
     align-items: center;
     text-align: center;
     padding: var(--space);
-}
-.search > div{
-    padding: 20px;
 }
 .search-field{
     display: flex;
@@ -145,7 +136,7 @@ ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: initial;
     flex-wrap: wrap;
     padding: var(--space);
 }
@@ -332,6 +323,7 @@ ul{
     }
     .result{
         flex-direction: column;
+        padding: 0px;
     }
     .result-cards-section{
         justify-content: center;

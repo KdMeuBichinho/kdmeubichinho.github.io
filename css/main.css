@@ -92,7 +92,6 @@ input::placeholder{
 }
 label{
     color: var(--gray-color);
-    margin-right: 5px;
 }
 select{
     padding: 10px;
@@ -285,6 +284,31 @@ span.tag{
     cursor: pointer;
     display: none;
 }
+.img-home{
+    width: 80%;
+    padding: 20px;
+}
+.h1-secondary{
+    color: var(--secondary-color);
+    margin: 0px;
+    font-size: 2.3em;
+    font-weight: bold;
+}
+.h2-secondary{
+    color: var(--gray-dark-color);
+    margin: 0px;
+    font-size: 1.3em;
+    font-weight: normal;
+}
+.slogan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    padding: 20px;
+    text-align: center;
+}
 
 @media(max-width:768px){
     h1{
@@ -310,5 +334,14 @@ span.tag{
     }
     #bar:checked ~ ul li:last-child{
         margin-right: 0;
+    }
+    .img-home{
+        width: 100%;
+        padding: 5px;
+    }
+    .slogan{
+        width: 80vw;
+        padding: 20px;
+        text-align: center;
     }
 }
