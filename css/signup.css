@@ -14,7 +14,7 @@ main{
     align-items: center;
     justify-content: center;
 }
-#register{
+.register{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +23,7 @@ main{
     height: 100vh;
     position: relative;
 }
-#register .header{
+.register .header{
     width: 100%;
     position: absolute;
     top: 0px;
@@ -35,7 +35,7 @@ main{
 .icone-link .icone{
     margin: 0px;
 }
-#form{
+.form{
     width:70%;
     font-style: normal;
     display: flex;
@@ -53,23 +53,23 @@ form{
     flex-wrap: wrap;
     align-self: center; 
 }
-#name,#phone,#password{
+.nameUser,.phone,.password,.street{
     width: 100%;
 }
 .part{
     display: flex;
     width: 100%;
     flex-direction: row;
-    flex-wrap: nowrap;    
+    flex-wrap: nowrap;  
+    justify-content: space-between;  
 }
-#mail, #street{
+.mail, .complement{
     width: 60%;
-    margin-right: 5px;
 }
-#cep, #number{
-    width: 40%;
+.cep, .number{
+    width: 37%;
 }
-#link{
+.link{
     height:50px;
 }
 
@@ -92,15 +92,15 @@ form{
     .welcome{
         display:none;
     }
-    #register{
+    .register{
         flex: none;
         min-width: 100%;
     }
-    #register .header{
+    .register .header{
         top: 0px;
         left: 0px;
     }
-    #form{
+    .form{
         width:70%;
         top: 64px;
         flex-direction: column;
