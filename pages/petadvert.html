@@ -5,33 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/petadvert.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap" rel="stylesheet">
-    <title>Novo Anúncio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg" href="../images/favicon.svg">
+    <script src="https://kit.fontawesome.com/5660cb5f80.js" crossorigin="anonymous"></script>
+    <title>KdMeuBichinho? - Novo anúncio</title> 
 </head>
 <body>
-    <header>
+    <header class="">
         <nav class="menu" id="menu">
-            <a href="#">
+            <a href="../index.html">
                 <img src="../images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
             </a>
             <input type="checkbox" id="bar">
             <label for="bar" class="bars">&#9776;</label>
             <ul>
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="#">Anúnciar</a></li>
-                <li><a href="./profile.html">Perfil</a></li>
-                <li><a href="#">Sair</a></li>
-            </ul>   
-        </nav>
+                <li><a href="./login.html">Anunciar &#9889;</a></li>
+                <li><a href="./signup.html">Cadastrar</a></li>
+                <li><a href="./login.html"><button class="btn-primary">Entrar</button></a></li>
+            </ul>  
+        </nav>     
     </header>
     <main>
         <section class="content">
-            <h1>#Novo Anúncio</h1>
-            <p class="subtitle">Nos conte o que aconteceu e te ajudaremos a resolver</p>
-            
-            <form action="">
-
-                <p class="details"> > Qual é o animal?</p>
+            <div class="slogan">
+                <img src="../images/ad.svg" alt="Duas pessoas segurando uma lupa" class="img-home">
+                <h1 class="h1-secondary">#Novo Anúncio</h1>
+                <h2 class="h2-secondary">Nos conte o que aconteceu e te ajudaremos a resolver</h2>
+            </div>
+            <form action="" class="form">
+                <p><strong>Qual é o animal?</strong></p>
                 <label for="cachorro">
                     <input type="radio" name="especie" id="cachorro" value="cachorro" checked>
                     Cachorro
@@ -53,7 +55,7 @@
                     Pássaro
                 </label>
 
-                <p class="details"> > O que aconteceu?</p>
+                <p><strong>O que aconteceu?</strong></p>
                 <label for="fugiu">
                     <input type="radio" name="evento" id="fugiu" value="fugiu" checked>
                     Fugiu de Casa
@@ -67,8 +69,8 @@
                     Quero doar
                 </label>
             
-                <p class="details"> > Fale sobre suas caracteristicas</p>
-                <p> > > Sexo</p>
+                <!-- <p class="details"><strong>Fale sobre suas caracteristicas</strong></p> -->
+                <p><strong>Sexo</strong></p>
                 <label for="macho">
                     <input type="radio" name="sexo" id="macho" value="macho" checked>
                     Macho
@@ -79,9 +81,9 @@
                 </label>
                 <label for="indeterminado">
                     <input type="radio" name="sexo" id="indeterminado" value="indeterminado">
-                    Não sei
+                    Não identificado
                 </label>
-                <p> > > Idade</p>
+                <p><strong>Idade</strong></p>
                 <label for="filhote">
                     <input type="radio" name="idade" id="filhote" value="filhote" checked>
                     Filhote
@@ -90,7 +92,7 @@
                     <input type="radio" name="idade" id="adulto" value="adulto">
                     Adulto
                 </label>
-                <p> > > Porte</p>
+                <p><strong>Porte</strong></p>
                 <label for="pequeno">
                     <input type="radio" name="porte" id="pequeno" value="pequeno" checked>
                     Pequeno
@@ -103,7 +105,7 @@
                     <input type="radio" name="porte" id="grande" value="grande">
                     Grande
                 </label>
-                <p> > > Outros</p>
+                <p><strong>Outros</strong></p>
                 <label for="castrado">
                     <input type="checkbox" name="outros" id="castrado" value="castrado">
                     Castrado
@@ -112,9 +114,9 @@
                     <input type="checkbox" name="outros" id="vacinado" value="vacinado">
                     Vacinado
                 </label>
-                <p> > > Adicione uma foto</p>
+                <p><strong>Adicione uma foto</strong></p>
                 <input type="file" />
-                <p class="details"> > Últimas perguntas</p>
+                <p><strong>Últimas perguntas</strong></p>
                 <div class="input-final">
                     <input type="text" name="nome" id="nome" placeholder="Nome do animal (caso saiba)">
                     <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP (para rastreamento)" value="" required/> 
@@ -125,14 +127,12 @@
             </form>
 
         </section>
-        <section class="image-aside">
-            <img src="../images/ad.svg" alt="Duas pessoas segurando uma lupa">
-        </section>
     </main>
-    <footer class="footer">
+    <footer class="footer display-none">
         <img src="../images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
         <div>
             <a href="https://github.com/teteusAraujo/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
+            <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
             <p>2020 Todos os direitos reservados.</p>
         </div>
         <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
