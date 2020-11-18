@@ -10,7 +10,7 @@ const anuncio = {};
 
 if(sessionStorage.estadoHome == "visitado"){
     reduzIndex();
-}else{
+} else{
     ampliaIndex();
 }
 
@@ -21,6 +21,7 @@ btnBuscar.addEventListener("click", () => {
 })
 
 function reduzIndex(){
+    
     imgSearch.classList.add("display-none");
     sectionSearch.classList.add("section-search-animation");
     sectionResult.classList.remove("display-none");
