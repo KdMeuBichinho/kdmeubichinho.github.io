@@ -44,34 +44,33 @@
         <section class="section-search">
             <section class="search">
                     <div class="slogan">
-                        <img src="./images/home.svg" alt="Homem segurando um cachorro na coleira e com uma lupa na mão" class="img-home display-none">
-                        <h1 class="h1-secondary"><strong>Encontre seu melhor amigo</strong></h1>
+                        <img src="./images/home.svg" alt="Homem segurando um cachorro na coleira e com uma lupa na mão" class="img-home">
+                        <h1 class="h1-secondary" id="start"><strong>Encontre seu melhor amigo</strong></h1>
                         <h2 class="h2-secondary">perdido ou encontre alguém doando por perto.</h2>
                     </div>
                     <div class="search-field">
                         <span class="search-field-area">
-                            <select name="especie" id="especie">
-                                <option value="" selected disabled>Qual animal?</option>
-                                <option value="">Todos</option>
-                                <option value="">Cachorro</option>
-                                <option value="">Gato</option>
-                                <option value="">Coelho</option>
-                                <option value="">Hamster</option>
+                            <select name="especie" id="especie" class="filter-field">
+                                <option value="0" selected disabled>Qual animal?</option>
+                                <option value="0">Todos</option>
+                                <option value="1">Cachorro</option>
+                                <option value="2">Gato</option>
+                                <option value="3">Coelho</option>
+                                <option value="4">Hamster</option>
                             </select>
-                            <select name="acontecimento" id="acontecimento">
-                                <option value="" selected disabled>O que aconteceu?</option>
-                                <option value="">Todos</option>
-                                <option value="">...fugiu de casa</option>
-                                <option value="">...encontrado na rua</option>
-                                <option value="">...para adoção</option>
+                            <select name="acontecimento" id="categoria" class="filter-field">
+                                <option value="0" selected disabled>O que aconteceu?</option>
+                                <option value="0">Todos</option>
+                                <option value="1">...fugiu de casa</option>
+                                <option value="2">...encontrado na rua</option>
+                                <option value="3">...para adoção</option>
                             </select>
-                            <input type="text" placeholder="Digite seu CEP" id="input_cep">
+                            <input type="text" placeholder="Digite seu CEP" id="cep" class="filter-field">
                         </span>
-                        <button class="btn-primary" id="btn_Buscar">Buscar</button>
+                        <button class="btn-primary" id="btn_buscar">Buscar</button>
                     </div>
                 <div class="animal-counter">
-                    Total de 200 animais com um final feliz 
-                    <img src="./images/purple-heart.svg" alt="Coração roxo">
+                    Total de 200 animais com um final feliz <i class="fas fa-heart secondary-color"></i>                    
                 </div>
             </section>
             <section class="result display-none">
@@ -99,7 +98,7 @@
                         </div>
                     </form> -->
                     <input type="checkbox" id="filter">
-                    <label for="filter" class="filters">Filtros</label>
+                    <label for="filter" class="filters">Filtros <i class="fas fa-angle-down"></i></label>
                     <div class="search-input">
                         <!-- <div >
                             <label for="animal">Animal</label>
@@ -123,199 +122,53 @@
                             <label>Refine sua busca <i class="fas fa-filter"></i></label>
                             <p>70 resultados encontrados</p>
                         </section>
-                        <div class="filter-field">
-                            <select name="genero" id="genero">
-                                <option value="" selected>Gênero</option>
-                                <option value="">Macho</option>
-                                <option value="">Fêmea</option>
+                        <div class="filter-fields">
+                            <label for="sexo">Sexo</label>
+                            <select name="sexo" id="sexo" class="filter-field">
+                                <option value="" selected>Todos</option>
+                                <option value="MACHO">Macho</option>
+                                <option value="FEMEA">Fêmea</option>
                             </select>
                         </div>
-                        <div>
-                            <select name="idade" id="idade">
-                                <option value="" selected>Idade</option>
-                                <option value="">Filhote</option>
-                                <option value="">Adulto</option>
+                        <div class="filter-fields">
+                            <label for="idade">Idade</label>
+                            <select name="idade" id="idade" class="filter-field">
+                                <option value="" selected>Todos</option>
+                                <option value="FILHOTE">Filhote</option>
+                                <option value="ADULTO">Adulto</option>
                             </select>
                         </div>
-                        <div>
-                            <select name="porte" id="porte">
-                                <option value="" selected>Porte</option>
-                                <option value="">Pequeno</option>
-                                <option value="">Médio</option>
-                                <option value="">Grande</option>
+                        <div class="filter-fields">
+                            <label for="porte">Porte</label>
+                            <select name="porte" id="porte" class="filter-field">
+                                <option value="" selected>Todos</option>
+                                <option value="PEQUENO">Pequeno</option>
+                                <option value="MEDIO">Médio</option>
+                                <option value="GRANDE">Grande</option>
                             </select>
                         </div>
-                        <div>
+                        <div class="filter-fields">
                             <label for="castrado">
-                                <input type="checkbox" name="outros" id="castrado" value="castrado">
+                                <input type="checkbox" name="outros" id="castrado" value="castrado" class="filter-field">
                                 Castrado
                             </label>
                         </div>
                         <div>
                             <label for="vacinado">
-                                <input type="checkbox" name="outros" id="vacinado" value="vacinado">
+                                <input type="checkbox" name="outros" id="vacinado" value="vacinado" class="filter-field">
                                 Vacinado
                             </label>
                         </div>
-                        <button class="btn-primary">Aplicar filtros</button>
+                        <button class="btn-primary" id="btn_aplicar_filtro">Aplicar filtros</button>
                     </div>
                 </div>
                 <div class="result-cards">
-                    <div class="result-cards-section" id="cards-area">
-                        <a href="./pages/petprofile.html" class="res-card">
-                            <div class="res-card-img">
-                                <img src="https://images.unsplash.com/photo-1523480717984-24cba35ae1ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="">
-                            </div>
-                            <div class="res-card-txt">
-                                <p>Bob</p>
-                                <p>Araraquara</p>
-                            </div>
-                            <div class="res-card-tag">
-                                <!-- <span class="tag">Cachorro</span> -->
-                                <span class="tag">Fugiu de casa</span>
-                                <!-- <span class="tag">Castrado</span>
-                                <span class="tag">Vacinado</span> -->
-                            </div>
-                        </a>
-                        <a href="#" class="res-card">
-                            <div class="res-card-img">
-                                <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="">
-                            </div>
-                            <div class="res-card-txt">
-                                <p>Desconhecido</p>
-                                <p>Araraquara</p>
-                            </div>
-                            <div class="res-card-tag">
-                                <!-- <span class="tag">Gato</span> -->
-                                <span class="tag">Encontrado na rua</span>
-                                <!-- <span class="tag">Fêmea</span>
-                                <span class="tag">Filhote</span>
-                                <span class="tag">Vacinado</span> -->
-                            </div>
-                        </a>
-                        <a href="#" class="res-card">
-                            <div class="res-card-img">
-                                <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9" alt="">
-                            </div>
-                            <div class="res-card-txt">
-                                <p>Katchusca</p>
-                                <p>Araraquara</p>
-                            </div>
-                            <div class="res-card-tag">
-                                <!-- <span class="tag">Cachorro</span> -->
-                                <span class="tag">Fugiu de casa</span>
-                                <!-- <span class="tag">Fêmea</span>
-                                <span class="tag">Aulto</span>
-                                <span class="tag">Castrado</span>
-                                <span class="tag">Vacinado</span> -->
-                            </div>
-                        </a>
-                        <a href="#" class="res-card">
-                            <div class="res-card-img">
-                                <img src="https://images.unsplash.com/photo-1577099595920-bf19294bc408?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
-                            </div>
-                            <div class="res-card-txt">
-                                <p>Frederico</p>
-                                <p>Araraquara</p>
-                            </div>
-                            <div class="res-card-tag">
-                                <!-- <span class="tag">Hamster</span> -->
-                                <span class="tag">Fugiu de casa</span>
-                                <!-- <span class="tag">Macho</span>
-                                <span class="tag">Adulto</span> -->
-                            </div>
-                        </a>
-                        <a href="#" class="res-card">
-                            <div class="res-card-img">
-                                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80" alt="">
-                            </div>
-                            <div class="res-card-txt">
-                                <p>Thor</p>
-                                <p>Araraquara</p>
-                            </div>
-                            <div class="res-card-tag">
-                                <!-- <span class="tag">Gato</span> -->
-                                <span class="tag">Procurando um lar</span>
-                                <!-- <span class="tag">Macho</span>
-                                <span class="tag">Adulto</span>
-                                <span class="tag">Médio</span>
-                                <span class="tag">Castrado</span>
-                                <span class="tag">Vacinado</span> -->
-                            </div>
-                        </a>
-                        <a href="#" class="res-card">
-                            <div class="res-card-img">
-                                <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
-                            </div>
-                            <div class="res-card-txt">
-                                <p>Rodolfinho</p>
-                                <p>Araraquara</p>
-                            </div>
-                            <div class="res-card-tag">
-                                <!-- <span class="tag">Coelho</span> -->
-                                <span class="tag">Fugiu de casa</span>
-                                <!-- <span class="tag">Macho</span>
-                                <span class="tag">Filhote</span>
-                                <span class="tag">Pequeno</span>
-                                <span class="tag">Castrado</span>
-                                <span class="tag">Vacinado</span> -->
-                            </div>
-                        </a>
-                        <a href="#" class="res-card">
-                            <div class="res-card-img">
-                                <img src="https://images.unsplash.com/photo-1529040181623-e04ebc611e25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" alt="">
-                            </div>
-                            <div class="res-card-txt">
-                                <p>Desconhecido</p>
-                                <p>Araraquara</p>
-                            </div>
-                            <div class="res-card-tag">
-                                <!-- <span class="tag">Coelho</span> -->
-                                <span class="tag">Encontrado na rua</span>
-                                <!-- <span class="tag">Fêmea</span>
-                                <span class="tag">Castrado</span>
-                                <span class="tag">Vacinado</span> -->
-                            </div>
-                        </a>
-                        <a href="#" class="res-card">
-                            <div class="res-card-img">
-                                <img src="https://images.unsplash.com/photo-1550697851-920b181d8ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
-                            </div>
-                            <div class="res-card-txt">
-                                <p>Lulu</p>
-                                <p>Araraquara</p>
-                            </div>
-                            <div class="res-card-tag">
-                                <!-- <span class="tag">Hamster</span> -->
-                                <span class="tag">Fugiu de casa</span>
-                                <!-- <span class="tag">Castrado</span>
-                                <span class="tag">Vacinado</span> -->
-                            </div>
-                        </a>
-                        <a href="#" class="res-card">
-                            <div class="res-card-img">
-                                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" alt="">
-                            </div>
-                            <div class="res-card-txt">
-                                <p>Tony</p>
-                                <p>Araraquara</p>
-                            </div>
-                            <div class="res-card-tag">
-                                <!-- <span class="tag">Cachorro</span> -->
-                                <span class="tag">Procurando um lar</span>
-                                <!-- <span class="tag">Macho</span>
-                                <span class="tag">Filhote</span>
-                                <span class="tag">Médio</span>
-                                <span class="tag">Castrado</span>
-                                <span class="tag">Vacinado</span> -->
-                            </div>
-                        </a>
+                    <div class="result-cards-section" id="cards_area">
+                        <!-- Cars dos animais são carregados via JavaScript -->                        
                     </div>
                     <nav class="pagination">
-                        <ul>
-                            <li><a href="#" class="active">1</a></li>
-                            <li><a href="#" class="">2</a></li>
-                            <li><a href="#" class="">3</a></li>
+                        <ul id="pagination">
+                            <!-- Paginação é carregada via JavaScript -->
                         </ul>
                     </nav>
                 </div>

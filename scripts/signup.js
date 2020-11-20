@@ -57,6 +57,19 @@ button.addEventListener("click",(e)=>{
     })
     .then(res => res.json())
     .then(res => console.log(res))
+    // .then(() => {
+    //     // const pessoaLogin = {};
+    //     // pessoaLogin.email = pessoa.email,
+    //     // pessoaLogin.senha = pessoa.senha,
+    //     // fetch("http://localhost:8080/pessoa/auth",{
+    //     //     method: "POST",
+    //     //     headers: { "Content-Type":"application/json"},
+    //     //     body: JSON.stringify(pessoaLogin)
+    //     // })
+    //     // .then(res => res.json())
+    //     // .then(res => console.log(res))
+    // }
+    // )
     .catch(err => console.log(err))
 });
 

@@ -20,6 +20,7 @@
 html, body{
     max-width: 100%;
     height: 100vh;
+    scroll-behavior: smooth;
 }
 body{
     font-family: 'Roboto', sans-serif;
@@ -234,6 +235,12 @@ span.tag{
 .bg-neutral{
     background-color: var(--neutral-color);
     color: var(--gray-dark-color);
+}
+.yellow-color{
+    color: var(--yellow-color);
+}
+.secondary-color{
+    color: var(--secondary-color); 
 }
 .logo{
     width: 120px;
