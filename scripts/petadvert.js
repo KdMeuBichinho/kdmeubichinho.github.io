@@ -31,7 +31,21 @@ const idPessoa = {};
 // anuncio.idCategoria.idCategoria----
 // anuncio.idPessoa.idPessoa----
 
-
+cep.addEventListener("blur",()=>{
+    if(cep.value){
+        fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+        .then(res => res.json())
+        .then(local => {
+            idAnimal.logradouro = local.logradouro
+            idAnimal.cep = local.cep
+            idAnimal.bairro = local.bairro
+            idAnimal.localidade = local.localidade
+            idAnimal.uf = local.uf
+            idAnimal.ibge = local.ibge
+            idAnimal.ddd = local.ddd
+        })
+    }   
+});
 photo.addEventListener("change", ()=>{
     uploadFile(photo.files[0])
 })
@@ -49,7 +63,8 @@ const uploadFile = (file) => {
     })
     .catch(err => console.log(err))
 }
-anunciar.addEventListener("click", () =>{
+anunciar.addEventListener("click", (e) =>{
+    e.preventDefault();
     for(especieFormFor of especieForm){
         if(especieFormFor.checked) especie.idEspecie = especieFormFor.value;
     }
@@ -74,13 +89,12 @@ anunciar.addEventListener("click", () =>{
     idAnimal.nome = nome.value;
     idAnimal.cep = cep.value;
 
-    idPessoa.idPessoa = 1;
+    idPessoa.email = localStorage.email;
     idAnimal.especie = especie;
 
     anuncio.idCategoria = idCategoria;
     anuncio.idPessoa = idPessoa;
     anuncio.idAnimal = idAnimal;
-    anuncio.status = "ATIVO";
     anuncio.dataCriacao = new Date();
 
     fetch("http://localhost:8080/anuncio",{
