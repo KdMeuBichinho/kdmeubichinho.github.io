@@ -18,4 +18,8 @@ function enviar(){
     })
     .then(res => res.json())
     .then(res => console.log(res))
+    .then(
+        localStorage.setItem("email", email.value),
+        localStorage.setItem("token", res.token)
+    )
 }
