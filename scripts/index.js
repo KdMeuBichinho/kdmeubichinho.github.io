@@ -99,14 +99,15 @@ function buscaAnimais(pagina){
         .then(res => res.json())
         .then(anuncio => {
             for(anuncioRecebido of anuncio.content){
+                console.log(anuncioRecebido.idAnimal.fotos.caminho)
                 cardsArea.innerHTML += 
                 `<a href="./pages/petprofile.html" class="res-card">
                     <div class="res-card-img">
-                        <img src="${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
+                        <img src="http://127.0.0.1:8080/${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
                     </div>
                     <div class="res-card-txt">
                         <p>${anuncioRecebido.idAnimal.nome}</p>
-                        <p>${anuncioRecebido.idAnimal.nome}</p>
+                        <p>${anuncioRecebido.idAnimal.bairro}</p>
                     </div>
                     <div class="res-card-tag">
                         <span class="tag">${anuncioRecebido.idCategoria.classificacao}</span>    
