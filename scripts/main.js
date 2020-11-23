@@ -1,4 +1,5 @@
 function logar(email, senha){
     console.log(`email: ${email} e senha: ${senha}`)
 }
-export default main;
+
+export const BASE_URL = "http://localhost:5500/"
