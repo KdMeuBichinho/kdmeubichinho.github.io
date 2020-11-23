@@ -17,9 +17,10 @@ function enviar(){
         body: JSON.stringify(pessoaLogin)
     })
     .then(res => res.json())
-    .then(res => console.log(res))
-    .then(
-        localStorage.setItem("email", email.value),
+    .then(res => {
+        console.log(res)
+        localStorage.setItem("email", email.value)
         localStorage.setItem("token", res.token)
-    )
+    })
+
 }
