@@ -33,76 +33,74 @@
                 <h2 class="h2-secondary">Nos conte o que aconteceu e te ajudaremos a resolver</h2>
             </div>
             <form action="" class="form">
+
                 <p><strong>Qual é o animal?</strong></p>
                 <label for="cachorro">
-                    <input type="radio" name="especie" id="cachorro" value="cachorro" checked>
+                    <input type="radio" name="especie" id="cachorro" value="1" checked>
                     Cachorro
                 </label>
                 <label for="gato">
-                    <input type="radio" name="especie" id="gato" value="gato">
+                    <input type="radio" name="especie" id="gato" value="2">
                     Gato
                 </label>
                 <label for="hamster">
-                    <input type="radio" name="especie" id="hamster" value="hamster">
+                    <input type="radio" name="especie" id="hamster" value="4">
                     Hamster
                 </label>
                 <label for="coelho">
-                    <input type="radio" name="especie" id="coelho" value="coelho">
+                    <input type="radio" name="especie" id="coelho" value="3">
                     Coelho
                 </label>
-                <label for="passaro">
-                    <input type="radio" name="especie" id="passaro" value="passaro">
-                    Pássaro
-                </label>
+                
 
                 <p><strong>O que aconteceu?</strong></p>
                 <label for="fugiu">
-                    <input type="radio" name="evento" id="fugiu" value="fugiu" checked>
+                    <input type="radio" name="evento" id="fugiu" value="1" checked>
                     Fugiu de Casa
                 </label>
                 <label for="encontrado">
-                    <input type="radio" name="evento" id="encontrado" value="encontrado">
+                    <input type="radio" name="evento" id="encontrado" value="2">
                     Encontrei na rua
                 </label>
                 <label for="doacao">
-                    <input type="radio" name="evento" id="doacao" value="doacao">
+                    <input type="radio" name="evento" id="doacao" value="3">
                     Quero doar
                 </label>
             
                 <!-- <p class="details"><strong>Fale sobre suas caracteristicas</strong></p> -->
                 <p><strong>Sexo</strong></p>
                 <label for="macho">
-                    <input type="radio" name="sexo" id="macho" value="macho" checked>
+                    <input type="radio" name="sexo" id="macho" value="MACHO" checked>
                     Macho
                 </label>
                 <label for="femea">
-                    <input type="radio" name="sexo" id="femea" value="femea">
+                    <input type="radio" name="sexo" id="femea" value="FEMEA">
                     Fêmea
                 </label>
                 <label for="indeterminado">
-                    <input type="radio" name="sexo" id="indeterminado" value="indeterminado">
+                    <input type="radio" name="sexo" id="indeterminado" value="NAO_IDENTIFICADO">
                     Não identificado
                 </label>
                 <p><strong>Idade</strong></p>
                 <label for="filhote">
-                    <input type="radio" name="idade" id="filhote" value="filhote" checked>
+                    <input type="radio" name="idade" id="filhote" value="FILHOTE" checked>
                     Filhote
                 </label>
                 <label for="adulto">
-                    <input type="radio" name="idade" id="adulto" value="adulto">
+                    <input type="radio" name="idade" id="adulto" value="ADULTO">
                     Adulto
                 </label>
                 <p><strong>Porte</strong></p>
                 <label for="pequeno">
-                    <input type="radio" name="porte" id="pequeno" value="pequeno" checked>
+                    <input type="radio" name="porte" id="pequeno" value="PEQUENO" checked>
                     Pequeno
                 </label>
                 <label for="medio">
-                    <input type="radio" name="porte" id="medio" value="medio">
+                    <input type="radio" name="porte" id="medio" value="MEDIO">
                     Médio
                 </label>
                 <label for="grande">
-                    <input type="radio" name="porte" id="grande" value="grande">
+                    <input type="radio" name="porte" id="grande" value="GRANDE">
                     Grande
                 </label>
                 <p><strong>Outros</strong></p>
@@ -122,7 +120,7 @@
                     <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP (para rastreamento)" value="" required/> 
                 </div>
 
-                <a href="profile.html"><button class="btn-primary">Anunciar</button></a>
+                <button class="btn-primary" id="anunciar">Anunciar</button>
 
             </form>
 
