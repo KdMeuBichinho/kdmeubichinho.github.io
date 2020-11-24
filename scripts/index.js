@@ -6,21 +6,18 @@ const sectionResult = document.querySelector(".result");
 const footer = document.querySelector(".footer");
 const cardsArea = document.querySelector("#cards_area");
 const paginationArea = document.querySelector("#pagination");
+const numberResults = document.querySelector("#title_filters_result")
 
+const BASE_URL_CLIENT = "http://localhost:5500/"
+const BASE_URL_SERVER = "http://localhost:8080/"
+const API = "anuncio/busca?"
 const anuncio = {};
+
 let queryFilter = "";
 let queryFilterStr;
 let page = 0;
 
-// if(sessionStorage.estadoHome == "visitado"){
-//     reduzIndex();
-// } else{
-//     ampliaIndex();
-// }
-
 btnBuscar.addEventListener("click", () => {
-    // sessionStorage.setItem("estadoHome","visitado");
-    // reduzIndex();
     buscaAnimais(page);
     ampliaIndex();
 })
@@ -80,11 +77,13 @@ function atualizaFiltros(){
     if(sexo) queryFilter += `sexo=${sexo}&`;
     if(idade) queryFilter += `classificacaoEtaria=${idade}&`;
     if(porte) queryFilter += `porte=${porte}&`;
-    if(castrado) queryFilter += `castrado=${castrado}&`;
-    if(vacinado) queryFilter += `vacinado=${vacinado}&`;
+    queryFilter += `castrado=${castrado}&`;
+    queryFilter += `vacinado=${vacinado}&`;
+
+    
 
 }
-function selecionePagina(pagina){
+function selecionaPagina(pagina){
     pagina --
     page = pagina;
     buscaAnimais(page)
@@ -95,35 +94,43 @@ function buscaAnimais(pagina){
     cardsArea.innerHTML = ""
     paginationArea.innerHTML = ""
 
-    fetch(`http://localhost:8080/anuncio/busca?${queryFilter}page=${pagina}&size=5`)
+
+    fetch(`${BASE_URL_SERVER}${API}${queryFilter}page=${pagina}&size=20`)
         .then(res => res.json())
         .then(anuncio => {
-            for(anuncioRecebido of anuncio.content){
-                console.log(anuncioRecebido.idAnimal.fotos.caminho)
-                cardsArea.innerHTML += 
-                `<a href="./pages/petprofile.html" class="res-card">
-                    <div class="res-card-img">
-                        <img src="http://127.0.0.1:8080/${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
-                    </div>
-                    <div class="res-card-txt">
-                        <p>${anuncioRecebido.idAnimal.nome}</p>
-                        <p>${anuncioRecebido.idAnimal.bairro}</p>
-                    </div>
-                    <div class="res-card-tag">
-                        <span class="tag">${anuncioRecebido.idCategoria.classificacao}</span>    
-                    </div>
-                </a>`
-            }
-
-            if(anuncio.totalPages){
-                for(let i = 1; i <= anuncio.totalPages; i++){
-                    paginationArea.innerHTML += `<li onclick="selecionePagina(${i})">${i}</li>`
+            if(!anuncio.empty){
+                for(let anuncioRecebido of anuncio.content){
+                    cardsArea.innerHTML += 
+                        `
+                            <a href="./pages/petprofile.html" class="res-card">
+                                <div class="res-card-img">
+                                    <img src="${BASE_URL_SERVER}${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
+                                </div>
+                                <div class="res-card-txt">
+                                    <p>${anuncioRecebido.idAnimal.nome}</p>
+                                    <p>${anuncioRecebido.idAnimal.localidade}</p>
+                                    <p>${anuncioRecebido.idAnimal.bairro}</p>
+                                </div>
+                                <div class="res-card-tag">
+                                    <span class="tag">${anuncioRecebido.idCategoria.classificacao}</span>    
+                                </div>
+                            </a>
+                        `
                 }
-    
-                let paginationAreaChildren = document.querySelector("#pagination").children;
-                paginationAreaChildren[pagina].classList.add("active")
-            }
-            
+                if(anuncio.totalPages){                      
+                    for(let i = 1; i <= anuncio.totalPages; i++){
+                        paginationArea.innerHTML += `<li onclick="selecionaPagina(${i})">${i}</li>`
+                    }
+                    let paginationAreaChildren = document.querySelector("#pagination").children;
+                    paginationAreaChildren[pagina].classList.add("active")
+                }
+            }else{
+                cardsArea.innerHTML +=
+                    `<div>
+                        <p>Que pena, nenhum resultado encontrado <i class="far fa-sad-cry font-size-20"></i></p>
+                    </div>`
 
+            }
+            numberResults.textContent = `${anuncio.totalElements} resultados encontrados.`
         })
 }

@@ -69,9 +69,9 @@
                         </span>
                         <button class="btn-primary" id="btn_buscar">Buscar</button>
                     </div>
-                <div class="animal-counter">
+                <!-- <div class="animal-counter">
                     Total de 200 animais com um final feliz <i class="fas fa-heart secondary-color"></i>                    
-                </div>
+                </div> -->
             </section>
             <section class="result display-none">
                 <div class="result-filters">
@@ -120,7 +120,7 @@
                         </div> -->
                         <section class="title-filters">
                             <label>Refine sua busca <i class="fas fa-filter"></i></label>
-                            <p>70 resultados encontrados</p>
+                            <p id="title_filters_result"></p>
                         </section>
                         <div class="filter-fields">
                             <label for="sexo">Sexo</label>
@@ -149,13 +149,13 @@
                         </div>
                         <div class="filter-fields">
                             <label for="castrado">
-                                <input type="checkbox" name="outros" id="castrado" value="castrado" class="filter-field">
+                                <input type="checkbox" name="outros" id="castrado" value="castrado" class="filter-field" checked>
                                 Castrado
                             </label>
                         </div>
-                        <div>
+                        <div class="filter-fields">
                             <label for="vacinado">
-                                <input type="checkbox" name="outros" id="vacinado" value="vacinado" class="filter-field">
+                                <input type="checkbox" name="outros" id="vacinado" value="vacinado" class="filter-field" checked>
                                 Vacinado
                             </label>
                         </div>
@@ -166,7 +166,7 @@
                     <div class="result-cards-section" id="cards_area">
                         <!-- Cars dos animais são carregados via JavaScript -->                        
                     </div>
-                    <nav class="pagination">
+                    <nav class="pagination" id="pagination_area">
                         <ul id="pagination">
                             <!-- Paginação é carregada via JavaScript -->
                         </ul>
@@ -177,8 +177,7 @@
             <footer class="footer display-none">
                 <img src="./images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
                 <div>
-                    <a href="https://github.com/teteusAraujo/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
-                    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                    <a href="https://github.com/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
                     <p>2020 Todos os direitos reservados.</p>
                 </div>
                 <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
@@ -187,6 +186,7 @@
     </main>
 
     <script src="./scripts/index.js"></script>
+
 
 </body>
 </html>
