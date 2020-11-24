@@ -1,3 +1,6 @@
+main{
+    padding-top: 90px;
+}
 h2{
     color: var(--secondary-color);
     font-size: 2em;
@@ -69,6 +72,7 @@ ul{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom: 20px;
 }
 .search-field *{
     margin: 5px;
@@ -191,8 +195,8 @@ ul{
 .pagination ul li{
     margin: 3px;
     border-radius: 200px;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid var(--gray-light-color);
+    color: var(--gray-light-color);
     width: 35px;
     height: 35px;
     display: flex;
@@ -201,7 +205,7 @@ ul{
     cursor: pointer;
 }
 .pagination ul li.active, .pagination ul li:hover{
-    background-color: var(--primary-color);
+    background-color: var(--gray-light-color);
     color: var(--white-color);
 }
 .result-filters{
@@ -235,7 +239,8 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;    
+    overflow: hidden;  
+    background-color: var(--neutral-light-color);
 }
 .res-card-img img{
     height: 100%;
@@ -257,7 +262,7 @@ ul{
     font-weight: bold;
     line-height: normal;
 }
-.res-card-txt p:last-of-type{
+.res-card-txt p:not(:first-child){
     font-size: 0.8em;
 }
 .res-card-tag{

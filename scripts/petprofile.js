@@ -6,5 +6,5 @@ fetch(`http://localhost:8080/anuncio/${id}`)
         .then(res => res.json())
         .then(anuncio => {
             console.log(anuncio)
-            nome_animal = anuncio
+            //nome_animal = anuncio
         })

@@ -10,99 +10,123 @@ const vacinado = document.querySelector("#vacinado")
 const nome = document.querySelector("#nome");
 const cep = document.querySelector("#cep");
 
+const BASE_URL_CLIENT = "http://localhost:5500/"
+const BASE_URL_SERVER = "http://localhost:8080/"
+const API_FOTO = "foto";
+const API_ANUNCIO = "anuncio";
+
 const anuncio = {};
-const idAnimal = {};
+const animal = {};
 const fotos = {};
 const especie = {};
-const idCategoria = {};
-const idPessoa = {};
+const categoriaAnuncio = {};
+const pessoa = {};
 
-// anuncio.dataCriacao
-// anuncio.status
-// anuncio.idAnimal.castrado----
-// anuncio.idAnimal.cep----
-// anuncio.idAnimal.classificacaoEtaria----
-// anuncio.idAnimal.especie.idEspecie----
-// anuncio.idAnimal.fotos.caminho----
-// anuncio.idAnimal.nome----
-// anuncio.idAnimal.porte----
-// anuncio.idAnimal.sexo----
-// anuncio.idAnimal.vacinado
-// anuncio.idCategoria.idCategoria----
-// anuncio.idPessoa.idPessoa----
+// function atualizaDadosViaCep(cep){
+//     fetch(`https://viacep.com.br/ws/${cep}/json/`)
+//         .then(res => res.json())
+//         .then(local => {
+//             animal.logradouro = local.logradouro
+//             animal.cep = local.cep
+//             animal.bairro = local.bairro
+//             animal.localidade = local.localidade
+//             animal.uf = local.uf
+//             animal.ibge = local.ibge
+//             animal.ddd = local.ddd
+//         })
+// }
 
-cep.addEventListener("blur",()=>{
-    if(cep.value){
-        fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
-        .then(res => res.json())
-        .then(local => {
-            idAnimal.logradouro = local.logradouro
-            idAnimal.cep = local.cep
-            idAnimal.bairro = local.bairro
-            idAnimal.localidade = local.localidade
-            idAnimal.uf = local.uf
-            idAnimal.ibge = local.ibge
-            idAnimal.ddd = local.ddd
-        })
-    }   
-});
+// function carregaLocalizacaoAnimal(localizacao){
+//     for(let atributo in localizacao){
+//         animal[atributo] = localizacao[atributo]
+//     }
+// }
+
+// async function localizacaoAnimal(cep){
+//     if(cep){
+//         const localizacaoViaCepp = await atualizaLocalizacaoViaCep(cep);
+//         return localizacaoViaCepp
+//     }
+// }
+
+// cep.addEventListener("blur", ()=>{
+//     if(cep.value){
+//         atualizaDadosViaCep(cep.value);  
+//         // atualizaLocalizacaoViaCep(cep.value);
+//         // carregaLocalizacaoAnimal(localizacaoViaCep)
+//         // console.log(animal)
+//     }   
+// });
 photo.addEventListener("change", ()=>{
     uploadFile(photo.files[0])
 })
 const uploadFile = (file) => {
+   
     const fd = new FormData();
     fd.append("image", file)
-    fetch("http://localhost:8080/foto",{
+    fetch(`${BASE_URL_SERVER}${API_FOTO}`,{
         method: "POST",
         body: fd
     })
     .then(res => res.text())
     .then(res => {
         fotos.caminho=res;
-        idAnimal.fotos=fotos;
+        animal.fotos=fotos;
     })
     .catch(err => console.log(err))
 }
-anunciar.addEventListener("click", (e) =>{
-    e.preventDefault();
-    for(especieFormFor of especieForm){
+anunciar.addEventListener("click", () =>{
+    for(let especieFormFor of especieForm){
         if(especieFormFor.checked) especie.idEspecie = especieFormFor.value;
     }
-    for(categoriaFormFor of categoria){
-        if(categoriaFormFor.checked) idCategoria.idCategoria = categoriaFormFor.value;
+    for(let categoriaFormFor of categoria){
+        if(categoriaFormFor.checked) categoriaAnuncio.idCategoria = categoriaFormFor.value;
     }
-    for(sexoFormFor of sexo){
-        if(sexoFormFor.checked) idAnimal.sexo = sexoFormFor.value;
+    for(let sexoFormFor of sexo){
+        if(sexoFormFor.checked) animal.sexo = sexoFormFor.value;
     }
-    for(idadeFormFor of idade){
-        if(idadeFormFor.checked) idAnimal.classificacaoEtaria = idadeFormFor.value;
+    for(let idadeFormFor of idade){
+        if(idadeFormFor.checked) animal.classificacaoEtaria = idadeFormFor.value;
     }
-    for(porteFormFor of porte){
-        if(porteFormFor.checked) idAnimal.porte = porteFormFor.value;
+    for(let porteFormFor of porte){
+        if(porteFormFor.checked) animal.porte = porteFormFor.value;
     }
 
-    idAnimal.castrado=false
-    idAnimal.vacinado=false
-    if(castrado.checked) idAnimal.castrado = true;
-    if(vacinado.checked) idAnimal.vacinado = true;
+    animal.castrado=false
+    animal.vacinado=false
+    if(castrado.checked) animal.castrado = true;
+    if(vacinado.checked) animal.vacinado = true;
 
-    idAnimal.nome = nome.value;
-    idAnimal.cep = cep.value;
+    animal.nome = nome.value;
+    pessoa.email = localStorage.email;
+    animal.especie = especie;
 
-    idPessoa.email = localStorage.email;
-    idAnimal.especie = especie;
-
-    anuncio.idCategoria = idCategoria;
-    anuncio.idPessoa = idPessoa;
-    anuncio.idAnimal = idAnimal;
+    anuncio.idCategoria = categoriaAnuncio;
+    anuncio.idPessoa = pessoa;
+    anuncio.idAnimal = animal;
     anuncio.dataCriacao = new Date();
 
-    fetch("http://localhost:8080/anuncio",{
-        method: "POST",
-        headers: { "Content-Type":"application/json"},
-        body: JSON.stringify(anuncio)
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+    fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+        .then(res => res.json())
+        .then(local => {
+            animal.logradouro = local.logradouro
+            animal.cep = local.cep
+            animal.bairro = local.bairro
+            animal.localidade = local.localidade
+            animal.uf = local.uf
+            animal.ibge = local.ibge
+            animal.ddd = local.ddd
+        })
+        .then(() => {
+            fetch(`${BASE_URL_SERVER}${API_ANUNCIO}`,{
+                method: "POST",
+                headers: { "Content-Type":"application/json"},
+                body: JSON.stringify(anuncio)
+            })
+            .then(res => res.json())
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        })
+
+    
 })
