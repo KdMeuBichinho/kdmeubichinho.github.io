@@ -30,10 +30,19 @@
     <main class="container">
         <div class="side-left">
             <div class="top-bar bg-secondary">
-                <span class="tag tag-animal">Fugiu de casa</span>
+                <span class="tag tag-animal" id="categoria">Categoria</span>
+            </div>
+            <div class="content-dog">
+                <div class="slideshow-container">
+                    <div class="mySlides fade" id="container_img">
+                        <!-- Preenchido via JS -->
+                        <img src="">
+                    </div>
+                </div>
             </div>
 
-            <div class="content-dog">
+
+            <!-- <div class="content-dog">
                 <div class="slideshow-container">
 
                     <div class="mySlides fade">
@@ -61,56 +70,39 @@
                     <span class="dot" onclick="currentSlide(2)"></span>
                     <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="side-right">
             <div class="description">
-                <h2 id="nome_animal"><strong>Bob</strong></h2>
-                <p id="cidade_animal">Barueri</p>
+                <!-- Preenchido via JS -->
+                <h2 id="nome_animal">Nome Animal</h2>
+                <p id="localizacao_animal">Localizacao Animal</p>
                 <div class="tags" id="tags">
-                    <span class="tag">Cachorro</span>
-                    <span class="tag">Macho</span>
-                    <span class="tag">Adulto</span>
-                    <span class="tag">Grande</span>
-                    <span class="tag">Castrado</span>
-                    <span class="tag">Vacinado</span>
+                    <!-- Preenchido via JS -->
                 </div>
 
             </div>
             <div class="contact-section">
-                <div class="contact">
-                    <div class="people"><strong>Eduardo Rodrigues</strong></div>
-                    <div class="phone">(11)98888-7777</div>
-                    <a href="#"><i class="fab fa-whatsapp"></i> Entrar em contato</a>
+                <div class="contact" id="contact">
+                    <!-- Preenchido via JS -->
+                    <div class="people"><strong>Nome</strong></div>
+                    <div class="phone">Celular</div>
+                    <a href="#" target="_blank"><i class="fab fa-whatsapp"></i> Entrar em contato</a>
                 </div>
             </div>
 
             <div class="message">
                 <div class="box-message">
-                    <div class="box-text-message">
+                    <div class="box-text-message" id="message_area">
                         <p class="style-message">
-                            <span><strong>Ingrid Silva:</strong></span>
-                            oi, bom dia! eu avistei esse cachorro em frente ao mercado Dia na esquina da rua xpto ontem por volta das 18h50. Ele parecia assustado e perdido
-                            <span>28-10-2020 19:10</span>
+                            <!-- Preenchido via JS -->
                         </p>                        
-
-                        <p class="style-message">
-                            <span><strong>Eduardo Rodrigues:</strong></span>
-                            Obrigado pelas informações, Ingrid... andei a cidade toda ontem procurando por ele mas ainda não encontrei. vou dar mais algumas voltas por onde você está falando para tentar encontra-lo. desde já te agradeço muito pela ajuda.
-                            <span>28-10-2020 20:15</span>
-                        </p>
-
-                        <p class="style-message">
-                            <span><strong>João Pereira:</strong></span>
-                            bom dia, Eduardo! eu e minha esposa encontramos seu cachorro hoje pela manhã na praça toledo perto de onde você perdeu ele. conseguimos trazer ele até nossa casa e ele está aqui e bem, quando puder, me chama no whatsapp para combinarmos para você buscar ele. (11) 977775463.
-                            <span>29-10-2020 10:10</span>
-                        </p>
                     </div>
 
                     <div class="text-message">
-                        <input class="input-size" type="text" placeholder="Digite uma mensagem">
-                        <button class="btn-primary btn-size"><i class="fas fa-paper-plane"></i></button>
+                        <input class="input-size" type="text" placeholder="Digite uma mensagem" id="message">
+                        <button class="btn-primary btn-size" id="send"><i class="fas fa-paper-plane"></i></button>
                     </div>
                 </div>
             </div>
@@ -125,7 +117,7 @@
         <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
     </footer>
 
-    <script>
+    <!-- <script>
         var slideIndex = 1;
         showSlides(slideIndex);
 
@@ -152,7 +144,7 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
-    </script>
+    </script> -->
     <script src="../scripts/petprofile.js"></script>
 </body>
 

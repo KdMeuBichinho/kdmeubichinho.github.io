@@ -15,7 +15,7 @@ body{
     padding: var(--space);
 }
 .side-left .content-dog {
-    position: relative;
+    /* position: relative; */
 }
 .side-left .top-bar .tag-animal {
     border-color: var(--white-color);
@@ -104,19 +104,19 @@ body{
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow*/
 /* Slideshow container */
 .slideshow-container {
-    position: relative;
+    /* position: relative; */
     margin: auto;
 }
 
 .slideshow-container .mySlides {
-    height: 500px;
-    position: relative;
+    /* height: 500px; */
+    /* position: relative; */
     overflow: hidden;
 }
 
 .slideshow-container .mySlides img {
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
 }
 
 /* Next & previous buttons */
@@ -178,6 +178,9 @@ body{
     animation-name: fade;
     animation-duration: 1.5s;
 }
+#nome_animal{
+    font-weight: bold;
+}
   
 @-webkit-keyframes fade {
     from {opacity: .4} 
@@ -196,7 +199,7 @@ body{
     }
 
     .slideshow-container .mySlides {
-        height: 400px;
+        /* height: 400px; */
     }
 }
 
@@ -204,6 +207,6 @@ body{
     .prev, .next,.text {font-size: 11px}
 
     .slideshow-container .mySlides {
-        height: 250px;
+        /* height: 250px; */
     }
 }

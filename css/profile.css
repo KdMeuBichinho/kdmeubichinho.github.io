@@ -35,7 +35,8 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--gray-light-color);
+    background-color: var(--neutral-dark-color);
+    color: var(--gray-color);
 }
 .cont-profile > div img{
     height: 60%;
