@@ -19,10 +19,24 @@
             </a>
             <input type="checkbox" id="bar">
             <label for="bar" class="bars">&#9776;</label>
+            <ul class="display-none">
+                <li><a href="./index.html">Início <!--<i class="fas fa-home"></i>--></a></li>
+                <li><a href="./pages/petadvert.html">Anunciar <!--<i class="fas fa-plus">--></i></a></li>
+                <li><a href="./pages/signup.html">Cadastrar <!--<i class="fas fa-user-plus"></i>--></a></li>
+                <li><button class="btn-primary" onclick="location.href='pages/login.html'">Entrar  <!--<i class="fas fa-sign-in-alt">--></i></button></li>
+            </ul>  
             <ul>
-                <li><a href="./pages/petadvert.html">Anunciar &#9889;</a></li>
-                <li><a href="./pages/signup.html">Cadastrar</a></li>
-                <li><a href="./pages/login.html"><button class="btn-primary">Entrar</button></a></li>
+                <li><a href="./index.html">Início </a></li>
+                <li><a href="./pages/petadvert.html">Anunciar</a></li>
+                <li>
+                    <div class="dropdown">
+                        <i class="fas fa-user dropbtn"></i>
+                        <div class="dropdown-content">
+                          <a href="./pages/profile.html">Perfil</a>
+                          <a href="#">Sair</a>
+                        </div>
+                      </div>
+                </li>
             </ul>  
         </nav>     
     </header>
@@ -50,7 +64,7 @@
                     </div>
                     <div class="search-field">
                         <span class="search-field-area">
-                            <select name="especie" id="especie" class="filter-field">
+                            <select name="especie" id="especie" class="filter-field" title="Selecione o animal que deseja procurar (opcional)">
                                 <option value="0" selected disabled>Qual animal?</option>
                                 <option value="0">Todos</option>
                                 <option value="1">Cachorro</option>
@@ -58,16 +72,16 @@
                                 <option value="3">Coelho</option>
                                 <option value="4">Hamster</option>
                             </select>
-                            <select name="acontecimento" id="categoria" class="filter-field">
+                            <select name="acontecimento" id="categoria" class="filter-field" title="Informe o que aconteceu com seu animal (opcional)">
                                 <option value="0" selected disabled>O que aconteceu?</option>
                                 <option value="0">Todos</option>
                                 <option value="1">...fugiu de casa</option>
                                 <option value="2">...encontrado na rua</option>
                                 <option value="3">...para adoção</option>
                             </select>
-                            <input type="text" placeholder="Digite seu CEP" id="cep" class="filter-field">
+                            <input type="text" title="Insira um CEP para exibir os resultados (opcional)" alt="Campo para digitar um CEP" placeholder="CEP (opcional)" id="cep" class="filter-field">
                         </span>
-                        <button class="btn-primary" id="btn_buscar">Buscar</button>
+                        <button class="btn-primary" id="btn_buscar">Buscar<!--<i class="fas fa-search">--></i></button>
                     </div>
                 <!-- <div class="animal-counter">
                     Total de 200 animais com um final feliz <i class="fas fa-heart secondary-color"></i>                    
@@ -147,7 +161,7 @@
                                 <option value="GRANDE">Grande</option>
                             </select>
                         </div>
-                        <div class="filter-fields">
+                        <!-- <div class="filter-fields">
                             <label for="castrado">
                                 <input type="checkbox" name="outros" id="castrado" value="castrado" class="filter-field" checked>
                                 Castrado
@@ -158,7 +172,7 @@
                                 <input type="checkbox" name="outros" id="vacinado" value="vacinado" class="filter-field" checked>
                                 Vacinado
                             </label>
-                        </div>
+                        </div> -->
                         <button class="btn-primary" id="btn_aplicar_filtro">Aplicar filtros</button>
                     </div>
                 </div>
@@ -174,13 +188,13 @@
                 </div>
             </section>
 
-            <footer class="footer display-none">
+            <footer class="footer display-none" aria-placeholder="Topo">
                 <img src="./images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
                 <div>
                     <a href="https://github.com/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
                     <p>2020 Todos os direitos reservados.</p>
                 </div>
-                <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
+                <a href="#menu"><button class="btn-primary"><span><i class="fas fa-chevron-up"></i></span></button></a>
             </footer>
         </section>
     </main>

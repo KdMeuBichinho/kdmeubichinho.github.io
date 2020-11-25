@@ -7,6 +7,7 @@ const footer = document.querySelector(".footer");
 const cardsArea = document.querySelector("#cards_area");
 const paginationArea = document.querySelector("#pagination");
 const numberResults = document.querySelector("#title_filters_result")
+const card = document.querySelector('.res-card')
 
 const BASE_URL_CLIENT = "http://localhost:5500/"
 const BASE_URL_SERVER = "http://localhost:8080/"
@@ -24,6 +25,9 @@ btnBuscar.addEventListener("click", () => {
 btnAplicarFiltro.addEventListener("click", () => {
     buscaAnimais(page);
 });
+function capturaAnimal(idAnimal) {
+    localStorage.setItem("idAnimal", idAnimal)
+}
 
 
 // function reduzIndex(){
@@ -65,8 +69,8 @@ function atualizaFiltros(){
     let sexo = document.querySelector("#sexo").value
     let idade = document.querySelector("#idade").value
     let porte = document.querySelector("#porte").value
-    let castrado = document.querySelector("#castrado").checked
-    let vacinado = document.querySelector("#vacinado").checked
+    // let castrado = document.querySelector("#castrado").checked
+    // let vacinado = document.querySelector("#vacinado").checked
 
     queryFilter = ""
     cep = cep.substring(0,5)
@@ -77,8 +81,10 @@ function atualizaFiltros(){
     if(sexo) queryFilter += `sexo=${sexo}&`;
     if(idade) queryFilter += `classificacaoEtaria=${idade}&`;
     if(porte) queryFilter += `porte=${porte}&`;
-    queryFilter += `castrado=${castrado}&`;
-    queryFilter += `vacinado=${vacinado}&`;
+    // queryFilter += `castrado=${castrado}&`;
+    // queryFilter += `vacinado=${vacinado}&`;
+    queryFilter += `status=ATIVO&`;
+    queryFilter += `size=20&`;
 
     
 
@@ -95,14 +101,14 @@ function buscaAnimais(pagina){
     paginationArea.innerHTML = ""
 
 
-    fetch(`${BASE_URL_SERVER}${API}${queryFilter}page=${pagina}&size=20`)
+    fetch(`${BASE_URL_SERVER}${API}${queryFilter}page=${pagina}`)
         .then(res => res.json())
         .then(anuncio => {
             if(!anuncio.empty){
                 for(let anuncioRecebido of anuncio.content){
                     cardsArea.innerHTML += 
                         `
-                            <a href="./pages/petprofile.html" class="res-card">
+                            <a href="./pages/petprofile.html" class="res-card" onclick="capturaAnimal(${anuncioRecebido.idAnuncio})">
                                 <div class="res-card-img">
                                     <img src="${BASE_URL_SERVER}${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
                                 </div>
