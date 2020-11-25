@@ -26,9 +26,14 @@ cep.addEventListener("keypress", function (){
     
 });
 
+function formatnumber(number){
+    return number.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ^a-zA-Z]/gi, '')
+}
+
 cep.addEventListener("blur",()=>{
     if(cep.value){
-        fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+        let newcep=formatnumber(cep.value)
+        fetch(`https://viacep.com.br/ws/${newcep}/json/`)
         .then(res => res.json())
         .then(local => {
             street.value = local.logradouro
@@ -38,14 +43,15 @@ cep.addEventListener("blur",()=>{
             pessoa.uf = local.uf
             pessoa.ibge = local.ibge
             pessoa.ddd = local.ddd
+            console.log(local)
         })
     }   
 });
 button.addEventListener("click",(e)=>{
-    //e.preventDefault();
+    e.preventDefault();
     pessoa.logradouro = street.value
     pessoa.complemento = complement.value
-    pessoa.celular=phone.value;
+    pessoa.celular=formatnumber(phone.value);
     pessoa.email=mail.value;
     pessoa.nome=nameUser.value;
     pessoa.numeroResidencial=number.value;
