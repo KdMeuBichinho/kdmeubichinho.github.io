@@ -108,7 +108,7 @@ function buscaAnimais(pagina){
                 for(let anuncioRecebido of anuncio.content){
                     cardsArea.innerHTML += 
                         `
-                            <a href="./pages/petprofile.html" class="res-card" onclick="capturaAnimal(${anuncioRecebido.idAnuncio})">
+                            <a href="${BASE_URL_CLIENT}pages/petprofile.html" class="res-card" onclick="capturaAnimal(${anuncioRecebido.idAnuncio})">
                                 <div class="res-card-img">
                                     <img src="${BASE_URL_SERVER}${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
                                 </div>

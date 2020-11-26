@@ -1,41 +1,48 @@
-import * as main from "./main.js"
+const BASE_URL_CLIENT = "http://localhost:5500/"
+const BASE_URL_SERVER = "http://localhost:8080/"
 
-const email = document.getElementById("email");
-const password = document.getElementById("password");
+const emailField = document.getElementById("email");
+const passwordField = document.getElementById("password");
 const submit = document.getElementById("submit");
 
 submit.addEventListener("click", (e) => {
     e.preventDefault();
     enviar();
-    
 })
 
 function enviar(){
     const pessoaLogin = {};
-    pessoaLogin.email = email.value,
-    pessoaLogin.senha = password.value,
+    pessoaLogin.email = emailField.value
+    pessoaLogin.senha = passwordField.value
+    let status;
     fetch("http://localhost:8080/pessoa/auth",{
         method: "POST",
         headers: { "Content-Type":"application/json"},
         body: JSON.stringify(pessoaLogin)
     })
-    .then(res => res.json())
     .then(res => {
-        console.log(res.status)
-        localStorage.setItem("email", email.value)
-        localStorage.setItem("token", res.token)
-        setTimeout(1000)
-        direcionamento(res.status)
+        status = res.status;
+        return res.json();
+    })
+    .then(({ token, email }) => {
+        if(status == 200){
+            localStorage.setItem("email", email)
+            localStorage.setItem("token", token)
+            direcionamento()
+        }else if(status == 401) {
+            localStorage.clear()
+            alert("Usuário ou senha inválido")
+            emailField.value = ""
+            passwordField.value = ""
+        }else{
+            localStorage.clear()
+            alert("Ocorreu um erro ao logar, tente novamente mais tarde")
+            emailField.value = ""
+            passwordField.value = ""  
+        }
     })
 }
 
-function direcionamento(status){
-    console.log(status)
-    if(status == "200"){
-        location.href = main.BASE_URL; 
-    } else {
-        alert("Tente novamente")
-        email.value = ""
-        password.value = ""
-    }
+function direcionamento(){
+        location.href = BASE_URL_CLIENT ; 
 }

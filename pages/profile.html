@@ -6,33 +6,33 @@
         <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/profile.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg" href="../images/favicon.svg">
         <script src="https://kit.fontawesome.com/5660cb5f80.js" crossorigin="anonymous"></script>
+    
 
-        <title>KdMeuBichinho?</title>
+        <title>KdMeuBichinho? - Perfil</title>
     </head>
     <body>
         <header>
             <nav class="menu" id="menu">
-                <a href="./searchpage.html">
+                <a href="../index.html">
                     <img src="../images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
                 </a>
                 <input type="checkbox" id="bar">
                 <label for="bar" class="bars">&#9776;</label>
-                <ul>
-                    <li><a href="./searchpage.html">Início</a></li>
-                    <li><a href="./petadvert.html">Anúnciar &#9889;</a></li>
-                    <li><a href="./profile.html">Perfil</a></li>
-                    <li><a href="../index.html">Sair</a></li>
-                </ul>   
-            </nav>
+                <ul class="">
+                    <li><a href="../index.html">Início <!--<i class="fas fa-home"></i>--></a></li>
+                    <li><a href="./petadvert.html">Anunciar <!--<i class="fas fa-plus">--></i></a></li>
+                    <li><a href="./signup.html">Cadastrar <!--<i class="fas fa-user-plus"></i>--></a></li>
+                    <li><button class="btn-primary" onclick="location.href='login.html'">Entrar  <!--<i class="fas fa-sign-in-alt">--></i></button></li>
+                </ul>  
+            </nav>  
         </header>
         <main>
             <section class="content">
-                <div class="cont-animation bg-secondary">
-                    <img src="../images/profile.svg" alt="">
-                </div>
-                <div class="cont-profile">
-                    
+                <input type="checkbox" id="filter">
+                    <label for="filter" class="filters">Meu perfil <i class="fas fa-angle-down"></i></label>
+                <div class="cont-profile">  
                     <div>
                         <i class="fas fa-user dropbtn font-size-60"></i>
                     </div>
@@ -43,6 +43,73 @@
                     <label id="number">Número</label>
                     <label id="phone">Celular</label>
                     <button id="edit" class="btn-primary">Editar</button>
+                </div>
+                <div class="cont-ad">
+                    <label class="filters">Meus anuncios</label>
+                    <div class="res-card">
+                        <div class="res-card-img">
+                            <img src="http://localhost:8080/1606223944421-04-09_gato_SITE.jpg" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Bob</p>
+                            <p>Araraquara</p>
+                            <p>Vila Xavier</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <span class="tag">Procurando um lar</span>    
+                        </div>
+                        <div class="res-card-status">
+                            <p>Criado em: <span>25/11/2020</span></p>
+                            <p>Encerrado em: <span>--</span></p>
+                            <p>Situação: <span>Pendente</span></p>   
+                            <button class="btn-secondary">Encerrar</button>
+                        </div>
+                    </div>
+                    <div class="res-card">
+                        <div class="res-card-img">
+                            <img src="http://localhost:8080/1606223944421-04-09_gato_SITE.jpg" alt="">
+                        </div>
+                        <div class="res-card-txt">
+                            <p>Bob</p>
+                            <p>Araraquara</p>
+                            <p>Vila Xavier</p>
+                        </div>
+                        <div class="res-card-tag">
+                            <span class="tag">Procurando um lar</span>    
+                        </div>
+                        <div class="res-card-status">
+                            <p>Criado em: <span>25/11/2020</span></p>
+                            <p>Encerrado em: <span>--</span></p>
+                            <p>Situação: <span>Pendente</span></p>   
+                            <button class="btn-secondary">Encerrar</button>
+                        </div>
+                    </div>
+                        <!-- <table>
+                            <tr>
+                              <th>Anúncio</th>
+                              <th>Nome</th>
+                              <th>Animal</th>
+                              <th>Categoria</th>
+                              <th>Cep</th>
+                              <th>Situação</th>
+                            </tr>
+                            <tr>
+                              <td><button class="btn-secondary">Encerrar</button> 1</td>
+                              <td>Bob</td>
+                              <td>Cachorro</td>
+                              <td>Fugiu de casa</td>
+                              <td>14810-125</td>
+                              <td>Pendente</td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn-secondary">Encerrar</button> 2</td>
+                                <td>Paçoca</td>
+                                <td>Cachorro</td>
+                                <td>Procurando um lar</td>
+                                <td>14810-125</td>
+                                <td>Pendente</td>
+                            </tr>
+                          </table> -->
                 </div>
             </section>
         </main>
