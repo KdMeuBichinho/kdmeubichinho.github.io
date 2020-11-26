@@ -25,8 +25,8 @@ btnBuscar.addEventListener("click", () => {
 btnAplicarFiltro.addEventListener("click", () => {
     buscaAnimais(page);
 });
-function capturaAnimal(idAnimal) {
-    localStorage.setItem("idAnimal", idAnimal)
+function capturaAnuncio(idAnuncio) {
+    localStorage.setItem("idAnuncio", idAnuncio)
 }
 
 
@@ -108,14 +108,14 @@ function buscaAnimais(pagina){
                 for(let anuncioRecebido of anuncio.content){
                     cardsArea.innerHTML += 
                         `
-                            <a href="${BASE_URL_CLIENT}pages/petprofile.html" class="res-card" onclick="capturaAnimal(${anuncioRecebido.idAnuncio})">
+                            <a href="${BASE_URL_CLIENT}pages/petprofile.html" class="res-card" onclick="capturaAnuncio(${anuncioRecebido.idAnuncio})">
                                 <div class="res-card-img">
                                     <img src="${BASE_URL_SERVER}${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
                                 </div>
                                 <div class="res-card-txt">
                                     <p>${anuncioRecebido.idAnimal.nome}</p>
-                                    <p>${anuncioRecebido.idAnimal.localidade}</p>
                                     <p>${anuncioRecebido.idAnimal.bairro}</p>
+                                    <p>${anuncioRecebido.idAnimal.localidade}</p>
                                 </div>
                                 <div class="res-card-tag">
                                     <span class="tag">${anuncioRecebido.idCategoria.classificacao}</span>    
