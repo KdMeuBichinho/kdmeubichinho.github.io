@@ -22,8 +22,7 @@ phone.addEventListener("keypress", function (){
 });
 cep.addEventListener("keypress", function (){ 
     if(cep.value.length == 5)
-        cep.value = cep.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do cep.
-    
+        cep.value = cep.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do cep. 
 });
 
 function formatnumber(number){
@@ -48,7 +47,7 @@ cep.addEventListener("blur",()=>{
     }   
 });
 button.addEventListener("click",(e)=>{
-    e.preventDefault();
+    //e.preventDefault();
     pessoa.logradouro = street.value
     pessoa.complemento = complement.value
     pessoa.celular=formatnumber(phone.value);

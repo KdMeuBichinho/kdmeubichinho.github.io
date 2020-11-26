@@ -1,5 +1,6 @@
 const BASE_URL_CLIENT = "http://localhost:5500/"
 const BASE_URL_SERVER = "http://localhost:8080/"
+const API_AUTH = "pessoa/auth"
 
 const emailField = document.getElementById("email");
 const passwordField = document.getElementById("password");
@@ -15,7 +16,7 @@ function enviar(){
     pessoaLogin.email = emailField.value
     pessoaLogin.senha = passwordField.value
     let status;
-    fetch("http://localhost:8080/pessoa/auth",{
+    fetch(`${BASE_URL_SERVER}${API_AUTH}`,{
         method: "POST",
         headers: { "Content-Type":"application/json"},
         body: JSON.stringify(pessoaLogin)
