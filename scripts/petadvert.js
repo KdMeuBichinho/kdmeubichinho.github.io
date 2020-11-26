@@ -22,6 +22,10 @@ const especie = {};
 const categoriaAnuncio = {};
 const pessoa = {};
 
+function formatnumber(number){
+    return number.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ^a-zA-Z]/gi, '')
+}
+
 // function atualizaDadosViaCep(cep){
 //     fetch(`https://viacep.com.br/ws/${cep}/json/`)
 //         .then(res => res.json())
@@ -75,7 +79,9 @@ const uploadFile = (file) => {
     })
     .catch(err => console.log(err))
 }
-anunciar.addEventListener("click", () =>{
+anunciar.addEventListener("click", (e) =>{
+    e.preventDefault()
+    
     for(let especieFormFor of especieForm){
         if(especieFormFor.checked) especie.idEspecie = especieFormFor.value;
     }
@@ -106,7 +112,9 @@ anunciar.addEventListener("click", () =>{
     anuncio.idAnimal = animal;
     anuncio.dataCriacao = new Date();
 
-    fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+    let newCep = formatnumber(cep.value)
+
+    fetch(`https://viacep.com.br/ws/${newCep}/json/`)
         .then(res => res.json())
         .then(local => {
             animal.logradouro = local.logradouro
