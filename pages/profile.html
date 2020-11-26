@@ -45,7 +45,7 @@
                     <label id="phone">Celular</label>
                     <button id="edit" class="btn-primary">Editar</button>
                 </div>
-                <div class="cont-ad">
+                <div class="cont-ad" id="cards_area">
                     <label class="filters">Meus anuncios</label>
                     <div class="res-card">
                         <div class="res-card-img">
@@ -126,12 +126,12 @@
             <div class="modal">
                 <h2>Editar</h2>
                 <form action="">
-                    <input type="text" name="Nome e Sobrenome" id="name_edit" placeholder="Nome" required/>
-                    <input type="text" name="cep" id="zip_code_edit" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP: xxxxx-xxx" required/>
-                    <input type="text" name="street" id="street_edit" placeholder="Rua"required/>
-                    <input type="text" name="number" id="number_edit" placeholder="Número" required/>
-                    <input type="text" name="Complemento" id="complement_edit" placeholder="Complemento"/>
-                    <input type="tel" name="phone" id="phone_edit" placeholder="Celular:(xx)9xxxx-xxxx" required/>
+                    <input type="text" name="Nome e Sobrenome" id="name_edit" placeholder="Nome" title="Nome e sobrenome" required/>
+                    <input type="text" name="cep" id="zip_code_edit" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP: xxxxx-xxx" title="CEP" required/>
+                    <input type="text" name="street" id="street_edit" placeholder="Rua" title="Rua" required/>
+                    <input type="text" name="number" id="number_edit" placeholder="Número" title="Número" required/>
+                    <input type="text" name="Complemento" id="complement_edit" placeholder="Complemento" title="Complemento"/>
+                    <input type="tel" name="phone" id="phone_edit" placeholder="Celular:(xx)9xxxx-xxxx" title="Celular" required/>
                     <div>
                         <button type="reset" id="cancel" class="btn-transparent">Cancelar</button>
                         <button type="submit" id="save" class="btn-primary">Salvar</button>

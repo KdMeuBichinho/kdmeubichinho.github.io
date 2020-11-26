@@ -45,10 +45,53 @@ function inserePessoaNaTela(pessoa){
     phoneLabel.textContent = `Celular: ${pessoa.celular}`;
 }
 
+function capturaAnuncio(idAnuncio) {
+    localStorage.setItem("idAnuncio", idAnuncio)
+}
+
+const cardsArea = document.querySelector('#cards_area')
+
 function buscaAnuncios(email){
+    cardsArea.innerHTML = `<label class="filters">Meus anuncios</label>`
+
     fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${queryPessoaEmail}${email}`)
         .then(res => res.json())
-        .then(res => console.log(res))
+        .then(anuncio => {
+            if(!anuncio.empty){
+                for(let anuncioRecebido of anuncio.content){
+                    cardsArea.innerHTML += 
+                        `
+                        <div class="res-card">
+                            <a href="${BASE_URL_CLIENT}pages/petprofile.html" class="res-card-link" onclick="capturaAnuncio(${anuncioRecebido.idAnuncio})">
+                                <div class="res-card-img">
+                                    <img src="${BASE_URL_SERVER}${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
+                                </div>
+                                <div class="res-card-txt">
+                                    <p>${anuncioRecebido.idAnimal.nome}</p>
+                                    <p>${anuncioRecebido.idAnimal.bairro}</p>
+                                    <p>${anuncioRecebido.idAnimal.localidade}</p>
+                                </div>
+                                <div class="res-card-tag">
+                                    <span class="tag">${anuncioRecebido.idCategoria.classificacao}</span>     
+                                </div>
+                            </a>
+                            <div class="res-card-status">
+                                <p>Criado em: <span>${anuncioRecebido.dataCriacao}</span></p>
+                                <p>Encerrado em: <span>${anuncioRecebido.dataEncerramento}</span></p>
+                                <p>Situação: <span>${anuncioRecebido.status}</span></p>   
+                                <button class="btn-secondary">Encerrar</button>
+                            </div>
+                        </div>
+                        `
+                }
+            }else{
+                cardsArea.innerHTML +=
+                    `<div>
+                        <p>Opss, parece que você ainda não possui nenhum anuncio por aqui <i class="fas fa-ghost"></i></p>
+                    </div>`
+
+            }
+        })
 }
 
 const btnEdit = document.getElementById('edit');
@@ -121,7 +164,6 @@ zipCodeEdit.addEventListener("blur", ()=>{
     }   
 });
 function editaPessoa(pessoa){
-    //http://localhost:8080/pessoa/
     fetch(`${BASE_URL_SERVER}${API_PESSOA}${email}`,{
         method: "PUT",
         headers: { "Content-Type":"application/json"},
@@ -131,7 +173,7 @@ function editaPessoa(pessoa){
     .then(res => console.log(res))
     .catch(err => console.log(err))
 
-    console.log(pessoa)
+    inserePessoaNaTela(pessoa)
 }
 
 buscaPessoa()
