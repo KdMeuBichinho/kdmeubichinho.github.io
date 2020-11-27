@@ -2,6 +2,7 @@ const BASE_URL_CLIENT = "http://localhost:5500/"
 const BASE_URL_SERVER = "http://localhost:8080/"
 const API_ANUNCIO = "anuncio/"
 const API_PESSOA = "pessoa/"
+const API_ATUALIZA_STATUS = "atualizastatus/"
 const queryPessoaEmail = "pessoa?email="
 const queryEmail = "email?email="
 const email = localStorage.getItem('email');
@@ -59,6 +60,18 @@ function buscaAnuncios(email){
         .then(anuncio => {
             if(!anuncio.empty){
                 for(let anuncioRecebido of anuncio.content){
+
+                    let buttonAnuncio;
+                    let classButton;
+
+                    if(anuncioRecebido.status == "Ativo"){
+                        buttonAnuncio = "Encerrar"
+                        classButton = "btn-secondary"
+                    }else if(anuncioRecebido.status == "Inativo"){
+                        buttonAnuncio = "Ativar"
+                        classButton = "btn-invert-secondary"
+                    }
+
                     cardsArea.innerHTML += 
                         `
                         <div class="res-card">
@@ -79,7 +92,7 @@ function buscaAnuncios(email){
                                 <p>Criado em: <span>${anuncioRecebido.dataCriacao}</span></p>
                                 <p>Encerrado em: <span>${anuncioRecebido.dataEncerramento}</span></p>
                                 <p>Situação: <span>${anuncioRecebido.status}</span></p>   
-                                <button class="btn-secondary">Encerrar</button>
+                                <button class="${classButton}" onclick="atualizaStatus(${anuncioRecebido.idAnuncio})">${buttonAnuncio}</button>
                             </div>
                         </div>
                         `
@@ -174,6 +187,20 @@ function editaPessoa(pessoa){
     .catch(err => console.log(err))
 
     inserePessoaNaTela(pessoa)
+}
+function atualizaStatus(idAnuncio){
+
+    fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${API_ATUALIZA_STATUS}${idAnuncio}`,{
+        method: "PUT",
+        headers: { "Content-Type":"application/json"}
+    })
+    .then(() => {
+        buscaAnuncios(email)
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+
 }
 
 buscaPessoa()

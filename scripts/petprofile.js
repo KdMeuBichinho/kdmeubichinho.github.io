@@ -6,6 +6,7 @@ const foto = document.querySelector('#container_img');
 const contato = document.querySelector('#contact');
 const categoria = document.querySelector('#categoria');
 const id = localStorage.getItem('idAnuncio');
+const email = localStorage.getItem('email');
 const messageArea = document.querySelector('#message_area');
 const message = document.querySelector('#message');
 const send = document.querySelector('#send');
@@ -55,8 +56,8 @@ function enviaMensagem(){
     const idPessoa = {}
 
     if(message.value){
-        idAnuncio.idAnuncio = localStorage.getItem('idAnimal');
-        idPessoa.email = localStorage.getItem('email');
+        idAnuncio.idAnuncio = id;
+        idPessoa.email = email;
 
         mensagem.dataMensagem = new Date();
         mensagem.idAnuncio = idAnuncio;
