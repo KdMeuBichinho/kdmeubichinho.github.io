@@ -47,7 +47,7 @@ cep.addEventListener("blur",()=>{
     }   
 });
 button.addEventListener("click",(e)=>{
-    //e.preventDefault();
+    e.preventDefault();
     pessoa.logradouro = street.value
     pessoa.complemento = complement.value
     pessoa.celular=formatnumber(phone.value);
