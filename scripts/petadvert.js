@@ -12,7 +12,7 @@ const cep = document.querySelector("#cep");
 
 const BASE_URL_CLIENT = "http://localhost:5500/"
 const BASE_URL_SERVER = "http://localhost:8080/"
-const API_FOTO = "foto";
+const API_FOTO = "storage/upload";
 const API_ANUNCIO = "anuncio";
 
 const anuncio = {};
@@ -67,7 +67,7 @@ photo.addEventListener("change", ()=>{
 const uploadFile = (file) => {
    
     const fd = new FormData();
-    fd.append("image", file)
+    fd.append("file", file)
     fetch(`${BASE_URL_SERVER}${API_FOTO}`,{
         method: "POST",
         body: fd
@@ -111,6 +111,9 @@ anunciar.addEventListener("click", (e) =>{
     anuncio.idPessoa = pessoa;
     anuncio.idAnimal = animal;
     anuncio.dataCriacao = new Date();
+
+    anuncio.dataCriacao.setHours(anuncio.dataCriacao.getHours() - 3);
+
 
     let newCep = formatnumber(cep.value)
 

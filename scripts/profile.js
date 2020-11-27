@@ -50,6 +50,13 @@ function capturaAnuncio(idAnuncio) {
     localStorage.setItem("idAnuncio", idAnuncio)
 }
 
+function adicionaZero(numero){
+    if (numero <= 9) 
+        return "0" + numero;
+    else
+        return numero; 
+}
+
 const cardsArea = document.querySelector('#cards_area')
 
 function buscaAnuncios(email){
@@ -60,6 +67,17 @@ function buscaAnuncios(email){
         .then(anuncio => {
             if(!anuncio.empty){
                 for(let anuncioRecebido of anuncio.content){
+
+                    const dataCriado = new Date(Date.parse(anuncioRecebido.dataCriacao))
+                    let dataCriadoFormatada = adicionaZero((dataCriado.getDate())) + "." + ((dataCriado.getMonth() + 1)) + "." + dataCriado.getFullYear() + " - " + (dataCriado.getHours() + 3) + ":" + adicionaZero(dataCriado.getMinutes()); 
+                    
+                    let dataEncerradoFormatada
+                    if(anuncioRecebido.dataEncerramento){
+                        const dataEncerrado = new Date(Date.parse(anuncioRecebido.dataEncerramento))
+                        dataEncerradoFormatada = adicionaZero((dataEncerrado.getDate())) + "." + ((dataEncerrado.getMonth() + 1)) + "." + dataEncerrado.getFullYear() + " - " + (dataEncerrado.getHours() + 3) + ":" + adicionaZero(dataEncerrado.getMinutes()); 
+                    }else{
+                        dataEncerradoFormatada = ""
+                    }
 
                     let buttonAnuncio;
                     let classButton;
@@ -77,7 +95,7 @@ function buscaAnuncios(email){
                         <div class="res-card">
                             <a href="${BASE_URL_CLIENT}pages/petprofile.html" class="res-card-link" onclick="capturaAnuncio(${anuncioRecebido.idAnuncio})">
                                 <div class="res-card-img">
-                                    <img src="${BASE_URL_SERVER}${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
+                                    <img src="${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
                                 </div>
                                 <div class="res-card-txt">
                                     <p>${anuncioRecebido.idAnimal.nome}</p>
@@ -89,8 +107,8 @@ function buscaAnuncios(email){
                                 </div>
                             </a>
                             <div class="res-card-status">
-                                <p>Criado em: <span>${anuncioRecebido.dataCriacao}</span></p>
-                                <p>Encerrado em: <span>${anuncioRecebido.dataEncerramento}</span></p>
+                                <p>Criado em: <span>${dataCriadoFormatada}</span></p>
+                                <p>Encerrado em: <span>${dataEncerradoFormatada}</span></p>
                                 <p>Situação: <span>${anuncioRecebido.status}</span></p>   
                                 <button class="${classButton}" onclick="atualizaStatus(${anuncioRecebido.idAnuncio})">${buttonAnuncio}</button>
                             </div>
