@@ -184,6 +184,15 @@ i{
     color: var(--secondary-color);
     border: 2px solid var(--secondary-color);
 }
+.btn-invert-secondary{
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);   
+}
+.btn-invert-secondary:hover{
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
 
 .btn-transparent{
     background-color: transparent;
