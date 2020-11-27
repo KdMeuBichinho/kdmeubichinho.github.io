@@ -10,11 +10,19 @@ const email = localStorage.getItem('email');
 const messageArea = document.querySelector('#message_area');
 const message = document.querySelector('#message');
 const send = document.querySelector('#send');
+const update = document.querySelector('#update');
 
 const BASE_URL_CLIENT = "http://localhost:5500/"
 const BASE_URL_SERVER = "http://localhost:8080/"
 const API_ANUNCIO = "anuncio/"
 const API_MENSAGEM = "mensagem/"
+
+function adicionaZero(numero){
+    if (numero <= 9) 
+        return "0" + numero;
+    else
+        return numero; 
+}
 
 async function atualizaMensagens(){
     var messageScroll = document.getElementById('message_area');
@@ -34,13 +42,18 @@ async function atualizaMensagens(){
                 // a must be equal to b
                 return 0;
               });
+
             for(let mensagem of anuncio.mensagens){
+
+                const data = new Date(Date.parse(mensagem.dataMensagem))
+                let dataFormatada = adicionaZero((data.getDate())) + "." + ((data.getMonth() + 1)) + "." + data.getFullYear() + " - " + (data.getHours() + 3) + ":" + adicionaZero(data.getMinutes()); 
+
                 messageArea.innerHTML += 
                 `
                     <p class="style-message">
                     <span><strong>${mensagem.idPessoa.nome}:</strong></span>
                     ${mensagem.mensagem}
-                    <span>${mensagem.dataMensagem}</span>
+                    <span>${dataFormatada}</span>
                     </p>
                 `
             }
@@ -60,6 +73,8 @@ function enviaMensagem(){
         idPessoa.email = email;
 
         mensagem.dataMensagem = new Date();
+        mensagem.dataMensagem.setHours(mensagem.dataMensagem.getHours() - 3);
+
         mensagem.idAnuncio = idAnuncio;
         mensagem.idPessoa = idPessoa;
         mensagem.mensagem = message.value;
@@ -83,6 +98,7 @@ function enviaMensagem(){
     
 
 }
+update.addEventListener('click', atualizaMensagens)
 
 send.addEventListener('click', enviaMensagem);
 
@@ -107,7 +123,7 @@ fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${id}`)
             anuncio.idAnimal.castrado? tags.innerHTML += `<span class="tag">Castrado</span>` : null
             anuncio.idAnimal.vacinado? tags.innerHTML += `<span class="tag">Vacinado</span>` : null
 
-            foto.innerHTML += `<img src="${BASE_URL_SERVER}${anuncio.idAnimal.fotos.caminho}">`
+            foto.innerHTML += `<img src="${anuncio.idAnimal.fotos.caminho}">`
 
             contato.innerHTML += 
                 `

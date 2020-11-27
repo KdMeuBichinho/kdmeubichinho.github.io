@@ -8,6 +8,7 @@ const cardsArea = document.querySelector("#cards_area");
 const paginationArea = document.querySelector("#pagination");
 const numberResults = document.querySelector("#title_filters_result")
 const card = document.querySelector('.res-card')
+const logout = document.querySelector('#logout')
 
 const BASE_URL_CLIENT = "http://localhost:5500/"
 const BASE_URL_SERVER = "http://localhost:8080/"
@@ -110,7 +111,7 @@ function buscaAnimais(pagina){
                         `
                             <a href="${BASE_URL_CLIENT}pages/petprofile.html" class="res-card" onclick="capturaAnuncio(${anuncioRecebido.idAnuncio})">
                                 <div class="res-card-img">
-                                    <img src="${BASE_URL_SERVER}${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
+                                    <img src="${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
                                 </div>
                                 <div class="res-card-txt">
                                     <p>${anuncioRecebido.idAnimal.nome}</p>
@@ -139,4 +140,10 @@ function buscaAnimais(pagina){
             }
             numberResults.textContent = `${anuncio.totalElements} resultados encontrados.`
         })
+}
+logout.addEventListener('click', fazlogout);
+
+function fazlogout(){
+    localStorage.removeItem('email')
+    localStorage.removeItem('token')
 }
