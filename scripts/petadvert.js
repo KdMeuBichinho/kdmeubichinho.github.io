@@ -10,22 +10,12 @@ const vacinado = document.querySelector("#vacinado")
 const nome = document.querySelector("#nome");
 const cep = document.querySelector("#cep");
 
-const BASE_URL_CLIENT = "http://localhost:5500/"
-const BASE_URL_SERVER = "http://localhost:8080/"
-const CLIENT_PETPROFILE = "pages/petprofile.html"
-const API_FOTO = "storage/upload";
-const API_ANUNCIO = "anuncio";
-
 const anuncio = {};
 const animal = {};
 const fotos = {};
 const especie = {};
 const categoriaAnuncio = {};
 const pessoa = {};
-
-function formatnumber(number){
-    return number.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ^a-zA-Z]/gi, '')
-}
 
 // function atualizaDadosViaCep(cep){
 //     fetch(`https://viacep.com.br/ws/${cep}/json/`)
@@ -123,19 +113,13 @@ function verificaCamposObrigatorios(){
         return false
     }
 }
-function capturaAnuncio(idAnuncio) {
-    localStorage.setItem("idAnuncio", idAnuncio)
-}
 anunciar.addEventListener("click", (e) =>{
     e.preventDefault()
-    
+
     constroiAnuncio()
 
     if(verificaCamposObrigatorios()){
-
-
         let newCep = formatnumber(cep.value)    
-
         fetch(`https://viacep.com.br/ws/${newCep}/json/`)
             .then(res => res.json())
             .then(local => {
@@ -165,6 +149,4 @@ anunciar.addEventListener("click", (e) =>{
     }else{
         window.alert('Campos obrigatórios não preenchidos')
     }
-
-    
 })

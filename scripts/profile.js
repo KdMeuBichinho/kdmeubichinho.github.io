@@ -1,8 +1,3 @@
-const BASE_URL_CLIENT = "http://localhost:5500/"
-const BASE_URL_SERVER = "http://localhost:8080/"
-const API_ANUNCIO = "anuncio/"
-const API_PESSOA = "pessoa/"
-const API_ATUALIZA_STATUS = "atualizastatus/"
 const queryPessoaEmail = "pessoa?email="
 const queryEmail = "email?email="
 const email = localStorage.getItem('email');
@@ -45,18 +40,6 @@ function inserePessoaNaTela(pessoa){
     complementLabel.textContent = `Complemento: ${pessoa.complemento}`;
     phoneLabel.textContent = `Celular: ${pessoa.celular}`;
 }
-
-function capturaAnuncio(idAnuncio) {
-    localStorage.setItem("idAnuncio", idAnuncio)
-}
-
-function adicionaZero(numero){
-    if (numero <= 9) 
-        return "0" + numero;
-    else
-        return numero; 
-}
-
 const cardsArea = document.querySelector('#cards_area')
 
 function buscaAnuncios(email){
@@ -161,22 +144,33 @@ phoneEdit.addEventListener("keypress", function (){
     if(phoneEdit.value.length == 10)
         phoneEdit.value = phoneEdit.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
 });
-btnSave.addEventListener('click',(e) => {
-    e.preventDefault()
-
+function verificaCamposObrigatorios(){
+    if(pessoa.nome && pessoa.cep && pessoa.logradouro && pessoa.numeroResidencial && pessoa.celular){
+        return true
+    } else {
+        return false
+    }
+}
+function constroiPessoa(){
     pessoa.nome = nameEdit.value;
     pessoa.cep = zipCodeEdit.value;
     pessoa.logradouro = streetEdit.value;
     pessoa.numeroResidencial = numberEdit.value;
     pessoa.complemento = complementEdit.value;
     pessoa.celular = formatnumber(phoneEdit.value);
-
-    editaPessoa(pessoa)
-} )
-
-function formatnumber(number){
-    return number.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ^a-zA-Z]/gi, '')
 }
+btnSave.addEventListener('click',(e) => {
+    e.preventDefault()
+
+    constroiPessoa();
+    if(verificaCamposObrigatorios()){
+        editaPessoa(pessoa)
+        window.alert('Usuário editado com sucesso!')
+        modal.classList.remove('show');
+    }else{
+        window.alert('Campos obrigatórios não preenchidos')
+    }
+} )
 zipCodeEdit.addEventListener("blur", ()=>{
     if(zipCodeEdit.value && zipCodeEdit.value.length == 9){
         let newcep=formatnumber(zipCodeEdit.value)
