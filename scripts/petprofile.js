@@ -63,6 +63,7 @@ async function atualizaMensagens(){
         })
 }
 
+
 function enviaMensagem(){
     const mensagem = {}
     const idAnuncio = {}
@@ -93,6 +94,8 @@ function enviaMensagem(){
         .catch(err => console.log(err))
 
         
+    } else {
+        window.alert('Campos obrigatórios não preenchidos')
     }
 
     
