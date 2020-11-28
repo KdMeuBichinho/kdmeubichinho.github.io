@@ -8,6 +8,11 @@ const number = document.getElementById("number");
 const password = document.getElementById("password");
 const complement = document.getElementById("complement");
 
+const BASE_URL_CLIENT = "http://localhost:5500/"
+const BASE_URL_SERVER = "http://localhost:8080/"
+const CLIENT_LOGIN = "pages/login.html"
+const API_PESSOA = "pessoa"
+
 const pessoa = {};
 
 phone.addEventListener("keypress", function (){ 
@@ -46,8 +51,7 @@ cep.addEventListener("blur",()=>{
         })
     }   
 });
-button.addEventListener("click",(e)=>{
-    e.preventDefault();
+function constroiPessoa(){
     pessoa.logradouro = street.value
     pessoa.complemento = complement.value
     pessoa.celular=formatnumber(phone.value);
@@ -55,14 +59,35 @@ button.addEventListener("click",(e)=>{
     pessoa.nome=nameUser.value;
     pessoa.numeroResidencial=number.value;
     pessoa.senha=password.value;
-    fetch("http://localhost:8080/pessoa",{
-        method: "POST",
-        headers: { "Content-Type":"application/json"},
-        body: JSON.stringify(pessoa)
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+}
+function verificaCamposObrigatorios(){
+    if(cep.value && pessoa.nome && pessoa.email && pessoa.logradouro && pessoa.numeroResidencial && pessoa.celular && pessoa.senha){
+        return true
+    }else{
+        return false
+    }
+}
+button.addEventListener("click",(e)=>{
+    e.preventDefault();
+
+    constroiPessoa();
+    
+    if(verificaCamposObrigatorios()){
+        fetch(`${BASE_URL_SERVER}${API_PESSOA}`,{
+            method: "POST",
+            headers: { "Content-Type":"application/json"},
+            body: JSON.stringify(pessoa)
+        })
+        .then(res => res.json())
+        .then(() => {
+            window.alert('Usuário cadastrado com sucesso!')
+            location.href = `${BASE_URL_CLIENT}${CLIENT_LOGIN}`;
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }else{
+        window.alert('Campos obrigatórios não preenchidos')
+    }
 });
 
 

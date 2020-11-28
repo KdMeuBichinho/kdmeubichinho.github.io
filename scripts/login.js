@@ -45,5 +45,5 @@ function enviar(){
 }
 
 function direcionamento(){
-        location.href = BASE_URL_CLIENT ; 
+        location.href = BASE_URL_CLIENT; 
 }

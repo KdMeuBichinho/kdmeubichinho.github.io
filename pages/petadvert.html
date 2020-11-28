@@ -34,7 +34,7 @@
                 <h2 class="h2-secondary">Nos conte o que aconteceu e te ajudaremos a resolver</h2>
             </div>
             <form class="form">
-                <p><strong>Qual é o animal?</strong></p>
+                <p><strong>Qual é o animal? *</strong></p>
                 <label for="cachorro">
                     <input type="radio" name="especie" id="cachorro" value="1">
                     Cachorro
@@ -52,7 +52,7 @@
                     Coelho
                 </label>
                 
-                <p><strong>O que aconteceu?</strong></p>
+                <p><strong>O que aconteceu? *</strong></p>
                 <label for="fugiu">
                     <input type="radio" name="evento" id="fugiu" value="1">
                     Fugiu de Casa
@@ -67,7 +67,7 @@
                 </label>
             
                 <!-- <p class="details"><strong>Fale sobre suas caracteristicas</strong></p> -->
-                <p><strong>Sexo</strong></p>
+                <p><strong>Sexo *</strong></p>
                 <label for="macho">
                     <input type="radio" name="sexo" id="macho" value="MACHO">
                     Macho
@@ -80,7 +80,7 @@
                     <input type="radio" name="sexo" id="indeterminado" value="NAO_IDENTIFICADO">
                     Não identificado
                 </label>
-                <p><strong>Idade</strong></p>
+                <p><strong>Idade *</strong></p>
                 <label for="filhote">
                     <input type="radio" name="idade" id="filhote" value="FILHOTE">
                     Filhote
@@ -89,7 +89,7 @@
                     <input type="radio" name="idade" id="adulto" value="ADULTO">
                     Adulto
                 </label>
-                <p><strong>Porte</strong></p>
+                <p><strong>Porte *</strong></p>
                 <label for="pequeno">
                     <input type="radio" name="porte" id="pequeno" value="PEQUENO">
                     Pequeno
@@ -111,12 +111,12 @@
                     <input type="checkbox" name="outros" id="vacinado" value="vacinado">
                     Vacinado
                 </label>
-                <p><strong>Adicione uma foto</strong></p>
+                <p><strong>Adicione uma foto *</strong></p>
                 <input id="photo" type="file" />
                 <p><strong>Últimas perguntas</strong></p>
                 <div class="input-final">
                     <input type="text" name="nome" id="nome" placeholder="Nome do animal (caso saiba)">
-                    <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP (para rastreamento)" value="" required/> 
+                    <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP (para rastreamento) *" required/> 
                 </div>
 
                 <button type="submit" class="btn-primary" id="anunciar">Anunciar</button>

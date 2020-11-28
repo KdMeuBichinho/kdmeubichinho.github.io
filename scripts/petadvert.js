@@ -12,6 +12,7 @@ const cep = document.querySelector("#cep");
 
 const BASE_URL_CLIENT = "http://localhost:5500/"
 const BASE_URL_SERVER = "http://localhost:8080/"
+const CLIENT_PETPROFILE = "pages/petprofile.html"
 const API_FOTO = "storage/upload";
 const API_ANUNCIO = "anuncio";
 
@@ -79,9 +80,7 @@ const uploadFile = (file) => {
     })
     .catch(err => console.log(err))
 }
-anunciar.addEventListener("click", (e) =>{
-    e.preventDefault()
-    
+function constroiAnuncio(){
     for(let especieFormFor of especieForm){
         if(especieFormFor.checked) especie.idEspecie = especieFormFor.value;
     }
@@ -114,30 +113,58 @@ anunciar.addEventListener("click", (e) =>{
 
     anuncio.dataCriacao.setHours(anuncio.dataCriacao.getHours() - 3);
 
+    console.log(anuncio)
 
-    let newCep = formatnumber(cep.value)
+}
+function verificaCamposObrigatorios(){
+    if(especie.idEspecie && categoriaAnuncio.idCategoria && animal.sexo && animal.classificacaoEtaria && animal.porte && cep.value && photo.files[0]){
+        return true
+    }else{
+        return false
+    }
+}
+function capturaAnuncio(idAnuncio) {
+    localStorage.setItem("idAnuncio", idAnuncio)
+}
+anunciar.addEventListener("click", (e) =>{
+    e.preventDefault()
+    
+    constroiAnuncio()
 
-    fetch(`https://viacep.com.br/ws/${newCep}/json/`)
-        .then(res => res.json())
-        .then(local => {
-            animal.logradouro = local.logradouro
-            animal.cep = local.cep
-            animal.bairro = local.bairro
-            animal.localidade = local.localidade
-            animal.uf = local.uf
-            animal.ibge = local.ibge
-            animal.ddd = local.ddd
-        })
-        .then(() => {
-            fetch(`${BASE_URL_SERVER}${API_ANUNCIO}`,{
-                method: "POST",
-                headers: { "Content-Type":"application/json"},
-                body: JSON.stringify(anuncio)
-            })
+    if(verificaCamposObrigatorios()){
+
+
+        let newCep = formatnumber(cep.value)    
+
+        fetch(`https://viacep.com.br/ws/${newCep}/json/`)
             .then(res => res.json())
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-        })
+            .then(local => {
+                animal.logradouro = local.logradouro
+                animal.cep = local.cep
+                animal.bairro = local.bairro
+                animal.localidade = local.localidade
+                animal.uf = local.uf
+                animal.ibge = local.ibge
+                animal.ddd = local.ddd
+            })
+            .then(() => {
+                fetch(`${BASE_URL_SERVER}${API_ANUNCIO}`,{
+                    method: "POST",
+                    headers: { "Content-Type":"application/json"},
+                    body: JSON.stringify(anuncio)
+                })
+                .then(res => res.json())
+                .then(res => capturaAnuncio(res.idAnuncio))
+                .then(() => {
+                    window.alert('Anúncio cadastrado com sucesso!')
+                    location.href = `${BASE_URL_CLIENT}${CLIENT_PETPROFILE}`;
+                })
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
+            })
+    }else{
+        window.alert('Campos obrigatórios não preenchidos')
+    }
 
     
 })
