@@ -57,32 +57,38 @@ function enviaMensagem(){
     const idAnuncio = {}
     const idPessoa = {}
 
-    if(message.value){
-        idAnuncio.idAnuncio = id;
-        idPessoa.email = email;
-
-        mensagem.dataMensagem = new Date();
-        mensagem.dataMensagem.setHours(mensagem.dataMensagem.getHours() - 3);
-
-        mensagem.idAnuncio = idAnuncio;
-        mensagem.idPessoa = idPessoa;
-        mensagem.mensagem = message.value;
-
-        fetch(`${BASE_URL_SERVER}${API_MENSAGEM}`,{
-            method: "POST",
-            headers: { "Content-Type":"application/json"},
-            body: JSON.stringify(mensagem)
-        })
-        .then(res => res.json())
-        .then(() => {
-            atualizaMensagens()
-            message.value = ""
-        })
-        .then(res => console.log(res))
-        .catch(err => console.log(err))  
+    verificaToken()
+    if(token){
+        if(message.value){
+            idAnuncio.idAnuncio = id;
+            idPessoa.email = email;
+    
+            mensagem.dataMensagem = new Date();
+            mensagem.dataMensagem.setHours(mensagem.dataMensagem.getHours() - 3);
+    
+            mensagem.idAnuncio = idAnuncio;
+            mensagem.idPessoa = idPessoa;
+            mensagem.mensagem = message.value;
+    
+            fetch(`${BASE_URL_SERVER}${API_MENSAGEM}`,{
+                method: "POST",
+                headers: { "Content-Type":"application/json"},
+                body: JSON.stringify(mensagem)
+            })
+            .then(res => res.json())
+            .then(() => {
+                atualizaMensagens()
+                message.value = ""
+            })
+            .then(res => console.log(res))
+            .catch(err => console.log(err))  
+        } else {
+            window.alert('Campos obrigatórios não preenchidos')
+        }
     } else {
-        window.alert('Campos obrigatórios não preenchidos')
+        window.alert('Você precisa estar logado para enviar mensagens')
     }
+    
 }
 update.addEventListener('click', atualizaMensagens)
 send.addEventListener('click', enviaMensagem);
