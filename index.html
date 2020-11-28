@@ -13,18 +13,26 @@
 
 <body>
     <header class="">
-        <nav class="menu" id="menu">
-            <a href="./index.html">
-                <img src="./images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
+        <nav class="menu" id="menu_logout">
+            <a href="index.html">
+                <img src="../images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
             </a>
             <input type="checkbox" id="bar">
             <label for="bar" class="bars">&#9776;</label>
-            <ul class="display-none">
-                <li><a href="./index.html">Início <!--<i class="fas fa-home"></i>--></a></li>
+            <ul class="">
+                <li><a href="index.html">Início <!--<i class="fas fa-home"></i>--></a></li>
                 <li><a href="./pages/petadvert.html">Anunciar <!--<i class="fas fa-plus">--></i></a></li>
                 <li><a href="./pages/signup.html">Cadastrar <!--<i class="fas fa-user-plus"></i>--></a></li>
                 <li><button class="btn-primary" onclick="location.href='pages/login.html'">Entrar  <!--<i class="fas fa-sign-in-alt">--></i></button></li>
             </ul>  
+        </nav>
+        
+        <nav class="menu display-none" id="menu_login">
+            <a href="./index.html">
+                <img src="./images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
+            </a>
+            <input type="checkbox" id="bar">
+            <label for="bar" class="bars">&#9776;</label> 
             <ul>
                 <li><a href="./index.html">Início </a></li>
                 <li><a href="./pages/petadvert.html">Anunciar</a></li>
@@ -32,13 +40,13 @@
                     <div class="dropdown">
                         <i class="fas fa-user dropbtn"></i>
                         <div class="dropdown-content">
-                          <a href="./pages/profile.html">Meus anuncios</a>
-                          <a href="#" id="logout">Sair</a>
+                            <a href="./pages/profile.html">Meus anuncios</a>
+                            <a href="#" id="logout">Sair</a>
                         </div>
-                      </div>
+                    </div>
                 </li>
-            </ul>  
-        </nav>     
+            </ul>
+        </nav>  
     </header>
     <main>
         <!-- <section class="section-home">

@@ -9,6 +9,8 @@ const paginationArea = document.querySelector("#pagination");
 const numberResults = document.querySelector("#title_filters_result")
 const card = document.querySelector('.res-card')
 const logout = document.querySelector('#logout')
+const menuLogin = document.querySelector('#menu_login')
+const menuLogout = document.querySelector('#menu_logout')
 
 const BASE_URL_CLIENT = "http://localhost:5500/"
 const BASE_URL_SERVER = "http://localhost:8080/"
@@ -146,4 +148,16 @@ logout.addEventListener('click', fazlogout);
 function fazlogout(){
     localStorage.removeItem('email')
     localStorage.removeItem('token')
+    verificaToken()
 }
+function verificaToken(){
+    if(localStorage.getItem('token')){
+        menuLogin.classList.remove('display-none')
+        menuLogout.classList.add('display-none')
+    }else{
+        menuLogin.classList.add('display-none')
+        menuLogout.classList.remove('display-none')
+    }
+}
+
+verificaToken()

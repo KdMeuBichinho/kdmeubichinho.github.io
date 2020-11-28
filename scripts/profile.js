@@ -161,17 +161,32 @@ phoneEdit.addEventListener("keypress", function (){
     if(phoneEdit.value.length == 10)
         phoneEdit.value = phoneEdit.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
 });
-btnSave.addEventListener('click',(e) => {
-    e.preventDefault()
-
+function verificaCamposObrigatorios(){
+    if(pessoa.nome && pessoa.cep && pessoa.logradouro && pessoa.numeroResidencial && pessoa.celular){
+        return true
+    } else {
+        return false
+    }
+}
+function constroiPessoa(){
     pessoa.nome = nameEdit.value;
     pessoa.cep = zipCodeEdit.value;
     pessoa.logradouro = streetEdit.value;
     pessoa.numeroResidencial = numberEdit.value;
     pessoa.complemento = complementEdit.value;
     pessoa.celular = formatnumber(phoneEdit.value);
+}
+btnSave.addEventListener('click',(e) => {
+    e.preventDefault()
 
-    editaPessoa(pessoa)
+    constroiPessoa();
+    if(verificaCamposObrigatorios()){
+        editaPessoa(pessoa)
+        window.alert('Usuário editado com sucesso!')
+        modal.classList.remove('show');
+    }else{
+        window.alert('Campos obrigatórios não preenchidos')
+    }
 } )
 
 function formatnumber(number){

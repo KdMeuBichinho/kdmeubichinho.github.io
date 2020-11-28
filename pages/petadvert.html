@@ -12,7 +12,7 @@
 </head>
 <body>
     <header class="">
-        <nav class="menu" id="menu">
+        <nav class="menu" id="menu_logout">
             <a href="../index.html">
                 <img src="../images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
             </a>
@@ -24,7 +24,28 @@
                 <li><a href="./signup.html">Cadastrar <!--<i class="fas fa-user-plus"></i>--></a></li>
                 <li><button class="btn-primary" onclick="location.href='login.html'">Entrar  <!--<i class="fas fa-sign-in-alt">--></i></button></li>
             </ul>  
-        </nav>        
+        </nav>
+        
+        <nav class="menu display-none" id="menu_login">
+            <a href="../index.html">
+                <img src="../images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
+            </a>
+            <input type="checkbox" id="bar">
+            <label for="bar" class="bars">&#9776;</label>
+            <ul>
+                <li><a href="../index.html">Início </a></li>
+                <li><a href="./petadvert.html">Anunciar</a></li>
+                <li>
+                    <div class="dropdown">
+                        <i class="fas fa-user dropbtn"></i>
+                        <div class="dropdown-content">
+                            <a href="./profile.html">Meus anuncios</a>
+                            <a href="#" id="logout">Sair</a>
+                        </div>
+                        </div>
+                </li>
+            </ul>
+        </nav>  
     </header>
     <main>
         <section class="content">
