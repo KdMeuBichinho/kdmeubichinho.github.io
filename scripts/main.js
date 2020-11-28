@@ -9,9 +9,14 @@ const API_AUTH = "pessoa/auth"
 const API_PESSOA = "pessoa/"
 const API_ATUALIZA_STATUS = "atualizastatus/"
 const CLIENT_PETPROFILE = "pages/petprofile.html";
+const CLIENT_PETADVERT = "pages/petadvert.html"
 const CLIENT_LOGIN = "pages/login.html"
 
+const URL_BLOCK = [`${BASE_URL_CLIENT}${CLIENT_PETADVERT}`, ]
+
+let token = false;
 const menu = document.querySelector('#menu')
+const footer = document.querySelector('#footer')
 const localizacaoViaCep = {}
 const menuLogout = `
     <a href="${BASE_URL_CLIENT}">
@@ -46,18 +51,42 @@ const menuLogin = `
         </li>
     </ul>
 `
-
+const footerPages = `
+    <img src="http://localhost:5500/images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
+    <div>
+        <a href="https://github.com/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
+        <p>2020 Todos os direitos reservados.</p>
+    </div>
+    <a href="#main"><button class="btn-primary"><span class="footer-top-button"><i class="fas fa-chevron-up"></i></span></button></a>
+`
 function fazlogout(){
     localStorage.removeItem('email')
     localStorage.removeItem('token')
     verificaToken()
+    redirecionamentoIndex()
+
+}
+function verificaRota(rota){
+    if(!token){
+        for(rotaBloqueada of URL_BLOCK){
+            if(rotaBloqueada == rota){
+                window.alert('Você precisa estar logado para fazer anuncios')
+                location.href = BASE_URL_CLIENT + CLIENT_LOGIN
+            }
+        }
+    }
 }
 function verificaToken(){
     if(localStorage.getItem('token')){
-        menu.innerHTML = menuLogin
+        menu.innerHTML = menuLogin;
+        token = true;
     }else{
-        menu.innerHTML = menuLogout
+        menu.innerHTML = menuLogout;
+        token = false;
     }
+}
+function redirecionamentoIndex(){
+    location.href = BASE_URL_CLIENT; 
 }
 function capturaAnuncio(idAnuncio) {
     localStorage.setItem("idAnuncio", idAnuncio)
@@ -71,5 +100,10 @@ function adicionaZero(numero){
     else
         return numero; 
 }
+function atualizaFooter(){
+    footer.innerHTML = footerPages;
+}
 
+atualizaFooter()
 verificaToken()
+verificaRota(location.href)

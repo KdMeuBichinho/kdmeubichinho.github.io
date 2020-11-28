@@ -3,7 +3,6 @@ const btnAplicarFiltro = document.querySelector("#btn_aplicar_filtro")
 const imgSearch = document.querySelector(".img-home");
 const sectionSearch = document.querySelector(".search");
 const sectionResult = document.querySelector(".result");
-const footer = document.querySelector(".footer");
 const cardsArea = document.querySelector("#cards_area");
 const paginationArea = document.querySelector("#pagination");
 const numberResults = document.querySelector("#title_filters_result")

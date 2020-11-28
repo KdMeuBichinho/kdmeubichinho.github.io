@@ -70,6 +70,7 @@ body{
 }
 .side-right .box-text-message .style-message{
     line-height: 25px;
+    word-break: break-all;
 }
 .side-right .box-text-message .style-message span:last-child {
     font-size: 0.8em;
@@ -85,6 +86,7 @@ body{
     border-radius: var(--space);
     margin-right: 5px;
     font-size: 1.0em;
+
 }
 .side-right .btn-size {
     padding: 10px 15px;
@@ -93,11 +95,12 @@ body{
     margin-left: 10px;
 }
 .side-right .text-message {
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
 }
 .side-right .input-size {
-    flex: 3;
+    flex: 1;
 }
 
 
@@ -190,6 +193,16 @@ body{
 @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
+}
+
+@media(max-width: 399px){
+    .side-right .input-size{
+        flex: 0;
+    }
+    .side-right .btn-size{
+        flex: 0;
+        margin-left: 3px;
+    }
 }
   
 /* On smaller screens, decrease text size */

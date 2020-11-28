@@ -37,7 +37,7 @@ function enviar(){
             if(status == 200){
                 localStorage.setItem("email", email)
                 localStorage.setItem("token", token)
-                direcionamento()
+                redirecionamentoIndex()
             }else if(status == 401) {
                 localStorage.clear()
                 alert("Usuário ou senha inválido")
@@ -53,8 +53,7 @@ function enviar(){
     }else{
         window.alert('Campos obrigatórios não preenchidos')
     }
+   
 }
 
-function direcionamento(){
-        location.href = BASE_URL_CLIENT; 
-}
+

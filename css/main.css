@@ -157,10 +157,10 @@ i{
     padding: 5px 20px 10px 20px;
 }
 .footer button.btn-primary span{
-    margin-left: 5px;
-    font-size: 0.8em;
-    font-weight: 100;
-    color: var(--white-color);
+    font-size: 0.7em;
+}
+.footer-top-button i{
+    color: white;
 }
 .btn-primary{
     background-color: var(--primary-color);
