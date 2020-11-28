@@ -1,7 +1,3 @@
-const BASE_URL_CLIENT = "http://localhost:5500/"
-const BASE_URL_SERVER = "http://localhost:8080/"
-const API_AUTH = "pessoa/auth"
-
 const emailField = document.getElementById("email");
 const passwordField = document.getElementById("password");
 const submit = document.getElementById("submit");
@@ -57,7 +53,6 @@ function enviar(){
     }else{
         window.alert('Campos obrigatórios não preenchidos')
     }
-   
 }
 
 function direcionamento(){

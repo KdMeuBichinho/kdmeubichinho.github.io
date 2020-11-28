@@ -9,12 +9,7 @@ const paginationArea = document.querySelector("#pagination");
 const numberResults = document.querySelector("#title_filters_result")
 const card = document.querySelector('.res-card')
 const logout = document.querySelector('#logout')
-const menuLogin = document.querySelector('#menu_login')
-const menuLogout = document.querySelector('#menu_logout')
 
-const BASE_URL_CLIENT = "http://localhost:5500/"
-const BASE_URL_SERVER = "http://localhost:8080/"
-const API = "anuncio/busca?"
 const anuncio = {};
 
 let queryFilter = "";
@@ -31,15 +26,6 @@ btnAplicarFiltro.addEventListener("click", () => {
 function capturaAnuncio(idAnuncio) {
     localStorage.setItem("idAnuncio", idAnuncio)
 }
-
-
-// function reduzIndex(){
-//     imgSearch.classList.add("display-none");
-//     sectionSearch.classList.add("section-search-animation");
-//     sectionResult.classList.remove("display-none");
-//     footer.classList.remove("display-none")
-//     sessionStorage.setItem("estadoHome","visitado");
-// }
 function ampliaIndex(){
     imgSearch.classList.add("display-none")
     sectionSearch.classList.add("section-search-animation");
@@ -47,7 +33,6 @@ function ampliaIndex(){
     footer.classList.remove("display-none")
 }
 function atualizaFiltros(){
-
     // const filterFields = document.querySelectorAll('.filter-field')
     // let queryFilterArr = [];
 
@@ -64,16 +49,12 @@ function atualizaFiltros(){
 
     // queryFilterStr = queryFilterArr.join('&');
 
-
-
     let cep = document.querySelector("#cep").value;
     let idEspecie = document.querySelector("#especie").value
     let idCategoria = document.querySelector("#categoria").value
     let sexo = document.querySelector("#sexo").value
     let idade = document.querySelector("#idade").value
     let porte = document.querySelector("#porte").value
-    // let castrado = document.querySelector("#castrado").checked
-    // let vacinado = document.querySelector("#vacinado").checked
 
     queryFilter = ""
     cep = cep.substring(0,5)
@@ -84,12 +65,8 @@ function atualizaFiltros(){
     if(sexo) queryFilter += `sexo=${sexo}&`;
     if(idade) queryFilter += `classificacaoEtaria=${idade}&`;
     if(porte) queryFilter += `porte=${porte}&`;
-    // queryFilter += `castrado=${castrado}&`;
-    // queryFilter += `vacinado=${vacinado}&`;
     queryFilter += `status=ATIVO&`;
     queryFilter += `size=20&`;
-
-    
 
 }
 function selecionaPagina(pagina){
@@ -103,8 +80,7 @@ function buscaAnimais(pagina){
     cardsArea.innerHTML = ""
     paginationArea.innerHTML = ""
 
-
-    fetch(`${BASE_URL_SERVER}${API}${queryFilter}page=${pagina}`)
+    fetch(`${BASE_URL_SERVER}${API_ANUNCIO_BUSCA}${queryFilter}page=${pagina}`)
         .then(res => res.json())
         .then(anuncio => {
             if(!anuncio.empty){
@@ -143,21 +119,3 @@ function buscaAnimais(pagina){
             numberResults.textContent = `${anuncio.totalElements} resultados encontrados.`
         })
 }
-logout.addEventListener('click', fazlogout);
-
-function fazlogout(){
-    localStorage.removeItem('email')
-    localStorage.removeItem('token')
-    verificaToken()
-}
-function verificaToken(){
-    if(localStorage.getItem('token')){
-        menuLogin.classList.remove('display-none')
-        menuLogout.classList.add('display-none')
-    }else{
-        menuLogin.classList.add('display-none')
-        menuLogout.classList.remove('display-none')
-    }
-}
-
-verificaToken()

@@ -8,11 +8,6 @@ const number = document.getElementById("number");
 const password = document.getElementById("password");
 const complement = document.getElementById("complement");
 
-const BASE_URL_CLIENT = "http://localhost:5500/"
-const BASE_URL_SERVER = "http://localhost:8080/"
-const CLIENT_LOGIN = "pages/login.html"
-const API_PESSOA = "pessoa"
-
 const pessoa = {};
 
 phone.addEventListener("keypress", function (){ 
@@ -29,10 +24,6 @@ cep.addEventListener("keypress", function (){
     if(cep.value.length == 5)
         cep.value = cep.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do cep. 
 });
-
-function formatnumber(number){
-    return number.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ^a-zA-Z]/gi, '')
-}
 
 cep.addEventListener("blur",()=>{
     if(cep.value){

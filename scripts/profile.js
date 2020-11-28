@@ -1,8 +1,3 @@
-const BASE_URL_CLIENT = "http://localhost:5500/"
-const BASE_URL_SERVER = "http://localhost:8080/"
-const API_ANUNCIO = "anuncio/"
-const API_PESSOA = "pessoa/"
-const API_ATUALIZA_STATUS = "atualizastatus/"
 const queryPessoaEmail = "pessoa?email="
 const queryEmail = "email?email="
 const email = localStorage.getItem('email');
@@ -45,18 +40,6 @@ function inserePessoaNaTela(pessoa){
     complementLabel.textContent = `Complemento: ${pessoa.complemento}`;
     phoneLabel.textContent = `Celular: ${pessoa.celular}`;
 }
-
-function capturaAnuncio(idAnuncio) {
-    localStorage.setItem("idAnuncio", idAnuncio)
-}
-
-function adicionaZero(numero){
-    if (numero <= 9) 
-        return "0" + numero;
-    else
-        return numero; 
-}
-
 const cardsArea = document.querySelector('#cards_area')
 
 function buscaAnuncios(email){
@@ -188,10 +171,6 @@ btnSave.addEventListener('click',(e) => {
         window.alert('Campos obrigatórios não preenchidos')
     }
 } )
-
-function formatnumber(number){
-    return number.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ^a-zA-Z]/gi, '')
-}
 zipCodeEdit.addEventListener("blur", ()=>{
     if(zipCodeEdit.value && zipCodeEdit.value.length == 9){
         let newcep=formatnumber(zipCodeEdit.value)

@@ -12,23 +12,11 @@ const message = document.querySelector('#message');
 const send = document.querySelector('#send');
 const update = document.querySelector('#update');
 
-const BASE_URL_CLIENT = "http://localhost:5500/"
-const BASE_URL_SERVER = "http://localhost:8080/"
-const API_ANUNCIO = "anuncio/"
-const API_MENSAGEM = "mensagem/"
-
-function adicionaZero(numero){
-    if (numero <= 9) 
-        return "0" + numero;
-    else
-        return numero; 
-}
-
-async function atualizaMensagens(){
+function atualizaMensagens(){
     var messageScroll = document.getElementById('message_area');
     
     messageArea.innerHTML = ""
-    await fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${id}`)
+    fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${id}`)
         .then(res => res.json())
         .then(anuncio => {
             console.log(anuncio)
@@ -91,18 +79,12 @@ function enviaMensagem(){
             message.value = ""
         })
         .then(res => console.log(res))
-        .catch(err => console.log(err))
-
-        
+        .catch(err => console.log(err))  
     } else {
         window.alert('Campos obrigatórios não preenchidos')
     }
-
-    
-
 }
 update.addEventListener('click', atualizaMensagens)
-
 send.addEventListener('click', enviaMensagem);
 
 fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${id}`)
@@ -127,7 +109,6 @@ fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${id}`)
             anuncio.idAnimal.vacinado? tags.innerHTML += `<span class="tag">Vacinado</span>` : null
 
             foto.innerHTML += `<img src="${anuncio.idAnimal.fotos.caminho}">`
-
             contato.innerHTML += 
                 `
                     <div class="people"><strong>${anuncio.idPessoa.nome}</strong></div>
