@@ -38,17 +38,31 @@ function enviar(){
                 redirecionamentoIndex()
             }else if(status == 401) {
                 localStorage.clear()
-                alert("Usuário ou senha inválido")
+                //alert("Usuário ou senha inválido")
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Usuário ou senha inválido!'
+                  })
                 emailField.value = ""
                 passwordField.value = ""
             }else{
                 localStorage.clear()
-                alert("Ocorreu um erro ao logar, tente novamente mais tarde")
+                //alert("Ocorreu um erro ao logar, tente novamente mais tarde")
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Ocorreu um erro ao logar, tente novamente mais tarde!'
+                  })
                 emailField.value = ""
                 passwordField.value = ""  
             }
         })
     }else{
-        window.alert('Campos obrigatórios não preenchidos')
+        Swal.fire({
+            icon: 'info',
+            title: 'Oops...',
+            text: 'Você não preencheu todos os campos obrigatórios.'
+          })
     }
 }

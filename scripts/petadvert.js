@@ -101,13 +101,22 @@ anunciar.addEventListener("click", (e) =>{
                 .then(res => res.json())
                 .then(res => capturaAnuncio(res.idAnuncio))
                 .then(() => {
-                    window.alert('Anúncio cadastrado com sucesso!')
-                    location.href = `${BASE_URL_CLIENT}${CLIENT_PETPROFILE}`;
+                    //window.alert('Anúncio cadastrado com sucesso!')
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Anúncio cadastrado com sucesso!',
+                    })
+                    setTimeout(function(){location.href = `${BASE_URL_CLIENT}${CLIENT_PETPROFILE}`}, 1800);
                 })
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
             })
     }else{
-        window.alert('Campos obrigatórios não preenchidos')
+        //window.alert('Campos obrigatórios não preenchidos')
+        Swal.fire({
+            icon: 'info',
+            title: 'Oops...',
+            text: 'Você não preencheu todos os campos obrigatórios marcados com *'
+          })
     }
 })

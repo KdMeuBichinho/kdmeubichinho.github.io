@@ -70,6 +70,12 @@ function verificaRota(rota){
         for(rotaBloqueada of URL_BLOCK){
             if(rotaBloqueada == rota){
                 window.alert('Você precisa estar logado para fazer anuncios')
+                // Swal.fire({
+                //     icon: 'error',
+                //     title: 'Oops...',
+                //     text: 'Você precisa estar logado para enviar mensagens!',
+                //     footer: '<a href="./login.html">Entrar na minha conta</a>'
+                //   })
                 location.href = BASE_URL_CLIENT + CLIENT_LOGIN
             }
         }

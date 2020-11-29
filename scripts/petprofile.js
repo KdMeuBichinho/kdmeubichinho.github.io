@@ -80,10 +80,21 @@ function enviaMensagem(){
             .then(res => console.log(res))
             .catch(err => console.log(err))  
         } else {
-            window.alert('Campos obrigatórios não preenchidos')
+            //window.alert('Campos obrigatórios não preenchidos')
+            Swal.fire({
+                icon: 'info',
+                title: 'Oops...',
+                text: 'Você não escreveu nenhuma mensagem para enviar.'
+              })
         }
     } else {
-        window.alert('Você precisa estar logado para enviar mensagens')
+        //window.alert('Você precisa estar logado para enviar mensagens')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Você precisa estar logado para enviar mensagens!',
+            footer: '<a href="./login.html">Entrar na minha conta</a>'
+          })
     } 
 }
 update.addEventListener('click', atualizaMensagens)

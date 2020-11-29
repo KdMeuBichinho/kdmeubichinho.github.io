@@ -61,12 +61,12 @@
             <div class="modal">
                 <h2>Editar</h2>
                 <form>
-                    <input type="text" name="Nome e Sobrenome" id="name_edit" placeholder="Nome" title="Nome e sobrenome" required/>
-                    <input type="text" name="cep" id="zip_code_edit" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP: xxxxx-xxx" title="CEP" required/>
-                    <input type="text" name="street" id="street_edit" placeholder="Rua" title="Rua" required/>
-                    <input type="text" name="number" id="number_edit" placeholder="Número" title="Número" required/>
+                    <input type="text" name="Nome e Sobrenome" id="name_edit" placeholder="Nome*" title="Nome e sobrenome" required/>
+                    <input type="text" name="cep" id="zip_code_edit" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP: xxxxx-xxx*" title="CEP" required/>
+                    <input type="text" name="street" id="street_edit" placeholder="Rua*" title="Rua" required/>
+                    <input type="text" name="number" id="number_edit" placeholder="Número*" title="Número" required/>
                     <input type="text" name="Complemento" id="complement_edit" placeholder="Complemento" title="Complemento"/>
-                    <input type="tel" name="phone" id="phone_edit" placeholder="Celular:(xx)9xxxx-xxxx" title="Celular" required/>
+                    <input type="tel" name="phone" id="phone_edit" placeholder="Celular:(xx)9xxxx-xxxx*" title="Celular" required/>
                     <div>
                         <button type="reset" id="cancel" class="btn-transparent">Cancelar</button>
                         <button type="submit" id="save" class="btn-primary">Salvar</button>
@@ -76,5 +76,6 @@
         </div>
         <script src="../scripts/main.js"></script>
         <script src="../scripts/profile.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     </body>
 </html>
