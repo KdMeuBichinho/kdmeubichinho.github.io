@@ -1,5 +1,5 @@
-const BASE_URL_CLIENT = "http://localhost:5500/";
-const BASE_URL_SERVER = "http://localhost:8080/";
+const BASE_URL_CLIENT = "https://kdmeubichinho.github.io/";
+const BASE_URL_SERVER = "https://kdmeubichinho-app.herokuapp.com/";
 
 const API_ANUNCIO_BUSCA = "anuncio/busca?";
 const API_FOTO = "storage/upload";
@@ -52,7 +52,7 @@ const menuLogin = `
     </ul>
 `
 const footerPages = `
-    <img src="http://localhost:5500/images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
+    <img src="https://kdmeubichinho.github.io/images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
     <div>
         <a href="https://github.com/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
         <p>2020 Todos os direitos reservados.</p>
