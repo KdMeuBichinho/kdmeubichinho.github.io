@@ -1,7 +1,6 @@
 const queryPessoaEmail = "pessoa?email="
 const queryEmail = "email?email="
 const email = localStorage.getItem('email');
-
 const nameLabel = document.querySelector('#name');
 const mailLabel = document.querySelector('#mail');
 const zipCodeLabel = document.querySelector('#zip_code');
@@ -9,6 +8,7 @@ const streetLabel = document.querySelector('#street');
 const numberLabel = document.querySelector('#number');
 const phoneLabel = document.querySelector('#phone');
 const complementLabel = document.querySelector('#complement');
+const cardsArea = document.querySelector('#cards_area')
 
 const pessoa = {};
 
@@ -40,8 +40,6 @@ function inserePessoaNaTela(pessoa){
     complementLabel.textContent = `Complemento: ${pessoa.complemento}`;
     phoneLabel.textContent = `Celular: ${pessoa.celular}`;
 }
-const cardsArea = document.querySelector('#cards_area')
-
 function buscaAnuncios(email){
     cardsArea.innerHTML = `<label class="filters">Meus anuncios</label>`
 
@@ -50,11 +48,10 @@ function buscaAnuncios(email){
         .then(anuncio => {
             if(!anuncio.empty){
                 for(let anuncioRecebido of anuncio.content){
-
                     const dataCriado = new Date(Date.parse(anuncioRecebido.dataCriacao))
                     let dataCriadoFormatada = adicionaZero((dataCriado.getDate())) + "." + ((dataCriado.getMonth() + 1)) + "." + dataCriado.getFullYear() + " - " + (dataCriado.getHours() + 3) + ":" + adicionaZero(dataCriado.getMinutes()); 
-                    
                     let dataEncerradoFormatada
+
                     if(anuncioRecebido.dataEncerramento){
                         const dataEncerrado = new Date(Date.parse(anuncioRecebido.dataEncerramento))
                         dataEncerradoFormatada = adicionaZero((dataEncerrado.getDate())) + "." + ((dataEncerrado.getMonth() + 1)) + "." + dataEncerrado.getFullYear() + " - " + (dataEncerrado.getHours() + 3) + ":" + adicionaZero(dataEncerrado.getMinutes()); 
@@ -103,7 +100,6 @@ function buscaAnuncios(email){
                     `<div>
                         <p>Opss, parece que você ainda não possui nenhum anuncio por aqui <i class="fas fa-ghost"></i></p>
                     </div>`
-
             }
         })
 }
@@ -128,7 +124,6 @@ btnEdit.addEventListener('click', () => {
     complementEdit.value = pessoa.complemento;
     modal.classList.add('show');
 })
-
 btnCancel.addEventListener('click', () => {
     modal.classList.remove('show');
 })
@@ -161,8 +156,8 @@ function constroiPessoa(){
 }
 btnSave.addEventListener('click',(e) => {
     e.preventDefault()
-
     constroiPessoa();
+
     if(verificaCamposObrigatorios()){
         editaPessoa(pessoa)
         window.alert('Usuário editado com sucesso!')
@@ -201,7 +196,6 @@ function editaPessoa(pessoa){
     inserePessoaNaTela(pessoa)
 }
 function atualizaStatus(idAnuncio){
-
     fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${API_ATUALIZA_STATUS}${idAnuncio}`,{
         method: "PUT",
         headers: { "Content-Type":"application/json"}

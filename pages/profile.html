@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="icon" type="image/svg" href="../images/favicon.svg">
         <script src="https://kit.fontawesome.com/5660cb5f80.js" crossorigin="anonymous"></script>
-    
-
         <title>KdMeuBichinho? - Perfil</title>
     </head>
     <body>
@@ -21,10 +19,10 @@
                 <input type="checkbox" id="bar">
                 <label for="bar" class="bars">&#9776;</label>
                 <ul class="">
-                    <li><a href="http://localhost:5500/">Início <!--<i class="fas fa-home"></i>--></a></li>
-                    <li><a href="http://localhost:5500/pages/petadvert.html">Anunciar <!--<i class="fas fa-plus">--></i></a></li>
-                    <li><a href="http://localhost:5500/pages/signup.html">Cadastrar <!--<i class="fas fa-user-plus"></i>--></a></li>
-                    <li><button class="btn-primary" onclick="location.href='http://localhost:5500/pages/login.html'">Entrar  <!--<i class="fas fa-sign-in-alt">--></i></button></li>
+                    <li><a href="http://localhost:5500/">Início</a></li>
+                    <li><a href="http://localhost:5500/pages/petadvert.html">Anunciar</i></a></li>
+                    <li><a href="http://localhost:5500/pages/signup.html">Cadastrar></a></li>
+                    <li><button class="btn-primary" onclick="location.href='http://localhost:5500/pages/login.html'">Entrar</i></button></li>
                 </ul>  
             </nav>  
         </header>
@@ -47,70 +45,7 @@
                 </div>
                 <div class="cont-ad" id="cards_area">
                     <label class="filters">Meus anuncios</label>
-                    <div class="res-card">
-                        <div class="res-card-img">
-                            <img src="http://localhost:8080/1606223944421-04-09_gato_SITE.jpg" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Bob</p>
-                            <p>Araraquara</p>
-                            <p>Vila Xavier</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <span class="tag">Procurando um lar</span>    
-                        </div>
-                        <div class="res-card-status">
-                            <p>Criado em: <span>25/11/2020</span></p>
-                            <p>Encerrado em: <span>--</span></p>
-                            <p>Situação: <span>Pendente</span></p>   
-                            <button class="btn-secondary">Encerrar</button>
-                        </div>
-                    </div>
-                    <div class="res-card">
-                        <div class="res-card-img">
-                            <img src="http://localhost:8080/1606223944421-04-09_gato_SITE.jpg" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Bob</p>
-                            <p>Araraquara</p>
-                            <p>Vila Xavier</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <span class="tag">Procurando um lar</span>    
-                        </div>
-                        <div class="res-card-status">
-                            <p>Criado em: <span>25/11/2020</span></p>
-                            <p>Encerrado em: <span>--</span></p>
-                            <p>Situação: <span>Pendente</span></p>   
-                            <button class="btn-secondary">Encerrar</button>
-                        </div>
-                    </div>
-                        <!-- <table>
-                            <tr>
-                              <th>Anúncio</th>
-                              <th>Nome</th>
-                              <th>Animal</th>
-                              <th>Categoria</th>
-                              <th>Cep</th>
-                              <th>Situação</th>
-                            </tr>
-                            <tr>
-                              <td><button class="btn-secondary">Encerrar</button> 1</td>
-                              <td>Bob</td>
-                              <td>Cachorro</td>
-                              <td>Fugiu de casa</td>
-                              <td>14810-125</td>
-                              <td>Pendente</td>
-                            </tr>
-                            <tr>
-                                <td><button class="btn-secondary">Encerrar</button> 2</td>
-                                <td>Paçoca</td>
-                                <td>Cachorro</td>
-                                <td>Procurando um lar</td>
-                                <td>14810-125</td>
-                                <td>Pendente</td>
-                            </tr>
-                          </table> -->
+                    <!-- Preenchido via JS -->
                 </div>
             </section>
         </main>
@@ -125,7 +60,7 @@
         <div class="modal-container">
             <div class="modal">
                 <h2>Editar</h2>
-                <form action="">
+                <form>
                     <input type="text" name="Nome e Sobrenome" id="name_edit" placeholder="Nome" title="Nome e sobrenome" required/>
                     <input type="text" name="cep" id="zip_code_edit" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP: xxxxx-xxx" title="CEP" required/>
                     <input type="text" name="street" id="street_edit" placeholder="Rua" title="Rua" required/>

@@ -27,7 +27,6 @@ function atualizaMensagens(){
                 if (a.idMensagem < b.idMensagem) {
                   return -1;
                 }
-                // a must be equal to b
                 return 0;
               });
 
@@ -50,8 +49,6 @@ function atualizaMensagens(){
             messageScroll.scrollTop = messageScroll.scrollHeight - messageScroll.clientHeight;
         })
 }
-
-
 function enviaMensagem(){
     const mensagem = {}
     const idAnuncio = {}
@@ -87,40 +84,38 @@ function enviaMensagem(){
         }
     } else {
         window.alert('Você precisa estar logado para enviar mensagens')
-    }
-    
+    } 
 }
 update.addEventListener('click', atualizaMensagens)
 send.addEventListener('click', enviaMensagem);
 
 fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${id}`)
-        .then(res => res.json())
-        .then(anuncio => {
+    .then(res => res.json())
+    .then(anuncio => {
 
-            tags.innerHTML = ""
-            foto.innerHTML = ""
-            contato.innerHTML = ""
-            messageArea.innerHTML = ""
+        tags.innerHTML = ""
+        foto.innerHTML = ""
+        contato.innerHTML = ""
+        messageArea.innerHTML = ""
 
-            console.log(anuncio)
-            categoria.textContent = anuncio.idCategoria.classificacao
-            nomeAnimal.textContent = anuncio.idAnimal.nome
-            localizacaoAnimal.textContent = `${anuncio.idAnimal.cep} - ${anuncio.idAnimal.bairro}, ${anuncio.idAnimal.localidade} `
+        console.log(anuncio)
+        categoria.textContent = anuncio.idCategoria.classificacao
+        nomeAnimal.textContent = anuncio.idAnimal.nome
+        localizacaoAnimal.textContent = `${anuncio.idAnimal.cep} - ${anuncio.idAnimal.bairro}, ${anuncio.idAnimal.localidade} `
 
-            tags.innerHTML += `<span class="tag">${anuncio.idAnimal.especie.nome}</span>`
-            tags.innerHTML += `<span class="tag">${anuncio.idAnimal.sexo}</span>`
-            tags.innerHTML += `<span class="tag">${anuncio.idAnimal.classificacaoEtaria}</span>`
-            tags.innerHTML += `<span class="tag">${anuncio.idAnimal.porte}</span>`
-            anuncio.idAnimal.castrado? tags.innerHTML += `<span class="tag">Castrado</span>` : null
-            anuncio.idAnimal.vacinado? tags.innerHTML += `<span class="tag">Vacinado</span>` : null
+        tags.innerHTML += `<span class="tag">${anuncio.idAnimal.especie.nome}</span>`
+        tags.innerHTML += `<span class="tag">${anuncio.idAnimal.sexo}</span>`
+        tags.innerHTML += `<span class="tag">${anuncio.idAnimal.classificacaoEtaria}</span>`
+        tags.innerHTML += `<span class="tag">${anuncio.idAnimal.porte}</span>`
+        anuncio.idAnimal.castrado? tags.innerHTML += `<span class="tag">Castrado</span>` : null
+        anuncio.idAnimal.vacinado? tags.innerHTML += `<span class="tag">Vacinado</span>` : null
 
-            foto.innerHTML += `<img src="${anuncio.idAnimal.fotos.caminho}">`
-            contato.innerHTML += 
-                `
-                    <div class="people"><strong>${anuncio.idPessoa.nome}</strong></div>
-                    <div class="phone">${anuncio.idPessoa.celular}</div>
-                    <a href="https://api.whatsapp.com/send?phone=55${anuncio.idPessoa.celular}&text=Olá,%20vi%20o%20anuncio%20do(a)%20${anuncio.idAnimal.nome}%20no%20Kdmeubichinho!." target="_blank"><i class="fab fa-whatsapp"></i> Entrar em contato</a>
-                `
-
-            atualizaMensagens()
-        })
+        foto.innerHTML += `<img src="${anuncio.idAnimal.fotos.caminho}">`
+        contato.innerHTML += 
+            `
+                <div class="people"><strong>${anuncio.idPessoa.nome}</strong></div>
+                <div class="phone">${anuncio.idPessoa.celular}</div>
+                <a href="https://api.whatsapp.com/send?phone=55${anuncio.idPessoa.celular}&text=Olá,%20vi%20o%20anuncio%20do(a)%20${anuncio.idAnimal.nome}%20no%20Kdmeubichinho!." target="_blank"><i class="fab fa-whatsapp"></i> Entrar em contato</a>
+            `
+        atualizaMensagens()
+    })

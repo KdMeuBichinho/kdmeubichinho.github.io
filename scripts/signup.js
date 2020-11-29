@@ -24,7 +24,6 @@ cep.addEventListener("keypress", function (){
     if(cep.value.length == 5)
         cep.value = cep.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do cep. 
 });
-
 cep.addEventListener("blur",()=>{
     if(cep.value){
         let newcep=formatnumber(cep.value)
@@ -60,7 +59,6 @@ function verificaCamposObrigatorios(){
 }
 button.addEventListener("click",(e)=>{
     e.preventDefault();
-
     constroiPessoa();
     
     if(verificaCamposObrigatorios()){
@@ -80,6 +78,3 @@ button.addEventListener("click",(e)=>{
         window.alert('Campos obrigatórios não preenchidos')
     }
 });
-
-
-  

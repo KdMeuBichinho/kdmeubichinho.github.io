@@ -64,7 +64,6 @@ function fazlogout(){
     localStorage.removeItem('token')
     verificaToken()
     redirecionamentoIndex()
-
 }
 function verificaRota(rota){
     if(!token){
