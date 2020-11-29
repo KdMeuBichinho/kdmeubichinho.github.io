@@ -17,41 +17,6 @@ const especie = {};
 const categoriaAnuncio = {};
 const pessoa = {};
 
-// function atualizaDadosViaCep(cep){
-//     fetch(`https://viacep.com.br/ws/${cep}/json/`)
-//         .then(res => res.json())
-//         .then(local => {
-//             animal.logradouro = local.logradouro
-//             animal.cep = local.cep
-//             animal.bairro = local.bairro
-//             animal.localidade = local.localidade
-//             animal.uf = local.uf
-//             animal.ibge = local.ibge
-//             animal.ddd = local.ddd
-//         })
-// }
-
-// function carregaLocalizacaoAnimal(localizacao){
-//     for(let atributo in localizacao){
-//         animal[atributo] = localizacao[atributo]
-//     }
-// }
-
-// async function localizacaoAnimal(cep){
-//     if(cep){
-//         const localizacaoViaCepp = await atualizaLocalizacaoViaCep(cep);
-//         return localizacaoViaCepp
-//     }
-// }
-
-// cep.addEventListener("blur", ()=>{
-//     if(cep.value){
-//         atualizaDadosViaCep(cep.value);  
-//         // atualizaLocalizacaoViaCep(cep.value);
-//         // carregaLocalizacaoAnimal(localizacaoViaCep)
-//         // console.log(animal)
-//     }   
-// });
 photo.addEventListener("change", ()=>{
     uploadFile(photo.files[0])
 })
@@ -102,9 +67,6 @@ function constroiAnuncio(){
     anuncio.dataCriacao = new Date();
 
     anuncio.dataCriacao.setHours(anuncio.dataCriacao.getHours() - 3);
-
-    console.log(anuncio)
-
 }
 function verificaCamposObrigatorios(){
     if(especie.idEspecie && categoriaAnuncio.idCategoria && animal.sexo && animal.classificacaoEtaria && animal.porte && cep.value && photo.files[0]){
@@ -115,7 +77,6 @@ function verificaCamposObrigatorios(){
 }
 anunciar.addEventListener("click", (e) =>{
     e.preventDefault()
-
     constroiAnuncio()
 
     if(verificaCamposObrigatorios()){
@@ -140,13 +101,22 @@ anunciar.addEventListener("click", (e) =>{
                 .then(res => res.json())
                 .then(res => capturaAnuncio(res.idAnuncio))
                 .then(() => {
-                    window.alert('Anúncio cadastrado com sucesso!')
-                    location.href = `${BASE_URL_CLIENT}${CLIENT_PETPROFILE}`;
+                    //window.alert('Anúncio cadastrado com sucesso!')
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Anúncio cadastrado com sucesso!',
+                    })
+                    setTimeout(function(){location.href = `${BASE_URL_CLIENT}${CLIENT_PETPROFILE}`}, 1800);
                 })
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
             })
     }else{
-        window.alert('Campos obrigatórios não preenchidos')
+        //window.alert('Campos obrigatórios não preenchidos')
+        Swal.fire({
+            icon: 'info',
+            title: 'Oops...',
+            text: 'Você não preencheu todos os campos obrigatórios marcados com *'
+          })
     }
 })

@@ -14,9 +14,6 @@ body{
     justify-content: space-between;
     padding: var(--space);
 }
-.side-left .content-dog {
-    /* position: relative; */
-}
 .side-left .top-bar .tag-animal {
     border-color: var(--white-color);
     color: var(--white-color);
@@ -210,16 +207,8 @@ body{
     .container {
         flex-direction: column;
     }
-
-    .slideshow-container .mySlides {
-        /* height: 400px; */
-    }
 }
 
 @media only screen and (max-width: 475px) {
     .prev, .next,.text {font-size: 11px}
-
-    .slideshow-container .mySlides {
-        /* height: 250px; */
-    }
 }

@@ -24,7 +24,6 @@ cep.addEventListener("keypress", function (){
     if(cep.value.length == 5)
         cep.value = cep.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do cep. 
 });
-
 cep.addEventListener("blur",()=>{
     if(cep.value){
         let newcep=formatnumber(cep.value)
@@ -60,7 +59,6 @@ function verificaCamposObrigatorios(){
 }
 button.addEventListener("click",(e)=>{
     e.preventDefault();
-
     constroiPessoa();
     
     if(verificaCamposObrigatorios()){
@@ -71,15 +69,22 @@ button.addEventListener("click",(e)=>{
         })
         .then(res => res.json())
         .then(() => {
-            window.alert('Usuário cadastrado com sucesso!')
-            location.href = `${BASE_URL_CLIENT}${CLIENT_LOGIN}`;
+            //window.alert('Usuário cadastrado com sucesso!')
+            Swal.fire({
+                icon: 'success',
+                title: 'Usuário cadastrado com sucesso!',
+                text: 'Você será redirecionado para a tela de login.'
+            })
+            setTimeout(function(){location.href = `${BASE_URL_CLIENT}${CLIENT_LOGIN}`;}, 3000);
         })
         .then(res => console.log(res))
         .catch(err => console.log(err))
     }else{
-        window.alert('Campos obrigatórios não preenchidos')
+        //window.alert('Campos obrigatórios não preenchidos')
+        Swal.fire({
+            icon: 'info',
+            title: 'Oops...',
+            text: 'Você não preencheu todos os campos obrigatórios marcados com *'
+          })
     }
 });
-
-
-  

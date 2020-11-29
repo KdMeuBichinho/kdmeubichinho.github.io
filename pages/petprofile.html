@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <link rel="icon" type="image/svg" href="../images/favicon.svg">
     <title>KdMeuBichinho? - Perfil do animal</title>
 </head>
-
 <body>
     <header class="">
         <nav class="menu" id="menu">
@@ -21,10 +19,10 @@
             <input type="checkbox" id="bar">
             <label for="bar" class="bars">&#9776;</label>
             <ul class="">
-                <li><a href="http://localhost:5500/">Início <!--<i class="fas fa-home"></i>--></a></li>
-                <li><a href="http://localhost:5500/pages/petadvert.html">Anunciar <!--<i class="fas fa-plus">--></i></a></li>
-                <li><a href="http://localhost:5500/pages/signup.html">Cadastrar <!--<i class="fas fa-user-plus"></i>--></a></li>
-                <li><button class="btn-primary" onclick="location.href='http://localhost:5500/pages/login.html'">Entrar  <!--<i class="fas fa-sign-in-alt">--></i></button></li>
+                <li><a href="http://localhost:5500/">Início</a></li>
+                <li><a href="http://localhost:5500/pages/petadvert.html">Anunciar</i></a></li>
+                <li><a href="http://localhost:5500/pages/signup.html">Cadastrar</a></li>
+                <li><button class="btn-primary" onclick="location.href='http://localhost:5500/pages/login.html'">Entrar</i></button></li>
             </ul>  
         </nav>   
     </header>
@@ -41,39 +39,7 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- <div class="content-dog">
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="https://images.unsplash.com/photo-1523480717984-24cba35ae1ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="https://images.unsplash.com/photo-1554456854-55a089fd4cb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                </div>
-
-                <div class="dot-images">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
-            </div> -->
         </div>
-
         <div class="side-right">
             <div class="description">
                 <!-- Preenchido via JS -->
@@ -100,7 +66,6 @@
                             <!-- Preenchido via JS -->
                         </p>                        
                     </div>
-
                     <div class="text-message">
                         <input class="input-size" type="text" placeholder="Digite uma mensagem" id="message">
                         <button class="btn-primary btn-size" id="update" title="Atualizar mensagens"><i class="fas fa-sync-alt"></i></button>
@@ -118,37 +83,9 @@
         </div>
         <a href="#main"><button class="btn-primary"><span class="footer-top-button"><i class="fas fa-chevron-up"></i></span></button></a>
     </footer>
-
-    <!-- <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script> -->
     <script src="../scripts/main.js"></script>
     <script src="../scripts/petprofile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>

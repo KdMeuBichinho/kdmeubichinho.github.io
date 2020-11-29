@@ -32,22 +32,6 @@ function ampliaIndex(){
     footer.classList.remove("display-none")
 }
 function atualizaFiltros(){
-    // const filterFields = document.querySelectorAll('.filter-field')
-    // let queryFilterArr = [];
-
-    // filterFields.forEach(function(field){
-    //     let {id, value} = field;
-
-    //     if(value.length){
-    //         if(id == 'cep'){
-    //             value = field.value.substring(0, 5);
-    //         }
-    //         queryFilterArr.push(`${id}=${value}`);
-    //     }
-    // });
-
-    // queryFilterStr = queryFilterArr.join('&');
-
     let cep = document.querySelector("#cep").value;
     let idEspecie = document.querySelector("#especie").value
     let idCategoria = document.querySelector("#categoria").value
