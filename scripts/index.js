@@ -60,12 +60,18 @@ function selecionaPagina(pagina){
 function buscaAnimais(pagina){
 
     atualizaFiltros()
-    cardsArea.innerHTML = ""
+    cardsArea.innerHTML = `
+        <div class="loading-area">
+            <p>Buscando</p>
+            <img src="./images/loading.gif" alt="" class="loading-image">
+        </div>
+    `
     paginationArea.innerHTML = ""
 
     fetch(`${BASE_URL_SERVER}${API_ANUNCIO_BUSCA}${queryFilter}page=${pagina}`)
         .then(res => res.json())
         .then(anuncio => {
+            cardsArea.innerHTML = ``
             if(!anuncio.empty){
                 for(let anuncioRecebido of anuncio.content){
                     cardsArea.innerHTML += 

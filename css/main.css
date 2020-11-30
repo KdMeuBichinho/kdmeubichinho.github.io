@@ -395,6 +395,15 @@ i{
 .font-size-60{
     font-size: 60px;
 }
+.loading-area{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.loading-image{
+    width: 100px;
+
+}
 
 
 @media(max-width:768px){
