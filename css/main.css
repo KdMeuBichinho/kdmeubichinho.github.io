@@ -404,7 +404,7 @@ i{
     width: 100px;
 }
 @media(max-width: 425px){
-    *:hover{
+    a:hover{
         border: none;
     }
 }
