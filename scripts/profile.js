@@ -41,11 +41,17 @@ function inserePessoaNaTela(pessoa){
     phoneLabel.textContent = `Celular: ${pessoa.celular}`;
 }
 function buscaAnuncios(email){
-    cardsArea.innerHTML = `<label class="filters">Meus anuncios</label>`
+    cardsArea.innerHTML = `        
+    <div class="loading-area">
+        <p>Buscando</p>
+        <img src="../images/loading.gif" alt="" class="loading-image">
+    </div>
+`
 
     fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${queryPessoaEmail}${email}`)
         .then(res => res.json())
         .then(anuncio => {
+            cardsArea.innerHTML = `<label class="filters">Meus anuncios</label>`
             if(!anuncio.empty){
                 for(let anuncioRecebido of anuncio.content){
                     const dataCriado = new Date(Date.parse(anuncioRecebido.dataCriacao))

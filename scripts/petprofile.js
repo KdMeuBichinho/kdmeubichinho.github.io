@@ -15,11 +15,16 @@ const update = document.querySelector('#update');
 function atualizaMensagens(){
     var messageScroll = document.getElementById('message_area');
     
-    messageArea.innerHTML = ""
+    messageArea.innerHTML = `
+        <div class="loading-area">
+            <p>Atualizando</p>
+            <img src="../images/loading.gif" alt="" class="loading-image">
+        </div>
+    `
     fetch(`${BASE_URL_SERVER}${API_ANUNCIO}${id}`)
         .then(res => res.json())
         .then(anuncio => {
-            console.log(anuncio)
+            messageArea.innerHTML = ""
             anuncio.mensagens.sort(function (a, b) {
                 if (a.idMensagem > b.idMensagem) {
                   return 1;

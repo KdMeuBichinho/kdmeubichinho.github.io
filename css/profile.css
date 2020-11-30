@@ -27,9 +27,9 @@ tr:nth-child(even) {
     flex: 2;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
-
+    text-align: center;
     transition: all var(--time);
     border-left: 1px solid var(--neutral-dark-color);
 }
@@ -223,6 +223,7 @@ label#name{
     .cont-ad{
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
     }
     .content{
         flex-direction: column;
