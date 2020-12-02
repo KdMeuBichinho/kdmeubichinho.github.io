@@ -1,3 +1,4 @@
+//const BASE_URL_CLIENT = "http://localhost:5500/";
 const BASE_URL_CLIENT = "https://kdmeubichinho.github.io/";
 const BASE_URL_SERVER = "https://kdmeubichinho-app.herokuapp.com/";
 
