@@ -35,7 +35,11 @@ function enviar(){
             if(status == 200){
                 localStorage.setItem("email", email)
                 localStorage.setItem("token", token)
-                redirecionamentoIndex()
+                if(localStorage.getItem("page") == `${BASE_URL_CLIENT}pages/petprofile.html`){
+                    redirecionamento()
+                }else{
+                    redirecionamentoIndex()
+                }
             }else if(status == 401) {
                 localStorage.clear()
                 //alert("Usuário ou senha inválido")

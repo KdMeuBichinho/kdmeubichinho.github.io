@@ -93,6 +93,9 @@ function verificaToken(){
 function redirecionamentoIndex(){
     location.href = BASE_URL_CLIENT; 
 }
+function redirecionamento(url){
+    location.href = url; 
+}
 function capturaAnuncio(idAnuncio) {
     localStorage.setItem("idAnuncio", idAnuncio)
 }
@@ -108,7 +111,11 @@ function adicionaZero(numero){
 function atualizaFooter(){
     footer.innerHTML = footerPages;
 }
+function capturaPagina(){
+    localStorage.setItem("page", location.href)
+}
 
 atualizaFooter()
 verificaToken()
 verificaRota(location.href)
+capturaPagina()
