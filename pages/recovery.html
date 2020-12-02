@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/recovery.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg" href="../images/favicon.svg">
-    <title>KdMeuBichinho? - Entrar</title>
+    <title>KdMeuBichinho? - Recuperação de senha</title>
 </head>
 <body>
     <main>
@@ -22,28 +22,24 @@
             </header>
             <section class="form-login">
                 <div class="form">
-                    <h1>Entre</h1>
-                    <p>Você é sempre bem-vindo(a) por aqui!</p>
+                    <h1>Redefinição de senha</h1>
+                    <p>Insira seu email abaixo</p>
                     <form action="">
                         <input 
                             type="email"
-                            id="email"
-                            name="email" placeholder="E-mail"
+                            id="mail"
+                            name="email"
+                            placeholder="Seu email"
+                            title="Digita seu email"
                             required >
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Senha"
-                            required > 
                         <button
                             id="submit"
                             class="btn-primary"
                             type="submit"
-                            >Entrar
+                            >Enviar
                         </button>
                         <div class="links">
-                            <a href="./recovery.html">Esqueci minha senha</a>
+                            <a href="./login.html">Entrar na conta</a>
                             <a href="./signup.html">Cadastrar usuário</a>
                         </div>                      
                     </form>
@@ -52,7 +48,7 @@
         </section>
     </main>
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/login.js"></script>
+    <script src="../scripts/recovery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 </html>

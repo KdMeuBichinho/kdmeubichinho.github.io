@@ -3,15 +3,12 @@ const btnAplicarFiltro = document.querySelector("#btn_aplicar_filtro")
 const imgSearch = document.querySelector(".img-home");
 const sectionSearch = document.querySelector(".search");
 const sectionResult = document.querySelector(".result");
-const footer = document.querySelector(".footer");
 const cardsArea = document.querySelector("#cards_area");
 const paginationArea = document.querySelector("#pagination");
 const numberResults = document.querySelector("#title_filters_result")
 const card = document.querySelector('.res-card')
+const logout = document.querySelector('#logout')
 
-const BASE_URL_CLIENT = "http://localhost:5500/"
-const BASE_URL_SERVER = "http://localhost:8080/"
-const API = "anuncio/busca?"
 const anuncio = {};
 
 let queryFilter = "";
@@ -25,18 +22,9 @@ btnBuscar.addEventListener("click", () => {
 btnAplicarFiltro.addEventListener("click", () => {
     buscaAnimais(page);
 });
-function capturaAnimal(idAnimal) {
-    localStorage.setItem("idAnimal", idAnimal)
+function capturaAnuncio(idAnuncio) {
+    localStorage.setItem("idAnuncio", idAnuncio)
 }
-
-
-// function reduzIndex(){
-//     imgSearch.classList.add("display-none");
-//     sectionSearch.classList.add("section-search-animation");
-//     sectionResult.classList.remove("display-none");
-//     footer.classList.remove("display-none")
-//     sessionStorage.setItem("estadoHome","visitado");
-// }
 function ampliaIndex(){
     imgSearch.classList.add("display-none")
     sectionSearch.classList.add("section-search-animation");
@@ -44,33 +32,12 @@ function ampliaIndex(){
     footer.classList.remove("display-none")
 }
 function atualizaFiltros(){
-
-    // const filterFields = document.querySelectorAll('.filter-field')
-    // let queryFilterArr = [];
-
-    // filterFields.forEach(function(field){
-    //     let {id, value} = field;
-
-    //     if(value.length){
-    //         if(id == 'cep'){
-    //             value = field.value.substring(0, 5);
-    //         }
-    //         queryFilterArr.push(`${id}=${value}`);
-    //     }
-    // });
-
-    // queryFilterStr = queryFilterArr.join('&');
-
-
-
     let cep = document.querySelector("#cep").value;
     let idEspecie = document.querySelector("#especie").value
     let idCategoria = document.querySelector("#categoria").value
     let sexo = document.querySelector("#sexo").value
     let idade = document.querySelector("#idade").value
     let porte = document.querySelector("#porte").value
-    // let castrado = document.querySelector("#castrado").checked
-    // let vacinado = document.querySelector("#vacinado").checked
 
     queryFilter = ""
     cep = cep.substring(0,5)
@@ -81,12 +48,8 @@ function atualizaFiltros(){
     if(sexo) queryFilter += `sexo=${sexo}&`;
     if(idade) queryFilter += `classificacaoEtaria=${idade}&`;
     if(porte) queryFilter += `porte=${porte}&`;
-    // queryFilter += `castrado=${castrado}&`;
-    // queryFilter += `vacinado=${vacinado}&`;
     queryFilter += `status=ATIVO&`;
     queryFilter += `size=20&`;
-
-    
 
 }
 function selecionaPagina(pagina){
@@ -97,25 +60,30 @@ function selecionaPagina(pagina){
 function buscaAnimais(pagina){
 
     atualizaFiltros()
-    cardsArea.innerHTML = ""
+    cardsArea.innerHTML = `
+        <div class="loading-area">
+            <p>Buscando</p>
+            <img src="./images/loading.gif" alt="" class="loading-image">
+        </div>
+    `
     paginationArea.innerHTML = ""
 
-
-    fetch(`${BASE_URL_SERVER}${API}${queryFilter}page=${pagina}`)
+    fetch(`${BASE_URL_SERVER}${API_ANUNCIO_BUSCA}${queryFilter}page=${pagina}`)
         .then(res => res.json())
         .then(anuncio => {
+            cardsArea.innerHTML = ``
             if(!anuncio.empty){
                 for(let anuncioRecebido of anuncio.content){
                     cardsArea.innerHTML += 
                         `
-                            <a href="${BASE_URL_CLIENT}pages/petprofile.html" class="res-card" onclick="capturaAnimal(${anuncioRecebido.idAnuncio})">
+                            <a href="${BASE_URL_CLIENT}pages/petprofile.html" class="res-card" onclick="capturaAnuncio(${anuncioRecebido.idAnuncio})">
                                 <div class="res-card-img">
-                                    <img src="${BASE_URL_SERVER}${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
+                                    <img src="${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
                                 </div>
                                 <div class="res-card-txt">
                                     <p>${anuncioRecebido.idAnimal.nome}</p>
-                                    <p>${anuncioRecebido.idAnimal.localidade}</p>
                                     <p>${anuncioRecebido.idAnimal.bairro}</p>
+                                    <p>${anuncioRecebido.idAnimal.localidade}</p>
                                 </div>
                                 <div class="res-card-tag">
                                     <span class="tag">${anuncioRecebido.idCategoria.classificacao}</span>    

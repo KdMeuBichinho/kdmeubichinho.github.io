@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,20 +13,20 @@
 <body>
     <header class="">
         <nav class="menu" id="menu">
-            <a href="../index.html">
-                <img src="../images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
+            <a href="https://kdmeubichinho.github.io/">
+                <img src="https://kdmeubichinho.github.io/images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
             </a>
             <input type="checkbox" id="bar">
             <label for="bar" class="bars">&#9776;</label>
             <ul class="">
-                <li><a href="../index.html">Início <!--<i class="fas fa-home"></i>--></a></li>
-                <li><a href="./petadvert.html">Anunciar <!--<i class="fas fa-plus">--></i></a></li>
-                <li><a href="./signup.html">Cadastrar <!--<i class="fas fa-user-plus"></i>--></a></li>
-                <li><button class="btn-primary" onclick="location.href='login.html'">Entrar  <!--<i class="fas fa-sign-in-alt">--></i></button></li>
+                <li><a href="https://kdmeubichinho.github.io/">Início</a></li>
+                <li><a href="https://kdmeubichinho.github.io/pages/petadvert.html">Anunciar</i></a></li>
+                <li><a href="https://kdmeubichinho.github.io/pages/signup.html">Cadastrar</a></li>
+                <li><button class="btn-primary" onclick="location.href='https://kdmeubichinho.github.io/pages/login.html'">Entrar</i></button></li>
             </ul>  
-        </nav>        
+        </nav>
     </header>
-    <main>
+    <main id="main">
         <section class="content">
             <div class="slogan">
                 <img src="../images/ad.svg" alt="Duas pessoas segurando uma lupa" class="img-home">
@@ -87,22 +87,22 @@
                 <p class="description"><strong>Últimas perguntas</strong></p>
                 <div class="finalquestions">
                     <input type="text" name="nome" id="nome" placeholder="Nome do animal (caso saiba)">
-                    <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP (para rastreamento)" value="" required/> 
+                    <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP (para rastreamento) *" required/> 
                 </div>
-
                 <button type="submit" class="btn-primary" id="anunciar">Anunciar</button>
             </form>
         </section>
     </main>
-    <footer class="footer display-none">
-        <img src="../images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
+    <footer class="footer" aria-placeholder="Topo" id="footer">
+        <img src="https://kdmeubichinho.github.io/images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
         <div>
-            <a href="https://github.com/teteusAraujo/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
-            <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+            <a href="https://github.com/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
             <p>2020 Todos os direitos reservados.</p>
         </div>
-        <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
+        <a href="#main"><button class="btn-primary"><span class="footer-top-button"><i class="fas fa-chevron-up"></i></span></button></a>
     </footer>
-    <script type="module" src="../scripts/petadvert.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/petadvert.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 </html>

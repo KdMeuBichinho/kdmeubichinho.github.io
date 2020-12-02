@@ -14,47 +14,20 @@
 <body>
     <header class="">
         <nav class="menu" id="menu">
-            <a href="./index.html">
-                <img src="./images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
+            <a href="https://kdmeubichinho.github.io/">
+                <img src="https://kdmeubichinho.github.io/images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
             </a>
             <input type="checkbox" id="bar">
             <label for="bar" class="bars">&#9776;</label>
-            <ul class="display-none">
-                <li><a href="./index.html">Início <!--<i class="fas fa-home"></i>--></a></li>
-                <li><a href="./pages/petadvert.html">Anunciar <!--<i class="fas fa-plus">--></i></a></li>
-                <li><a href="./pages/signup.html">Cadastrar <!--<i class="fas fa-user-plus"></i>--></a></li>
-                <li><button class="btn-primary" onclick="location.href='pages/login.html'">Entrar  <!--<i class="fas fa-sign-in-alt">--></i></button></li>
+            <ul class="">
+                <li><a href="https://kdmeubichinho.github.io/">Início</a></li>
+                <li><a href="https://kdmeubichinho.github.io/pages/petadvert.html">Anunciar</i></a></li>
+                <li><a href="https://kdmeubichinho.github.io/pages/signup.html">Cadastrar</a></li>
+                <li><button class="btn-primary" onclick="location.href='https://kdmeubichinho.github.io/pages/login.html'">Entrar</i></button></li>
             </ul>  
-            <ul>
-                <li><a href="./index.html">Início </a></li>
-                <li><a href="./pages/petadvert.html">Anunciar</a></li>
-                <li>
-                    <div class="dropdown">
-                        <i class="fas fa-user dropbtn"></i>
-                        <div class="dropdown-content">
-                          <a href="./pages/profile.html">Meus anuncios</a>
-                          <a href="#">Sair</a>
-                        </div>
-                      </div>
-                </li>
-            </ul>  
-        </nav>     
+        </nav>
     </header>
-    <main>
-        <!-- <section class="section-home">
-            <div class="home-content">
-                <h1>Procure seu MELHOR AMIGO perdido ou <span>encontre alguém doando por perto.</span></h1>
-                <div>
-                    <input type="text" placeholder="Digite seu CEP">
-                    <a href="#"><button class="btn-primary" id="btnPesquisar">Pesquisar</button></a>
-                </div>
-                <div class="animal-counter">
-                    Total de 200 animais com um final feliz 
-                    <img src="./images/purple-heart.svg" alt="Coração roxo">
-                </div>
-            </div>
-            <img src="./images/home.svg" alt="Homem procurando animal perdido" class="home-animation">
-        </section> -->
+    <main id="main">
         <section class="section-search">
             <section class="search">
                     <div class="slogan">
@@ -69,8 +42,8 @@
                                 <option value="0">Todos</option>
                                 <option value="1">Cachorro</option>
                                 <option value="2">Gato</option>
-                                <option value="3">Coelho</option>
-                                <option value="4">Hamster</option>
+                                <option value="3">Pássaro</option>
+                                <option value="4">Roedor</option>
                             </select>
                             <select name="acontecimento" id="categoria" class="filter-field" title="Informe o que aconteceu com seu animal (opcional)">
                                 <option value="0" selected disabled>O que aconteceu?</option>
@@ -81,57 +54,14 @@
                             </select>
                             <input type="text" title="Insira um CEP para exibir os resultados (opcional)" alt="Campo para digitar um CEP" placeholder="CEP (opcional)" id="cep" class="filter-field">
                         </span>
-                        <button class="btn-primary" id="btn_buscar">Buscar<!--<i class="fas fa-search">--></i></button>
+                        <button class="btn-primary" id="btn_buscar">Buscar</i></button>
                     </div>
-                <!-- <div class="animal-counter">
-                    Total de 200 animais com um final feliz <i class="fas fa-heart secondary-color"></i>                    
-                </div> -->
             </section>
             <section class="result display-none">
                 <div class="result-filters">
-                    <!-- <form class="group-btn-pet">
-                        <label class="btn-pet" for="filter-cachorro">
-                            <img src="./images/dog.svg" alt="Botão com imagem de cachorro" class="btn-pet-img">
-                            <input type="checkbox" id="filter-cachorro" class="filter-pet">
-                            <label for="filter-cachorro" class="">Cachorro</label>
-                        </label>
-                        <div class="btn-pet">
-                            <img src="./images/cat.svg" alt="Botão com imagem de gato" class="btn-pet-img">
-                            <input type="checkbox" id="filter-gato" class="filter-pet">
-                            <label for="filter-gato" class="">Gato</label>
-                        </div>
-                        <div class="btn-pet">
-                            <img src="./images/rabbit.svg" alt="Botão com imagem de coelho" class="btn-pet-img">
-                            <input type="checkbox" id="filter-coelho" class="filter-pet">
-                            <label for="filter-coelho" class="">Coelho</label>
-                        </div>
-                        <div class="btn-pet">
-                            <img src="./images/hamster.svg" alt="Botão com imagem de hamster" class="btn-pet-img">
-                            <input type="checkbox" id="filter-hamster" class="filter-pet">
-                            <label for="filter-hamster" class="">Hamster</label>
-                        </div>
-                    </form> -->
                     <input type="checkbox" id="filter">
                     <label for="filter" class="filters">Filtros <i class="fas fa-angle-down"></i></label>
                     <div class="search-input">
-                        <!-- <div >
-                            <label for="animal">Animal</label>
-                            <select name="animal" id="animal">
-                                <option value="">Todos</option>
-                                <option value="">Cachorro</option>
-                                <option value="">Gato</option>
-                                <option value="">Coelho</option>
-                                <option value="">Hamster</option>
-                            </select>
-                        </div> -->
-                        <!-- <div>
-                            <select name="acontecimento" id="acontecimento">
-                                <option value="" selected>Acontecimento</option>
-                                <option value="">Fugiu de casa</option>
-                                <option value="">Encontrado na rua</option>
-                                <option value="">Procurando um lar</option>
-                            </select>
-                        </div> -->
                         <section class="title-filters">
                             <label>Refine sua busca <i class="fas fa-filter"></i></label>
                             <p id="title_filters_result"></p>
@@ -142,6 +72,7 @@
                                 <option value="" selected>Todos</option>
                                 <option value="MACHO">Macho</option>
                                 <option value="FEMEA">Fêmea</option>
+                                <option value="NAO_IDENTIFICADO">Não identificado</option>
                             </select>
                         </div>
                         <div class="filter-fields">
@@ -161,18 +92,6 @@
                                 <option value="GRANDE">Grande</option>
                             </select>
                         </div>
-                        <!-- <div class="filter-fields">
-                            <label for="castrado">
-                                <input type="checkbox" name="outros" id="castrado" value="castrado" class="filter-field" checked>
-                                Castrado
-                            </label>
-                        </div>
-                        <div class="filter-fields">
-                            <label for="vacinado">
-                                <input type="checkbox" name="outros" id="vacinado" value="vacinado" class="filter-field" checked>
-                                Vacinado
-                            </label>
-                        </div> -->
                         <button class="btn-primary" id="btn_aplicar_filtro">Aplicar filtros</button>
                     </div>
                 </div>
@@ -187,21 +106,19 @@
                     </nav>
                 </div>
             </section>
-
-            <footer class="footer display-none" aria-placeholder="Topo">
-                <img src="./images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
+            <footer class="footer display-none" aria-placeholder="Topo" id="footer">
+                <img src="https://kdmeubichinho.github.io/images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
                 <div>
                     <a href="https://github.com/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
                     <p>2020 Todos os direitos reservados.</p>
                 </div>
-                <a href="#menu"><button class="btn-primary"><span><i class="fas fa-chevron-up"></i></span></button></a>
+                <a href="#main"><button class="btn-primary"><span class="footer-top-button"><i class="fas fa-chevron-up"></i></span></button></a>
             </footer>
         </section>
     </main>
-
+    <script src="./scripts/main.js"></script>
     <script src="./scripts/index.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 </html>
 

@@ -14,9 +14,6 @@ body{
     justify-content: space-between;
     padding: var(--space);
 }
-.side-left .content-dog {
-    /* position: relative; */
-}
 .side-left .top-bar .tag-animal {
     border-color: var(--white-color);
     color: var(--white-color);
@@ -70,6 +67,7 @@ body{
 }
 .side-right .box-text-message .style-message{
     line-height: 25px;
+    word-break: break-all;
 }
 .side-right .box-text-message .style-message span:last-child {
     font-size: 0.8em;
@@ -85,6 +83,7 @@ body{
     border-radius: var(--space);
     margin-right: 5px;
     font-size: 1.0em;
+
 }
 .side-right .btn-size {
     padding: 10px 15px;
@@ -93,11 +92,12 @@ body{
     margin-left: 10px;
 }
 .side-right .text-message {
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
 }
 .side-right .input-size {
-    flex: 3;
+    flex: 1;
 }
 
 
@@ -191,22 +191,24 @@ body{
     from {opacity: .4} 
     to {opacity: 1}
 }
+
+@media(max-width: 399px){
+    .side-right .input-size{
+        flex: 0;
+    }
+    .side-right .btn-size{
+        flex: 0;
+        margin-left: 3px;
+    }
+}
   
 /* On smaller screens, decrease text size */
 @media(max-width: 768px){
     .container {
         flex-direction: column;
     }
-
-    .slideshow-container .mySlides {
-        /* height: 400px; */
-    }
 }
 
 @media only screen and (max-width: 475px) {
     .prev, .next,.text {font-size: 11px}
-
-    .slideshow-container .mySlides {
-        /* height: 250px; */
-    }
 }

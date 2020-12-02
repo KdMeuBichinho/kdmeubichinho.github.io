@@ -22,14 +22,8 @@ phone.addEventListener("keypress", function (){
 });
 cep.addEventListener("keypress", function (){ 
     if(cep.value.length == 5)
-        cep.value = cep.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do cep.
-    
+        cep.value = cep.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do cep. 
 });
-
-function formatnumber(number){
-    return number.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ^a-zA-Z]/gi, '')
-}
-
 cep.addEventListener("blur",()=>{
     if(cep.value){
         let newcep=formatnumber(cep.value)
@@ -47,8 +41,7 @@ cep.addEventListener("blur",()=>{
         })
     }   
 });
-button.addEventListener("click",(e)=>{
-    e.preventDefault();
+function constroiPessoa(){
     pessoa.logradouro = street.value
     pessoa.complemento = complement.value
     pessoa.celular=formatnumber(phone.value);
@@ -56,15 +49,42 @@ button.addEventListener("click",(e)=>{
     pessoa.nome=nameUser.value;
     pessoa.numeroResidencial=number.value;
     pessoa.senha=password.value;
-    fetch("http://localhost:8080/pessoa",{
-        method: "POST",
-        headers: { "Content-Type":"application/json"},
-        body: JSON.stringify(pessoa)
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+}
+function verificaCamposObrigatorios(){
+    if(cep.value && pessoa.nome && pessoa.email && pessoa.logradouro && pessoa.numeroResidencial && pessoa.celular && pessoa.senha){
+        return true
+    }else{
+        return false
+    }
+}
+button.addEventListener("click",(e)=>{
+    e.preventDefault();
+    constroiPessoa();
+    
+    if(verificaCamposObrigatorios()){
+        fetch(`${BASE_URL_SERVER}${API_PESSOA}`,{
+            method: "POST",
+            headers: { "Content-Type":"application/json"},
+            body: JSON.stringify(pessoa)
+        })
+        .then(res => res.json())
+        .then(() => {
+            //window.alert('Usuário cadastrado com sucesso!')
+            Swal.fire({
+                icon: 'success',
+                title: 'Usuário cadastrado com sucesso!',
+                text: 'Você será redirecionado para a tela de login.'
+            })
+            setTimeout(function(){location.href = `${BASE_URL_CLIENT}${CLIENT_LOGIN}`;}, 3000);
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }else{
+        //window.alert('Campos obrigatórios não preenchidos')
+        Swal.fire({
+            icon: 'info',
+            title: 'Oops...',
+            text: 'Você não preencheu todos os campos obrigatórios marcados com *'
+          })
+    }
 });
-
-
-  

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +8,25 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="icon" type="image/svg" href="../images/favicon.svg">
         <script src="https://kit.fontawesome.com/5660cb5f80.js" crossorigin="anonymous"></script>
-    
-
         <title>KdMeuBichinho? - Perfil</title>
     </head>
     <body>
         <header>
             <nav class="menu" id="menu">
-                <a href="../index.html">
-                    <img src="../images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
+                <a href="https://kdmeubichinho.github.io/">
+                    <img src="https://kdmeubichinho.github.io/images/logo-black.svg" alt="Logo KdMeuBichinho" class="logo">
                 </a>
                 <input type="checkbox" id="bar">
                 <label for="bar" class="bars">&#9776;</label>
                 <ul class="">
-                    <li><a href="../index.html">Início <!--<i class="fas fa-home"></i>--></a></li>
-                    <li><a href="./petadvert.html">Anunciar <!--<i class="fas fa-plus">--></i></a></li>
-                    <li><a href="./signup.html">Cadastrar <!--<i class="fas fa-user-plus"></i>--></a></li>
-                    <li><button class="btn-primary" onclick="location.href='login.html'">Entrar  <!--<i class="fas fa-sign-in-alt">--></i></button></li>
+                    <li><a href="https://kdmeubichinho.github.io/">Início</a></li>
+                    <li><a href="https://kdmeubichinho.github.io/pages/petadvert.html">Anunciar</i></a></li>
+                    <li><a href="https://kdmeubichinho.github.io/pages/signup.html">Cadastrar></a></li>
+                    <li><button class="btn-primary" onclick="location.href='https://kdmeubichinho.github.io/pages/login.html'">Entrar</i></button></li>
                 </ul>  
             </nav>  
         </header>
-        <main>
+        <main id="main">
             <section class="content">
                 <input type="checkbox" id="filter">
                     <label for="filter" class="filters">Meu perfil <i class="fas fa-angle-down"></i></label>
@@ -38,99 +36,37 @@
                     </div>
                     <label id="name">Nome</label>
                     <label id="mail">Email</label>
-                    <label id="zip-code">Cep</label>
+                    <label id="zip_code">Cep</label>
                     <label id="street">Rua</label>
                     <label id="number">Número</label>
+                    <label id="complement">Complemento</label>                  
                     <label id="phone">Celular</label>
                     <button id="edit" class="btn-primary">Editar</button>
                 </div>
-                <div class="cont-ad">
+                <div class="cont-ad" id="cards_area">
                     <label class="filters">Meus anuncios</label>
-                    <div class="res-card">
-                        <div class="res-card-img">
-                            <img src="http://localhost:8080/1606223944421-04-09_gato_SITE.jpg" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Bob</p>
-                            <p>Araraquara</p>
-                            <p>Vila Xavier</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <span class="tag">Procurando um lar</span>    
-                        </div>
-                        <div class="res-card-status">
-                            <p>Criado em: <span>25/11/2020</span></p>
-                            <p>Encerrado em: <span>--</span></p>
-                            <p>Situação: <span>Pendente</span></p>   
-                            <button class="btn-secondary">Encerrar</button>
-                        </div>
-                    </div>
-                    <div class="res-card">
-                        <div class="res-card-img">
-                            <img src="http://localhost:8080/1606223944421-04-09_gato_SITE.jpg" alt="">
-                        </div>
-                        <div class="res-card-txt">
-                            <p>Bob</p>
-                            <p>Araraquara</p>
-                            <p>Vila Xavier</p>
-                        </div>
-                        <div class="res-card-tag">
-                            <span class="tag">Procurando um lar</span>    
-                        </div>
-                        <div class="res-card-status">
-                            <p>Criado em: <span>25/11/2020</span></p>
-                            <p>Encerrado em: <span>--</span></p>
-                            <p>Situação: <span>Pendente</span></p>   
-                            <button class="btn-secondary">Encerrar</button>
-                        </div>
-                    </div>
-                        <!-- <table>
-                            <tr>
-                              <th>Anúncio</th>
-                              <th>Nome</th>
-                              <th>Animal</th>
-                              <th>Categoria</th>
-                              <th>Cep</th>
-                              <th>Situação</th>
-                            </tr>
-                            <tr>
-                              <td><button class="btn-secondary">Encerrar</button> 1</td>
-                              <td>Bob</td>
-                              <td>Cachorro</td>
-                              <td>Fugiu de casa</td>
-                              <td>14810-125</td>
-                              <td>Pendente</td>
-                            </tr>
-                            <tr>
-                                <td><button class="btn-secondary">Encerrar</button> 2</td>
-                                <td>Paçoca</td>
-                                <td>Cachorro</td>
-                                <td>Procurando um lar</td>
-                                <td>14810-125</td>
-                                <td>Pendente</td>
-                            </tr>
-                          </table> -->
+                    <!-- Preenchido via JS -->
                 </div>
             </section>
         </main>
-        <footer class="footer">
-            <img src="../images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
+        <footer class="footer" aria-placeholder="Topo" id="footer">
+            <img src="https://kdmeubichinho.github.io/images/icone-black.svg" alt="Icone do KdMeuBichinho" class="icone">
             <div>
-                <a href="https://github.com/teteusAraujo/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
+                <a href="https://github.com/KdMeuBichinho" target="_blank"><strong>Colabore no Github do projeto.</strong></a>
                 <p>2020 Todos os direitos reservados.</p>
             </div>
-            <a href="#menu"><button class="btn-primary">&#9915;<span>topo</span></button></a>
+            <a href="#main"><button class="btn-primary"><span class="footer-top-button"><i class="fas fa-chevron-up"></i></span></button></a>
         </footer>
         <div class="modal-container">
             <div class="modal">
                 <h2>Editar</h2>
-                <form action="">
-                    <input type="text" name="Nome e Sobrenome" id="name-edit" placeholder="Nome" value="" required/>
-                    <input type="email" id="mail-edit" placeholder="E-mail: user@email.com" required/>
-                    <input type="text" name="cep" id="cep-edit" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP: xxxxx-xxx" value="" required/>
-                    <input type="text" name="street" id="street-edit" placeholder="Rua" value="" required/>
-                    <input type="text" name="number" id="number-edit" placeholder="Número" value="" required/>
-                    <input type="tel" name="phone" id="phone-edit" pattern="\([0-9]{2}\)[9]{1}[0-9]{4}-[0-9]{4}" placeholder="Celular:(xx)9xxxx-xxxx" value="" required/>
+                <form>
+                    <input type="text" name="Nome e Sobrenome" id="name_edit" placeholder="Nome*" title="Nome e sobrenome" required/>
+                    <input type="text" name="cep" id="zip_code_edit" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP: xxxxx-xxx*" title="CEP" required/>
+                    <input type="text" name="street" id="street_edit" placeholder="Rua*" title="Rua" required/>
+                    <input type="text" name="number" id="number_edit" placeholder="Número*" title="Número" required/>
+                    <input type="text" name="Complemento" id="complement_edit" placeholder="Complemento" title="Complemento"/>
+                    <input type="tel" name="phone" id="phone_edit" placeholder="Celular:(xx)9xxxx-xxxx*" title="Celular" required/>
                     <div>
                         <button type="reset" id="cancel" class="btn-transparent">Cancelar</button>
                         <button type="submit" id="save" class="btn-primary">Salvar</button>
@@ -138,18 +74,8 @@
                 </form>
             </div>
         </div>
-        <script>
-            const btnEdit = document.getElementById('edit');
-            const btnCancel = document.getElementById('cancel');
-            const modal = document.querySelector('.modal-container');
-            
-            btnEdit.addEventListener('click', () => {
-                modal.classList.add('show');
-            })
-
-            btnCancel.addEventListener('click', () => {
-                modal.classList.remove('show');
-            })
-        </script>
+        <script src="../scripts/main.js"></script>
+        <script src="../scripts/profile.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     </body>
 </html>
