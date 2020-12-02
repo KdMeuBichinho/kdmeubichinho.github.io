@@ -26,6 +26,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     background-color: var(--neutral-color);
+    overflow-x: hidden;
 }
 header + main{
     padding-top: 90px;
