@@ -34,95 +34,64 @@
                 <h2 class="h2-secondary">Nos conte o que aconteceu e te ajudaremos a resolver</h2>
             </div>
             <form class="form">
-                <p><strong>Qual é o animal?</strong></p>
-                <label for="cachorro">
-                    <input type="radio" name="especie" id="cachorro" value="1">
-                    Cachorro
-                </label>
-                <label for="gato">
-                    <input type="radio" name="especie" id="gato" value="2">
-                    Gato
-                </label>
-                <label for="hamster">
-                    <input type="radio" name="especie" id="hamster" value="4">
-                    Hamster
-                </label>
-                <label for="coelho">
-                    <input type="radio" name="especie" id="coelho" value="3">
-                    Coelho
-                </label>
+
+                <p class="description"><strong>Qual é o animal?</strong></p>
+                <input type="radio" name="especie" id="cachorro" value="1">
+                <label for="cachorro">Cachorro</label>
+                <input type="radio" name="especie" id="gato" value="2">
+                <label for="gato">Gato</label>
+                <input type="radio" name="especie" id="hamster" value="4">
+                <label for="hamster">Hamster</label>
+                <input type="radio" name="especie" id="coelho" value="3">
+                <label for="coelho">Coelho</label>
                 
-                <p><strong>O que aconteceu?</strong></p>
-                <label for="fugiu">
-                    <input type="radio" name="evento" id="fugiu" value="1">
-                    Fugiu de Casa
-                </label>
-                <label for="encontrado">
-                    <input type="radio" name="evento" id="encontrado" value="2">
-                    Encontrei na rua
-                </label>
-                <label for="doacao">
-                    <input type="radio" name="evento" id="doacao" value="3">
-                    Quero doar
-                </label>
+                <p class="description"><strong>O que aconteceu?</strong></p>
+                <input type="radio" name="evento" id="fugiu" value="1">
+                <label for="fugiu">Fugiu de Casa</label>
+                <input type="radio" name="evento" id="encontrado" value="2">
+                <label for="encontrado">Encontrei na rua</label>
+                <input type="radio" name="evento" id="doacao" value="3">
+                <label for="doacao">Quero doar</label>
             
-                <!-- <p class="details"><strong>Fale sobre suas caracteristicas</strong></p> -->
-                <p><strong>Sexo</strong></p>
-                <label for="macho">
-                    <input type="radio" name="sexo" id="macho" value="MACHO">
-                    Macho
-                </label>
-                <label for="femea">
-                    <input type="radio" name="sexo" id="femea" value="FEMEA">
-                    Fêmea
-                </label>
-                <label for="indeterminado">
-                    <input type="radio" name="sexo" id="indeterminado" value="NAO_IDENTIFICADO">
-                    Não identificado
-                </label>
-                <p><strong>Idade</strong></p>
-                <label for="filhote">
-                    <input type="radio" name="idade" id="filhote" value="FILHOTE">
-                    Filhote
-                </label>
-                <label for="adulto">
-                    <input type="radio" name="idade" id="adulto" value="ADULTO">
-                    Adulto
-                </label>
-                <p><strong>Porte</strong></p>
-                <label for="pequeno">
-                    <input type="radio" name="porte" id="pequeno" value="PEQUENO">
-                    Pequeno
-                </label>
-                <label for="medio">
-                    <input type="radio" name="porte" id="medio" value="MEDIO">
-                    Médio
-                </label>
-                <label for="grande">
-                    <input type="radio" name="porte" id="grande" value="GRANDE">
-                    Grande
-                </label>
-                <p><strong>Outros</strong></p>
-                <label for="castrado">
-                    <input type="checkbox" name="outros" id="castrado" value="castrado">
-                    Castrado
-                </label>
-                <label for="vacinado">
-                    <input type="checkbox" name="outros" id="vacinado" value="vacinado">
-                    Vacinado
-                </label>
-                <p><strong>Adicione uma foto</strong></p>
+                <p class="description"><strong>Sexo</strong></p>
+                <input type="radio" name="sexo" id="macho" value="MACHO">
+                <label for="macho">Macho</label>
+                <input type="radio" name="sexo" id="femea" value="FEMEA">
+                <label for="femea">Fêmea</label>
+                <input type="radio" name="sexo" id="indeterminado" value="NAO_IDENTIFICADO">
+                <label for="indeterminado">Não identificado</label>
+                
+                <p class="description"><strong>Idade</strong></p>
+                <input type="radio" name="idade" id="filhote" value="FILHOTE">
+                <label for="filhote">Filhote</label>
+                <input type="radio" name="idade" id="adulto" value="ADULTO">
+                <label for="adulto">Adulto</label>
+
+                <p class="description"><strong>Porte</strong></p>
+                <input type="radio" name="porte" id="pequeno" value="PEQUENO">
+                <label for="pequeno">Pequeno</label>
+                <input type="radio" name="porte" id="medio" value="MEDIO">
+                <label for="medio">Médio</label>
+                <input type="radio" name="porte" id="grande" value="GRANDE">
+                <label for="grande">Grande</label>
+
+                <p class="description"><strong>Outros</strong></p>
+                <input type="checkbox" name="outros" id="castrado" value="castrado">
+                <label for="castrado">Castrado</label>
+                <input type="checkbox" name="outros" id="vacinado" value="vacinado">
+                <label for="vacinado">Vacinado</label>
+
+                <p class="description"><strong>Adicione uma foto</strong></p>
                 <input id="photo" type="file" />
-                <p><strong>Últimas perguntas</strong></p>
-                <div class="input-final">
+                
+                <p class="description"><strong>Últimas perguntas</strong></p>
+                <div class="finalquestions">
                     <input type="text" name="nome" id="nome" placeholder="Nome do animal (caso saiba)">
                     <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP (para rastreamento)" value="" required/> 
                 </div>
 
                 <button type="submit" class="btn-primary" id="anunciar">Anunciar</button>
-
             </form>
-
         </section>
     </main>
     <footer class="footer display-none">
