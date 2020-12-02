@@ -36,7 +36,7 @@ function enviar(){
                 localStorage.setItem("email", email)
                 localStorage.setItem("token", token)
                 if(localStorage.getItem("page") == `${BASE_URL_CLIENT}pages/petprofile.html`){
-                    redirecionamento()
+                    redirecionamento(localStorage.getItem("page"))
                 }else{
                     redirecionamentoIndex()
                 }
