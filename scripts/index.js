@@ -16,11 +16,11 @@ let queryFilterStr;
 let page = 0;
 
 btnBuscar.addEventListener("click", () => {
-    buscaAnimais(page);
+    buscaAnimais(0);
     ampliaIndex();
 })
 btnAplicarFiltro.addEventListener("click", () => {
-    buscaAnimais(page);
+    buscaAnimais(0);
 });
 function capturaAnuncio(idAnuncio) {
     localStorage.setItem("idAnuncio", idAnuncio)
@@ -54,8 +54,7 @@ function atualizaFiltros(){
 }
 function selecionaPagina(pagina){
     pagina --
-    page = pagina;
-    buscaAnimais(page)
+    buscaAnimais(pagina)
 }
 function buscaAnimais(pagina){
 
