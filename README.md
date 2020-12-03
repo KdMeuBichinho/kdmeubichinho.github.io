@@ -30,7 +30,29 @@ Realizar conexão entre os interesses comuns das pessoas e os animais.
 
 ## 🖼 Screenshot das telas da aplicação 
 
-   
+## Tela principal do KdMeuBichinho
+
+ <img src="./images/telaprincipal.png" alt="Tela Principal"> 
+
+## Tela de cadastro de um animal
+
+<br>
+<img src="./images/cadastroanimal.png" alt="Tela Principal"> 
+
+<br>
+
+## Tela de Anuncio dos animais
+
+<br>
+<img src="./images/telaanuncio.png" alt="Tela Principal"> 
+<br>
+
+## Tela dos meus anuncios
+
+<br>
+<img src="./images/meusanuncio.png" alt="Tela Principal"> 
+<br>
+
 ## 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
@@ -40,6 +62,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -  **[HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)**
 -  **[CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)**
 -  **[JS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)**
+
 
 
 # 👷 Como rodar
@@ -55,7 +78,7 @@ git clone https://github.com/teteusAraujo/KdMeuBichinho
 
 Feito isso, abra o seu navegador e acesse `http://localhost:5500/`
 
-## 🤔 Como contribuir ? <br/>
+## 🤔 Como contribuir ? 🤝  <br/>
 ```bash
 - Faça um fork desse repositório;
 - Cria uma branch com a sua feature: `git checkout -b minha-feature`;
@@ -64,6 +87,37 @@ Feito isso, abra o seu navegador e acesse `http://localhost:5500/`
 
 Depois que o merge da sua pull request ser feito, você pode deletar a sua branch. 
 ```
+
+## **:star2: AGRADECIMENTOS**
+
+<div align=center>
+
+<table style="width:100%">
+
+  <tr align=center>
+    <th><strong>Digital House</strong></th>
+    <th><strong>Santander Universidades </strong></th>
+  </tr>
+  
+  <tr align=center>
+    <td>
+      <a href="https://www.digitalhouse.com/br/">
+        <img width="200" src="./images/logodh.jpg">
+      </a>
+    </td>
+    <td>
+      <a href="https://www.santander.com.br/universidades">
+        <img width="200" height="180" src="./images/santander.png">
+      </a>
+    </td>
+  </tr>
+
+</table>
+
+</div>
+
+<br>
+
 ## :mortar_board: Autores
 
 <table>
@@ -105,3 +159,7 @@ Depois que o merge da sua pull request ser feito, você pode deletar a sua branc
         </td>
     </tr>
 </table>
+
+## 📝 Licença
+
+Este projeto esta sobe a licença MIT.
