@@ -1,4 +1,9 @@
- <img src="./images/banner.png" alt="Logomarca do Cadê meu Bichinho"> 
+ <img src="./images/banner.png" alt="Logomarca do Santander Coderes Java"> 
+ <br>
+ <br>
+ <img src="./images/logo-black.svg" alt="Logomarca do Kd Meu bichinho?"> 
+<br>
+<br>
 
 <h4 align="center"> 
 	🚧  Kd meu bichinho? 👨‍🏫 em construção ✔️ 🚧
@@ -14,11 +19,11 @@ Santander Coders é um programa educacional promovido pelo Banco Santander em pa
 
 Projeto integrador desenvolvido durante o curso de Desenvolvimento Web Full Stack Java oferecido pela [digitalhouse](https://www.digitalhouse.com/br/) em parceria com a universidade Santander.
 <br>
-🐹 KdMeuBichinho - O projeto surgiu com a missão de ajudar as pessoas que querem encontrar seu melhor amigo :dog: :cat: :rabbit:  que foi perdido ou encontrar alguém que está doando. 
+:shipit: KdMeuBichinho - O projeto surgiu com a missão de ajudar as pessoas que querem encontrar seu melhor amigo :dog: :cat: :rabbit:  que foi perdido ou encontrar alguém que está doando. 
 
 ## :bulb: Ideia do Projeto
 ```bash
-Realizar conexão entre os interesses comuns das pessoas e os animais.
+Realizar a conexão entre os interesses comuns das pessoas e os animais.
 
 -Aquele que perdeu e quer encontrar;
 -Aquele que encontrou e quer devolver;
@@ -30,24 +35,24 @@ Realizar conexão entre os interesses comuns das pessoas e os animais.
 
 ## 🖼 Screenshot das telas da aplicação 
 
-## Tela principal do KdMeuBichinho
+## 🖼 Tela principal da plataforma do KdMeuBichinho? 
 
  <img src="./images/telaprincipal.png" alt="Tela Principal"> 
 
-## Tela de cadastro de um animal
+## 🖼 Tela para a criação do cadastro de um novo animal
 
 <br>
 <img src="./images/cadastroanimal.png" alt="Tela Principal"> 
 
 <br>
 
-## Tela de Anuncio dos animais
+## 🖼 Tela de anuncio dos animais que estão perdidos ou procurando um novo lar
 
 <br>
 <img src="./images/telaanuncio.png" alt="Tela Principal"> 
 <br>
 
-## Tela dos meus anuncios
+## 🖼 Tela dos anuncios de um peerfil
 
 <br>
 <img src="./images/meusanuncio.png" alt="Tela Principal"> 
@@ -68,15 +73,16 @@ As seguintes ferramentas foram usadas na construção do projeto:
 # 👷 Como rodar
 ```bash
 # Clonar o repositório
-git clone https://github.com/teteusAraujo/KdMeuBichinho
+git clone https://github.com/KdMeuBichinho/kdmeubichinho.github.io
 
-# Entrar noa sua IDE de sua preferência 
+# Entrar numa IDE de sua preferência 
 
-# Executar o servidor
+# Executar o servidor ou usar um puglin que criar um servidor
 
 ```
 
 Feito isso, abra o seu navegador e acesse `http://localhost:5500/`
+ou em uma porta de sua preferência.
 
 ## 🤔 Como contribuir ? 🤝  <br/>
 ```bash
@@ -163,3 +169,7 @@ Depois que o merge da sua pull request ser feito, você pode deletar a sua branc
 ## 📝 Licença
 
 Este projeto esta sobe a licença MIT.
+
+<h4>Você consegue acessar a plataforma do KdMeuBichinho :shipit: clicando : <a href="https://kdmeubichinho.github.io/"> AQUI 👋</a></a></h4>
+<br>
+<h4 align=center>Feito com ❤️ por  <a href="https://kdmeubichinho.github.io/"> Equipe KdMeuBichinho :dog: :cat: :rabbit:👋</a></a></h4>
