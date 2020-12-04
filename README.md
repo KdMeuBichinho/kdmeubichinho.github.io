@@ -1,9 +1,7 @@
  <img src="./images/banner.png" alt="Logomarca do Santander Coderes Java"> 
  <br>
  <br>
- <img src="./images/logo-black.svg" alt="Logomarca do Kd Meu bichinho?"> 
-<br>
-<br>
+
 
 <h4 align="center"> 
 	🚧  Kd meu bichinho? 👨‍🏫 em construção ✔️ 🚧
@@ -11,7 +9,8 @@
 
 ## :coffee: Santander Coders
 
-Santander Coders é um programa educacional promovido pelo Banco Santander em parceria com a instituição de ensino Digital House. Para ingressar no programa, foi realizado um processo seletivo com o intuito de contemplar 240 bolsas integrais de estudo para o curso de Desenvolvimento Web Full Stack Java.
+Santander Coders é um programa educacional promovido pelo Banco Santander em parceria com a instituição de ensino Digital House. <br>
+Para poder ingressar no programa o aluno, foi submetido a realizar um processo seletivo com o intuito de ser um dos 240 bolsistas, que receberiam bolsas integrais de estudo para o curso de Desenvolvimento Web Full Stack Java.
 
 <br>
 
@@ -19,17 +18,16 @@ Santander Coders é um programa educacional promovido pelo Banco Santander em pa
 
 Projeto integrador desenvolvido durante o curso de Desenvolvimento Web Full Stack Java oferecido pela [digitalhouse](https://www.digitalhouse.com/br/) em parceria com a universidade Santander.
 <br>
-:shipit: KdMeuBichinho - O projeto surgiu com a missão de ajudar as pessoas que querem encontrar seu melhor amigo :dog: :cat: :rabbit:  que foi perdido ou encontrar alguém que está doando. 
+:shipit: KdMeuBichinho? - O projeto surgiu com a missão de ajudar as pessoas que querem encontrar seu melhor amigo :dog: :cat: :rabbit:  que foi perdido ou encontrar alguém que está doando. 
 
 ## :bulb: Ideia do Projeto
-```bash
-Realizar a conexão entre os interesses comuns das pessoas e os animais.
 
--Aquele que perdeu e quer encontrar;
--Aquele que encontrou e quer devolver;
--Aquele que teve filhotes e quer doar;
--Aquele que quer adotar;
--Aqueles (pets) que estão nas ONGs e querem um lar.
+```bash
+Realizar conexão entre interesses comuns das pessoas e os animais através de suas localizações.
+
+-Pessoas que perderam seus animais e querem encontrá-los.
+-Pessoas que encontraram animais perdidos e querem devolvê-los.
+-Pessoas que têm animais para doar e adotar.
 
 ```
 
@@ -46,13 +44,13 @@ Realizar a conexão entre os interesses comuns das pessoas e os animais.
 
 <br>
 
-## 🖼 Tela de anuncio dos animais que estão perdidos ou procurando um novo lar
+## 🖼 Tela de anúncio dos animais que estão perdidos ou procurando um novo lar
 
 <br>
 <img src="./images/telaanuncio.png" alt="Tela Principal"> 
 <br>
 
-## 🖼 Tela dos anuncios de um peerfil
+## 🖼 Tela dos anúncios de um perfil de usuário
 
 <br>
 <img src="./images/meusanuncio.png" alt="Tela Principal"> 
@@ -63,14 +61,44 @@ Realizar a conexão entre os interesses comuns das pessoas e os animais.
 As seguintes ferramentas foram usadas na construção do projeto:
 
 #### **Front-end** 
+<br>
+<p align="left">
 
--  **[HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)**
--  **[CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)**
--  **[JS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)**
+  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">
+    <img
+      src="https://devicon.dev/devicon.git/icons/html5/html5-original-wordmark.svg"
+      alt="HTML5"
+      width="120"
+      height="120"
+    />
+  </a>
 
+  <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank">
+    <img
+      src="https://devicon.dev/devicon.git/icons/css3/css3-original-wordmark.svg"
+      alt="Css3"
+      width="120"
+      height="120"
+    />
+  </a>
+  <a
+    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    target="_blank"
+  >
+    <img
+      src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg"
+      alt="javascript"
+      width="120"
+      height="120"
+    />
+  </a>
+  
+</p>
 
+<br>
 
 # 👷 Como rodar
+
 ```bash
 # Clonar o repositório
 git clone https://github.com/KdMeuBichinho/kdmeubichinho.github.io
@@ -170,6 +198,6 @@ Depois que o merge da sua pull request ser feito, você pode deletar a sua branc
 
 Este projeto esta sobe a licença MIT.
 
-<h4>Você consegue acessar a plataforma do KdMeuBichinho :shipit: clicando : <a href="https://kdmeubichinho.github.io/"> AQUI 👋</a></a></h4>
+<h4> :computer: Você consegue acessar a plataforma do KdMeuBichinho :shipit: clicando : <a href="https://kdmeubichinho.github.io/"> AQUI 👋</a></a></h4>
 <br>
-<h4 align=center>Feito com ❤️ por  <a href="https://kdmeubichinho.github.io/"> Equipe KdMeuBichinho :dog: :cat: :rabbit:👋</a></a></h4>
+<h4 align=center>Feito com ❤️ pela <a href="https://kdmeubichinho.github.io/"> Equipe KdMeuBichinho :dog: :cat: :rabbit:👋</a></a></h4>
