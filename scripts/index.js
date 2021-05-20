@@ -77,7 +77,7 @@ function buscaAnimais(pagina){
                         `
                             <a href="${BASE_URL_CLIENT}pages/petprofile.html" class="res-card" onclick="capturaAnuncio(${anuncioRecebido.idAnuncio})">
                                 <div class="res-card-img">
-                                    <img src="${anuncioRecebido.idAnimal.fotos.caminho}" alt="">
+                                    <img src="${anuncioRecebido.idAnimal.fotos.caminho || 'https://via.placeholder.com/250.jpg'}" alt="">
                                 </div>
                                 <div class="res-card-txt">
                                     <p>${anuncioRecebido.idAnimal.nome}</p>
