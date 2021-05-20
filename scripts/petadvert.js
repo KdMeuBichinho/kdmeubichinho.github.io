@@ -17,43 +17,8 @@ const especie = {};
 const categoriaAnuncio = {};
 const pessoa = {};
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-let firebaseConfig = {
-    apiKey: "AIzaSyAYh5Jg2--ApCyh8jyfX88tmGhNQwOosoY",
-    authDomain: "kdmeubichinho-app.firebaseapp.com",
-    projectId: "kdmeubichinho-app",
-    storageBucket: "kdmeubichinho-app.appspot.com",
-    messagingSenderId: "455469113787",
-    appId: "1:455469113787:web:39fe5d7b8077886ddce49e",
-    measurementId: "G-BTHWR5STER"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
-let storage = firebase.storage();
-
-function uploadImageFirebase(image){
-
-    const nameImage = Date.now() + image.name;
-    const upload = storage.ref().child(nameImage).put(image);
-
-    upload.on("state_changed", function(){
-        upload.snapshot.ref.getDownloadURL().then(function(image_url){
-            console.log("Sucesso ao salvar a imagem");
-            fotos.caminho = image_url;
-            animal.fotos = fotos;
-            console.log(animal)
-        })
-    }, function(error){
-        console.log("Erro ao salvar a imagem");
-    })
-}
-
 photo.addEventListener("change", ()=>{
-    //uploadFile(photo.files[0])
-    uploadImageFirebase(photo.files[0])
+    uploadFile(photo.files[0])
 })
 const uploadFile = (file) => {
    
